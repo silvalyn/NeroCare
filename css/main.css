@@ -1,0 +1,681 @@
+body {
+  font-family: "Noto Serif";
+  color: #09283c;
+  background-color: #f7f6ff;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+#logo {
+  font-family: "Bree Serif";
+  color: white;
+}
+#about {
+  padding: 1rem;
+  color: white;
+}
+#contact {
+  padding: 1rem;
+  color: white;
+}
+#banner {
+  font-family: "Abril Fatface";
+  color: white;
+  background: url(../img/Login_pic.png) center/cover no-repeat fixed;
+  opacity: 80%;
+  padding: 6rem;
+  text-underline-position: below;
+}
+#ban {
+  font-family: "Abril Fatface";
+  padding: 6rem;
+  font-size: 80px;
+}
+#about_us {
+  color: #09283c;
+}
+#contact_us {
+  color: #09283c;
+}
+.title-underline {
+  width: 150px;
+  height: 5px;
+  margin: 0 auto;
+  background-color: #09283c;
+}
+.card-footer {
+  background-color: #09283c;
+}
+#back_top {
+  padding: 10px 4rem;
+  background-color: gray;
+}
+.selected {
+  margin-top: 6px;
+  padding: 1rem;
+  color: #f7f6ff;
+  background-color: #09283c;
+  cursor: pointer;
+  order: 0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.selected-box {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+}
+.selected-box .options-container {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  background-color: #09283c;
+  color: #f7f6ff;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+
+  order: 1;
+  margin-bottom: 8px;
+}
+.selected-box .options-container.active {
+  max-height: 250px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+.selected-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background-color: #0d141f;
+  border-radius: 0 8px 8px 0;
+}
+.selected-box .options-container::-webkit-scrollbar-thumb {
+  background: #7c7d80;
+  border-radius: 0 8px 8px 0;
+}
+.selected-box .option {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+.selected-box .option:hover {
+  background: #414b57;
+}
+.selected-box label {
+  cursor: pointer;
+}
+.selected-box .option .radio {
+  display: none;
+}
+.wrap {
+  max-width: 350px;
+  margin: auto;
+  padding: 20px;
+  background-color: gray;
+  margin-top: 60px;
+  border-radius: 8px;
+}
+form {
+  margin-top: 20px;
+}
+#disc {
+  color: #fff;
+}
+input {
+  /* width: 100%; */
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  border: 1px solid gray;
+  font-size: 20px;
+  border-radius: 8px;
+}
+input[type="submit"] {
+  font-size: 25px;
+  margin-top: 30px;
+  color: #fff;
+  background-color: #0d141f;
+  font-weight: bold;
+  border: 1px solid #fff;
+}
+input[type="submit"]:hover {
+  background-color: #0d414f;
+}
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 40px;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.closebtn:hover {
+  color: #414b57;
+}
+.overlay.active1 {
+  display: block;
+}
+#username {
+  padding-right: 1rem;
+  position: absolute;
+  right: 40%;
+  margin-top: 3px;
+}
+#placename {
+  position: absolute;
+  right: 5%;
+  margin-top: 3px;
+}
+#location {
+  position: absolute;
+  right: 23%;
+  margin-top: 3px;
+}
+#loc_icon {
+  position: absolute;
+  right: 35%;
+  margin-top: 3px;
+}
+#welcome {
+  position: absolute;
+  right: 60%;
+  margin-top: 3px;
+}
+#usericon {
+  position: absolute;
+  right: 73%;
+  margin-top: 3px;
+}
+#homebanner {
+  font-family: "Abril Fatface";
+  color: white;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0)),
+    url(../img/banner.png) no-repeat fixed;
+}
+#desc {
+  font-family: "Noto Serif";
+}
+#nav {
+  background-color: #800000;
+}
+#checkbox {
+  display: none;
+}
+.checkbtn {
+  cursor: pointer;
+}
+#dashboard {
+  padding: 5px;
+  border-style: solid;
+  border-color: white;
+
+  border-width: 1px;
+  position: relative;
+  left: 5%;
+  border-top: none;
+  border-bottom: none;
+}
+#administration {
+  padding: 5px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  position: relative;
+  left: 5%;
+  border-top: none;
+  border-bottom: none;
+}
+#services {
+  padding: 5px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  position: relative;
+  left: 5%;
+  border-top: none;
+  border-bottom: none;
+}
+#dropdown {
+  background-color: #800000;
+}
+#dopcolor {
+  color: white;
+}
+#dopcolor:hover {
+  color: #0d141f;
+}
+#allpatients {
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  position: relative;
+  left: 25%;
+  margin-bottom: 5px;
+  padding: 0 1rem 0 1rem;
+}
+#admincenter {
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  position: relative;
+  left: 38%;
+  margin-bottom: 5px;
+  padding: 0 1rem 0 1rem;
+}
+#icons {
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #414b57;
+}
+#icona {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 20%;
+}
+#icon1 {
+  color: #0d141f;
+}
+#icon1:hover {
+  color: #800000;
+}
+#icona:hover {
+  color: #800000;
+}
+#iconb:hover {
+  color: #800000;
+}
+#iconc:hover {
+  color: #800000;
+}
+#img {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+#iconb {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 45%;
+}
+#iconc {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 63%;
+}
+#icona {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: relative;
+  left: 20%;
+}
+#iconsbilling {
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #414b57;
+}
+#iconsDischarge {
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #414b57;
+}
+#icond {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 10%;
+}
+#icone {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 33%;
+}
+#iconf {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 50%;
+}
+#iconi {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 73%;
+}
+#cheat {
+  margin-top: 12rem;
+}
+#iconspharmacy {
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #414b57;
+}
+#icong {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 45%;
+}
+#cheat1 {
+  margin-top: 12rem;
+}
+#iconnurses {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 67%;
+}
+#iconstuf {
+  margin: 20px;
+  display: block;
+  size: 20%;
+  position: absolute;
+  left: 67%;
+}
+#paypal {
+  font-size: 3rem;
+  color: #0d141f;
+}
+.radio:hover {
+  cursor: pointer;
+}
+.cash {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#checkinbody {
+  background: url(../img/Login_pic.png) center/cover no-repeat fixed;
+}
+.inputcheck {
+  /* width: 100%; */
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  border: 1px solid gray;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.wrapcheckin {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  background-color: gray;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.overlay__content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+.openCash {
+  color: #0d141f;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.openMedical {
+  color: #0d141f;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.openPaypal {
+  color: #0d141f;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.openVisa {
+  color: #0d141f;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.openPaynow {
+  color: #0d141f;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+#Organisation {
+  padding: 1px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 10px;
+  border: 1px solid gray;
+  font-size: 15px;
+  border-radius: 8px;
+}
+#MedicalName {
+  padding: 1px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 10px;
+  border: 1px solid gray;
+  font-size: 15px;
+  border-radius: 8px;
+}
+#LastName {
+  padding: 1px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 10px;
+  border: 1px solid gray;
+  font-size: 15px;
+  border-radius: 8px;
+}
+#MemberNo {
+  padding: 1px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  font-size: 15px;
+  border-radius: 8px;
+}
+.overlayMedical {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayPaypal {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayVisa {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayPaynow {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayecocash {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlaytelecash {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlaymycash {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayzipit {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlayonemoney {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+#country {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  border: 1px solid gray;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.Ecocash {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #0d141f;
+}
+.Telecash {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #0d141f;
+}
+.OneMoney {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #0d141f;
+}
+.MyCash {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #0d141f;
+}
+.Zipit {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 30px;
+  color: #0d141f;
+}
+#allpatientsclinic {
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  position: relative;
+  left: 38%;
+  margin-bottom: 5px;
+  padding: 0 1rem 0 1rem;
+}

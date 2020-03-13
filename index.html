@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- fontawesome -->
+    <script src="./jS/all.js"></script>
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bree+Serif|Caladea|Krona+One|Montserrat:900|Noto+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <!-- overlay login -->
+    <div id="loginOverlay" class="overlay">
+      <span class="closebtn" onclick="closeForm()" title="Close Overlay"> &#215 </span>
+      <div class="wrap text-center">
+        <form action="">
+          <h4 id="disc">Enter full name</h4>
+          <input type="text" name="name" id="name" placeholder="Emmanuel Tinotenda Nakura">
+          <h4 id="disc">Email Address</h4>
+          <input type="email" name="email" id="email"
+          placeholder="enakura@mpilohospital.gov.org">
+         <h4 id="disc">Password</h4>
+          <input type="password" name="password" id="password"
+          placeholder="password">
+          <input type="submit" value="submit">
+        </form>
+      </div>
+    </div>
+    <!-- NAV BAR -->
+    <div class="container-fluid bg-secondary">
+      <div class="row">
+        <div class="col">
+          <h1 id="logo">
+            NeroCare <span style="color: #09283C;">System</span>
+          </h1>
+        </div>
+        <a href="#about_us"><h4 id="about">About Us</h4></a>
+        <a href="#contact_us"
+          ><h4 id="contact">Contact Us</h4></a
+        >
+        <div class="selected-box text-center">
+          
+            <div class="options-container">
+              <div class="option" id="optn">
+                <input
+                  type="radio"
+                  class="radio"
+                  name="catagory"
+                  id="Hospital"
+               />
+                <label for="Hospital">Hospital</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input type="radio" class="radio" name="catagory" id="Clinc"  />
+                <label for="Clinc">Clinc</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input
+                  type="radio"
+                  class="radio"
+                  name="catagory"
+                  id="Pharmacy"
+               />
+                <label for="Pharmacy">Pharmacy</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input
+                  type="radio"
+                  class="radio"
+                  name="catagory"
+                  id="Patient"
+               />
+                <label for="Patient">Patient</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input type="radio" class="radio" name="catagory" id="Doctor" />
+                <label for="Doctor">Doctor</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input type="radio" class="radio" name="catagory" id="Nurse" />
+                <label for="Nurse">Nurse</label>
+              </div>
+
+              <div class="option" id="optn">
+                <input type="radio" class="radio" name="catagory" id="LAB" />
+                <label for="LAB">LAB</label>
+              </div>
+            </div>
+            <div  class="selected text-center"> Sign in </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of Nav bar -->
+    <!-- landing banner -->
+    <section id="banner" class="p-5 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center">
+            <h1 id="ban" class="display-4">
+              NERO<span style="color: #09283C;">CARE System</span>
+            </h1>
+            <h1>Covering all the electronic records for all patients</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of landing banner -->
+    <!-- About us -->
+    <br />
+    <section id="about_us" class="py-5 bg-light">
+      <div class="container">
+        <div class="raw col-md-6 mx-auto text-center">
+          <h1><strong>About us</strong></h1>
+          <div class="title-underline "></div>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde non
+            omnis sequi voluptatum laboriosam, incidunt qui natus voluptates
+            architecto tempore, quia illo adipisci itaque voluptatibus? Quaerat
+            velit facere hic incidunt!
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end of about us -->
+    <!-- Contact us -->
+    <section id="contact_us" class="py-5 bg-light">
+      <div class="container">
+        <div class="raw col-md-6 mx-auto text-center">
+          <h1><strong>Contact Us</strong> </h1>
+          <div class="title-underline "></div>
+          <br />
+          <a href="#"
+            ><i class="fab fa-facebook fa-2x text-dark"></i>NeroCareHome</a
+          >
+          <a href="#"
+            ><i class="fab fa-twitter fa-2x text-dark"></i>@Nerocare</a
+          >
+          <a href="#"
+            ><i class="fas fa-globe fa-2x text-dark"></i>www.nerocare.gov.org</a
+          >
+          <br />
+          <a href="#LOGO"
+            ><i class="fab fa-instagram fa-2x text-dark"></i>NeroCareHome</a
+          >
+          <a href="#"
+            ><i class="fas fa-phone-volume fa-2x text-dark"></i>+263 773 607
+            827</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- End of Contact us -->
+    <!-- footer -->
+    <br /><br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+
+    <div
+      class="card-footer  justify-condent-around dflex text-center text-light"
+    >
+      <h1>National e-Health Record Operational Care</h1>
+      <br />
+      <p>
+        NeroCare is dedicated to store, synchronize and visualize patient
+        clinical data with the goal to improve national health status. The
+        abilities of the system lies in its full utilization by General
+        practitioners as such all the copy rights and usage of NeroCare shall
+        only be for medical purposes approved by the patient and standards
+        boards associated with it.
+      </p>
+
+      <br />
+      <h4>copyrights&copy;2020</h4>
+      <br />
+      <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+    </div>
+    <!-- end  of footer-->
+    <!-- jQuery -->
+    <script src="./jS/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap javaScript -->
+    <script src="./jS/bootstrap.bundle.min.js"></script>
+    <script src="./jS/main.js"></script>
+    
+  </body>
+</html>
