@@ -639,6 +639,17 @@ input[type="submit"]:hover {
   overflow-x: hidden;
   background: rgba(0, 0, 0, 0.7);
 }
+.overlaycheckout {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
 #country {
   width: 100%;
   padding: 10px;

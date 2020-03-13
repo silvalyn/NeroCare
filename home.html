@@ -21,7 +21,40 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-   
+
+    <div id="overlaycheckout" class="overlaycheckout">
+      <span class="closebtn" onclick="closecheckout()" title="Close Overlay"> &#215 </span>
+      <div class="overlay__content">
+       <div id="iconb"><img id="img" src="./img/check_out.svg" alt="check-out" />
+      <h4 id="icon1">Check-Out</h4></div>
+      <br><br><br><br><br><br>
+        <form class="text-center" action="">
+          <label for="">
+            <h4>Enter Patient ID</h4>
+          </label>
+          <input type="text" name="PatientID" id="PatientID" placeholder="N0165103T">
+          <br><br>
+        <div class="container">
+          <div class="row text-center">
+            <a href="#" id="icona"><img id="img" src="./img/Dischargelist.svg" alt="Dischargelist" />
+              <h4 id="icon1">Dischrge List</h4>
+            </a>
+            <a href="#" id="iconb"><img id="img" src="./img/pharmacy.svg" alt="outpatientlist" />
+            
+              <h4 id="icon1">Patient Px List</h4>
+            </a>
+            <a href="#" id="iconc"><img id="img" src="./img/reffered.svg" alt="reffered" />
+              <h4 id="icon1">Reffered-to-Other List</h4>
+            </a>
+          </div>
+        </div>
+        
+          <input type="submit" value="Check Out">
+    
+        </form>
+      </div>
+    </div>
+
     <section>
       <div class="container-fluid bg-secondary text-light">
         <div class="row">
@@ -146,7 +179,7 @@
             ><img id="img" src="./img/check_in.svg" alt="check-in" />
             <h4 id="icon1">Check-in</h4></a
           >
-          <a href="#" id="iconb"
+          <a href="#" id="iconb" onclick="opencheckout()"
             ><img id="img" src="./img/check_out.svg" alt="check-out" />
             <h4 id="icon1">Check-Out</h4>
           </a>
@@ -316,5 +349,14 @@
     <!-- bootstrap javaScript -->
     <script src="./jS/bootstrap.bundle.min.js"></script>
     <script src="./jS/main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
+    
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
   </body>
 </html>
