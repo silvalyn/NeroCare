@@ -48,6 +48,9 @@ function openmycash() {
 function openzipit() {
   document.getElementById("overlayzipit").style.display = "block";
 }
+function openpharmacy() {
+  document.getElementById("overlaypharmacy").style.display = "block";
+}
 function closeCash() {
   document.getElementById("overlaycash").style.display = "none";
 }
@@ -77,4 +80,7 @@ function closemycash() {
 }
 function closezipit() {
   document.getElementById("overlayzipit").style.display = "none";
+}
+function closepharmacy() {
+  document.getElementById("overlaypharmacy").style.display = "none";
 }
