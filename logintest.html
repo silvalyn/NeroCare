@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hospital Login</title>
+<!-- bootstrap css -->
+<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<!-- fontawesome -->
+<script src="./jS/all.js"></script>
+<!-- Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet" />
+<link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bree+Serif|Caladea|Krona+One|Montserrat:900|Noto+Serif&display=swap"
+    rel="stylesheet" />
+<!-- main css -->
+<link rel="stylesheet" href="./css/main.css" />
+
+</head>
+
+<body>
+    <div class="cash">
+
+        <div class="wrap text-center">
+
+            <!-- <input type="text" name="name" id="name" placeholder="Emmanuel Tinotenda Nakura">
+                <h4 id="disc">Email Address</h4>
+                <input type="email" name="email" id="email" placeholder="enakura@mpilohospital.gov.org">
+                <h4 id="disc">Password</h4>
+                <input type="password" name="password" id="password" placeholder="password">
+                <button id="Login" onclick="login()">
+                    <h4>LOG IN</h4>
+                </button> -->
+            <input type="text" name="" id="email">
+            <input type="text" name="" id="password">
+            <button id="login" onclick="login1()">log in</button>
+            <button id="logout" onclick="login2()">log out</button>
+
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+            authDomain: "nerocare-1ab70.firebaseapp.com",
+            databaseURL: "https://nerocare-1ab70.firebaseio.com",
+            projectId: "nerocare-1ab70",
+            storageBucket: "nerocare-1ab70.appspot.com",
+            messagingSenderId: "954862350723",
+            appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+            measurementId: "G-TH863E9823"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="./login.js"></script>
+
+</body>
+
+</html>
