@@ -104,7 +104,7 @@
         </nav>
     </section>
     <!-- end of nav -->
-    <section id="icons" >
+    <section id="icons">
         <div class="row">
             <a href="#" id="allpatientsclinic"><button id="allpatients" class="bg-secondary text-light text-center">
                     <h4>All patients List</h4>
@@ -221,13 +221,13 @@
                 <a href="#" id="icona"><img id="img" src="./img/appointments.svg" alt="appointments" />
                     <h4 id="icon1">Appointments</h4>
                 </a> -->
-                <!-- <a href="#" id="iconb"><img id="img" src="./img/Doctors.svg" alt="Doctors" />
+            <!-- <a href="#" id="iconb"><img id="img" src="./img/Doctors.svg" alt="Doctors" />
                     <h4 id="icon1">Doctors</h4>
                 </a> -->
-                <a href="#" id="iconnurs"><img id="img" src="./img/nurses.svg" alt="nurses" />
-                    <h4 id="icon1">Nurses</h4>
-                </a>
-            </div>
+            <a href="#" id="iconnurs"><img id="img" src="./img/nurses.svg" alt="nurses" />
+                <h4 id="icon1">Nurses</h4>
+            </a>
+        </div>
         </div>
     </section>
     <!-- <section id="icons" class="bg-light text-center">
@@ -271,14 +271,37 @@
     <script src="./jS/bootstrap.bundle.min.js"></script>
     <script src="./jS/main.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
-    
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
-    
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    cript src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+            authDomain: "nerocare-1ab70.firebaseapp.com",
+            databaseURL: "https://nerocare-1ab70.firebaseio.com",
+            projectId: "nerocare-1ab70",
+            storageBucket: "nerocare-1ab70.appspot.com",
+            messagingSenderId: "954862350723",
+            appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+            measurementId: "G-TH863E9823"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./login.js"></script>
 </body>
 
 </html>

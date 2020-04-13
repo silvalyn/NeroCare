@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Patient</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- fontawesome -->
+    <script src="./jS/all.js"></script>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bree+Serif|Caladea|Krona+One|Montserrat:900|Noto+Serif&display=swap"
+        rel="stylesheet" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+
+
+
+    </section>
+    <!-- end of tools section -->
+    <!-- home banner -->
+    <section>
+        <div class="container-fluid" id="homebanner">
+            <div class="row">
+                <div class="col text-center" id="bancol">
+                    <h1 class="display-4">
+                        NEROCARE <span style="color: #09283C;">System</span>
+                    </h1>
+                    <!-- <h3 id="desc">
+                        Covering all the electronic <br />
+                        records for all patients
+                    </h3> -->
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+    <!-- end of banner -->
+    <!-- nav bar -->
+    <div class="container">
+        <h3 style="text-align: center;">Enter Patient Data</h3>
+        <div class="row" id="patientrow">
+            <div class="colum" style="margin-right: 10rem;">
+                <i class="fas fa-camera" style="font-size: 100px;"></i>
+            </div>
+            <div class="colum " style="margin-right: 10rem;">
+                <h5>Patient Full Name</h5>
+                <input type="text" id="patientName">
+                <h5>Date of Birth</h5>
+                <input type="date" name="" id="DateOfBirth">
+                <div>
+                    <h5>Gender</h5>
+                    <input type="radio" name="gender" id="gender"><label for="gender">Male</label>
+                    <input type="radio" name="gender" id="gender"><label for="gender">Female</label>
+                    <input type="radio" name="gender" id="gender"><label for="gender">Others</label>
+                </div>
+                <h5>Full Address</h5>
+                <input type="text" id="Address">
+                <h5>City</h5>
+                <input type="text" id="City">
+                <h5>Contact Details</h5>
+                <input type="text" id="MobileNumber" placeholder="077357564"><br>
+                <input type="email " id="email Addres" placeholder="name@email.com">
+            </div>
+            <div class="colum">
+                <div>
+                    <h5>Blood Type</h5>
+                    <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        for="BloodType">A</label>
+                    <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        for="BloodType">B</label>
+                    <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        for="BloodType">O</label>
+                    <input type="radio" name="BloodType" id="gender">
+                    <label style="margin:0 1rem 0 0" for="BloodType">AB</label>
+                </div>
+                <h5>Height</h5>
+                <input type="text" id="Height">
+                <h5>Chronic Disease</h5>
+                <input type="text" id="Chronic">
+                <h5>HIV Status</h5>
+                <input type="text" id="HIVStatus">
+                <h5>Allergies And Reactions</h5>
+                <input type="text" id="Allergies" placeholder="penicilli, nuts......">
+                <br>
+                <label for="patientclass">
+                    <h5>Patient Class</h5>
+                </label>
+
+                <select id="patientclass">
+                    <option id="options" value="Standard Patient">Standard Patient</option>
+                    <option id="options" value="HospitalVIP">Hospital VIP</option>
+                    <option id="options" value="GovementVIP">Govement VIP</option>
+                    <option id="options" value="Special Care">Special Care</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="container text-center">
+        <h3>Health Survaly Data</h3>
+        <div class="row" id="patientrow">
+            <div class="colums" id="lables" style="margin-right: 52px;">
+                <label id="lables" style="margin-right: 1rem;" for="smoking">Smoking Status</label>
+                <input type="text" name="smoking" id="smoking"><br>
+                <label id="lables" style="margin-right: 3rem;" for="Disabilities">Disabilities</label>
+                <input type="text" name="Disabilities" id="Disabilities"><br>
+                <label style="margin-right: 4rem;" for="Alcohole">Alcohole</label>
+                <input type="text" name="Alcohole" id="Alcohole"><br>
+                <label style="margin-right: 4rem;" id="lables" for="Religion">Religion</label>
+                <input type="text" name="Religion" id="Religion"><br>
+                <label style="margin-right: 1rem;" id="lables" for="MaritalStatus">Marital Status</label>
+                <input type="text" name="sMaritalStatus" id="MaritalStatus"><br>
+            </div>
+            <div class="colums" id="lables">
+                <label style="margin-right: 1rem;" for="PatientNumber">Patient Number</label>
+                <input type="text" name="PatientNumber" id="PatientNumber"><br>
+                <label style="margin-right: 52px;" for="BirthPlace">Birth Place</label>
+                <input type="text" name="BirthPlace" id="BirthPlace"><br>
+                <label style="margin-right: 28px;" for="FamilyDetails">Family Details</label>
+                <input type="text" name="FamilyDetails" id="FamilyDetails"><br>
+                <label style="margin-right: 52px;" for="NextofKin">Next of Kin</label>
+                <input type="text" name="NextofKin" id="NextofKin"><br>
+                <label style="margin-right: 105px;" for="BMI">BMI</label>
+                <input type="text" name="BMI" id="BMI"><br></div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <h3>Accounting Details</h3>
+        <div class="row" id="patientrow">The Patient Shall be responsible for all the necessary payments which will be
+            either directly
+            or indirectly linked to
+            the hospital. All the treatment and the medication shall be included in the flat payment payed during check
+            in by the
+            patient, no hospital member is allowed to directly ask patients or family members payments without a
+            hospital certified
+            and approved invoice. <br> <br></div>
+
+    </div>
+    <div class="container text-center">
+        <h3>Activities</h3>
+        <div class="row">
+            <div class="colum" id="lables"><label style="margin-right: 5rem;" for="DailyJob">Daily Job</label>
+                <input type="text" name="DailyJob" style="margin-right: 2rem;" id="DailyJob"><br>
+                <label style="margin-right: 60px;" for="Nationality">Nationality</label>
+                <input type="text" name="Nationality" id="Nationality">
+                <br>
+                <label style="margin-right: 62px;" for="Citizenship">Citizenship</label>
+                <input type="text" name="Citizenship" id="Citizenship"><br>
+                <label for="CommunityService">Community Service</label>
+                <input type="text" name="CommunityService" id="CommunityService"><br>
+                <label style="margin-right: 25px;" for="Criminal Record">Criminal Record</label>
+                <input type="text" name="Criminal Record" id="Criminal Record"><br></div>
+
+        </div>
+    </div>
+
+    <div class="card-footer  justify-condent-around dflex text-center text-light">
+        <h1>National e-Health Record Operational Care</h1>
+        <br />
+        <p>
+            NeroCare is dedicated to store, synchronize and visualize patient
+            clinical data with the goal to improve national health status. The
+            abilities of the system lies in its full utilization by General
+            practitioners as such all the copy rights and usage of NeroCare shall
+            only be for medical purposes approved by the patient and standards
+            boards associated with it.
+        </p>
+
+        <br />
+        <h4>copyrights&copy;2020</h4>
+        <br />
+        <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+    </div>
+    <!-- end  of footer-->
+    <!-- jQuery -->
+    <script src="./jS/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap javaScript -->
+    <script src="./jS/bootstrap.bundle.min.js"></script>
+    <script src="./jS/main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    cript src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+            authDomain: "nerocare-1ab70.firebaseapp.com",
+            databaseURL: "https://nerocare-1ab70.firebaseio.com",
+            projectId: "nerocare-1ab70",
+            storageBucket: "nerocare-1ab70.appspot.com",
+            messagingSenderId: "954862350723",
+            appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+            measurementId: "G-TH863E9823"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./login.js"></script>
+</body>
+
+</html>

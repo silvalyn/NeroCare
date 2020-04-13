@@ -19,7 +19,20 @@ close.addEventListener("click", () => {
   overlay.classList.remove("active1");
 });
 function openCash() {
-  document.getElementById("overlaycash").style.display = "block";
+  var ID = document.getElementById('patientsID').value;
+  if (ID.length < 1) {
+    // User is signed in.
+
+
+    alert('Please enter Patient ID.');
+    return;
+
+  } else {
+    // No user is signed in.
+
+    document.getElementById("overlaycash").style.display = "block";
+  }
+
 }
 function openMedical() {
   document.getElementById("overlayMedical").style.display = "block";
@@ -54,6 +67,22 @@ function openpharmacy() {
 function opencheckout() {
   document.getElementById("overlaycheckout").style.display = "block";
 }
+function openPscp() {
+  document.getElementById("PrescriptionOverlay").style.display = "block";
+}
+function openNotes() {
+  document.getElementById("NotesOverlay").style.display = "block";
+}
+function openLab() {
+  document.getElementById("LabOverlay").style.display = "block";
+}
+function openRefferre1() {
+  document.getElementById("Refrence1Overlay").style.display = "block";
+}
+function openReffere() {
+  document.getElementById("RefrenceOverlay").style.display = "block";
+}
+
 function closeCash() {
   document.getElementById("overlaycash").style.display = "none";
 }
@@ -90,7 +119,34 @@ function closepharmacy() {
 function closecheckout() {
   document.getElementById("overlaycheckout").style.display = "none";
 }
+function closePscp() {
+  document.getElementById("PrescriptionOverlay").style.display = "none";
+}
+function closeNotes() {
+  document.getElementById("NotesOverlay").style.display = "none";
+}
+function closeLab() {
+  document.getElementById("LabOverlay").style.display = "none";
+}
+function closeRefrence1() {
+  document.getElementById("RefrenceOverlay1").style.display = "none";
+}
+function closeRefrence() {
+  document.getElementById("RefrenceOverlay").style.display = "none";
+}
+function submit() {
+  var ID1 = document.getElementById('CashAmount').value;
+  if (ID1.length < 1) {
+    // User is signed in.
 
 
+    alert('Enter Amount');
+    return;
 
+  } else {
+    alert('Submited');
+    return;
+    // document.getElementById("overlaycash").style.display = "block";
+  }
+}
 

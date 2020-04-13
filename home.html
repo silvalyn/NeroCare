@@ -70,13 +70,18 @@
             <h6 id="welcome">Welcome :</h6>
 
             <h6 id="username">Princes Ruwisi</h6>
+            <br>
+
             <br />
             <i id="loc_icon" class="fas fa-map-marker-alt"></i>
             <h6 id="location">Location :</h6>
 
             <h6 id="placename">Mpilo Hospital</h6>
           </div>
+
         </div>
+        <button id="signout">Sign Out</button>
+
       </div>
     </div>
   </section>
@@ -93,8 +98,10 @@
             Covering all the electronic <br />
             records for all patients
           </h3>
+
         </div>
         <div class="col"></div>
+        <br><br><br>
       </div>
     </div>
   </section>
@@ -163,7 +170,7 @@
         <a href="#" id="iconb" onclick="opencheckout()"><img id="img" src="./img/check_out.svg" alt="check-out" />
           <h4 id="icon1">Check-Out</h4>
         </a>
-        <a href="#" id="iconc"><img id="img" src="./img/outpatientlist.svg" alt="outpatientlist" />
+        <a href="Outpatientlist.html" id="iconc"><img id="img" src="./img/outpatientlist.svg" alt="outpatientlist" />
           <h4 id="icon1">Outpatient List</h4>
         </a>
       </div>
@@ -173,13 +180,13 @@
     <h4>Inpatient Managment</h4>
     <div class="container">
       <div class="row text-center">
-        <a href="#" id="icona"><img id="img" src="./img/outpatientlist.svg" alt="Outpatient" />
+        <a href="InpatientList.html" id="icona"><img id="img" src="./img/outpatientlist.svg" alt="Outpatient" />
           <h4 id="icon1">Inpatient List</h4>
         </a>
-        <a href="#" id="iconb"><img id="img" src="./img/Hospitallist.svg" alt="Hospital list" />
+        <a href="hospitalList.html" id="iconb"><img id="img" src="./img/Hospitallist.svg" alt="Hospital list" />
           <h4 id="icon1">Hospital List</h4>
         </a>
-        <a href="#" id="iconc"><img id="img" src="./img/reffered_in.svg" alt="reffered" />
+        <a href="refered.html" id="iconc"><img id="img" src="./img/reffered_in.svg" alt="reffered" />
           <h4 id="icon1">Reffered Patients List</h4>
         </a>
       </div>
@@ -210,7 +217,7 @@
     <h4>Discharge Summary</h4>
     <div class="container">
       <div class="row text-center">
-        <a href="#" id="icona"><img id="img" src="./img/Dischargelist.svg" alt="Dischargelist" />
+        <a href="dischargeList.html" id="icona"><img id="img" src="./img/Dischargelist.svg" alt="Dischargelist" />
           <h4 id="icon1">Dischrge List</h4>
         </a>
         <a href="#" id="iconc"><img id="img" src="./img/reffered.svg" alt="reffered" />
@@ -307,6 +314,37 @@
   <script src="./jS/main.js"></script>
   <script src="./login.js"></script>
   <script src="./firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+  <script>
+
+    var firebaseConfig = {
+      apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+      authDomain: "nerocare-1ab70.firebaseapp.com",
+      databaseURL: "https://nerocare-1ab70.firebaseio.com",
+      projectId: "nerocare-1ab70",
+      storageBucket: "nerocare-1ab70.appspot.com",
+      messagingSenderId: "954862350723",
+      appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+      measurementId: "G-TH863E9823"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <script src="./login.js"></script>
 </body>
 
 </html>

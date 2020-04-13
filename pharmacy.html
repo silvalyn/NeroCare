@@ -1,92 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pharmacy</title>
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <!-- fontawesome -->
-    <script src="./jS/all.js"></script>
-    <!-- Google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bree+Serif|Caladea|Krona+One|Montserrat:900|Noto+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <!-- main css -->
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharmacy</title>
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <!-- fontawesome -->
+  <script src="./jS/all.js"></script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bree+Serif|Caladea|Krona+One|Montserrat:900|Noto+Serif&display=swap"
+    rel="stylesheet" />
+  <!-- main css -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
 
-    <div id="overlaypharmacy" class="overlaypharmacy">
-        <span class="closebtn" onclick="closepharmacy()" title="Close Overlay"> &#215 </span>
-        <div class="overlay__content">
-            <h3 class="text-center"><strong>Pharmacy Access</strong></h3>
-            <form class="text-center" action="">
-                <label for="">
-                    <h4>Enter Patient's Number</h4>
-                </label>
-                <input type="text" name="PatientID" id="PatientID" placeholder="N0165103T">
-                <br><br>
-                
-                </section>
-                <br> <br>
-                <input type="submit" value="Check Px List">
-    
-            </form>
-        </div>
+<body>
+
+  <div id="overlaypharmacy" class="overlaypharmacy">
+    <span class="closebtn" onclick="closepharmacy()" title="Close Overlay"> &#215 </span>
+    <div class="overlay__content">
+      <h3 class="text-center"><strong>Pharmacy Access</strong></h3>
+      <form class="text-center" action="">
+        <label for="">
+          <h4>Enter Patient's Number</h4>
+        </label>
+        <input type="text" name="PatientID" id="PatientID" placeholder="N0165103T">
+        <br><br>
+
+        </section>
+        <br> <br>
+        <input type="submit" value="Check Px List">
+
+      </form>
     </div>
-    <section>
-      <div class="container-fluid bg-secondary text-light">
-        <div class="row">
-          <div class="col">
-            <i class="fab fa-instagram "> </i>
-            <i class="fab fa-twitter"> </i>
-            <i class="fab fa-facebook-f"> </i>
-            <i class="fas fa-envelope"> </i>
-          </div>
-          <div class="col">
-            <div class="row">
-              <i id="usericon" class="fas fa-user-md"></i>
-              <h6 id="welcome">Welcome :</h6>
+  </div>
+  <section>
+    <div class="container-fluid bg-secondary text-light">
+      <div class="row">
+        <div class="col">
+          <i class="fab fa-instagram "> </i>
+          <i class="fab fa-twitter"> </i>
+          <i class="fab fa-facebook-f"> </i>
+          <i class="fas fa-envelope"> </i>
+        </div>
+        <div class="col">
+          <div class="row">
+            <i id="usericon" class="fas fa-user-md"></i>
+            <h6 id="welcome">Welcome :</h6>
 
-              <h6 id="username">Princes Ruwisi</h6>
-              <br />
-              <i id="loc_icon" class="fas fa-map-marker-alt"></i>
-              <h6 id="location">Location :</h6>
+            <h6 id="username">Princes Ruwisi</h6>
+            <br />
+            <i id="loc_icon" class="fas fa-map-marker-alt"></i>
+            <h6 id="location">Location :</h6>
 
-              <h6 id="placename">Mpilo Hospital</h6>
-            </div>
+            <h6 id="placename">Mpilo Hospital</h6>
           </div>
         </div>
       </div>
-    </section>
-    <!-- end of tools section -->
-    <!-- home banner -->
-    <section>
-      <div class="container-fluid" id="homebanner">
-        <div class="row">
-          <div class="col text-center" id="bancol">
-            <h1 class="display-4">
-              NEROCARE <span style="color: #09283C;">System</span>
-            </h1>
-            <!-- <h3 id="desc">
+    </div>
+  </section>
+  <!-- end of tools section -->
+  <!-- home banner -->
+  <section>
+    <div class="container-fluid" id="homebanner">
+      <div class="row">
+        <div class="col text-center" id="bancol">
+          <h1 class="display-4">
+            NEROCARE <span style="color: #09283C;">System</span>
+          </h1>
+          <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
                     </h3> -->
-          </div>
-          <div class="col"></div>
         </div>
+        <div class="col"></div>
       </div>
-    </section>
-    <!-- end of banner -->
-    <!-- nav bar -->
-    <!-- <section id="nav">
+    </div>
+  </section>
+  <!-- end of banner -->
+  <!-- nav bar -->
+  <!-- <section id="nav">
         <nav class="navbar navbar-expand-md navbar-dark ">
             <input type="checkbox" name="checkbox dropdown" id="checkbox" /><a href="#" class="nav-link dropdown-toggle"
                 data-toggle="dropdown" data-target="dropdown_target"><label for="checkbox" class="checkbtn"><i
@@ -124,9 +121,9 @@
             </ul>
         </nav>
     </section> -->
-    <!-- end of nav -->
-    <section id="icons">
-      <!-- <div class="row">
+  <!-- end of nav -->
+  <section id="icons">
+    <!-- <div class="row">
             <a href="#" id="allpatients"><button id="allpatients" class="bg-secondary text-light text-center">
                     <h4>All patients List</h4>
                     <br />
@@ -137,8 +134,8 @@
                 <h4>Admin Center</h4>
             </button>
         </div> -->
-      <!-- </section> -->
-      <!-- <section id="icons" class="bg-light text-center">
+    <!-- </section> -->
+    <!-- <section id="icons" class="bg-light text-center">
         <h4>Outpatient Managment</h4>
         <div class="container">
           <div class="row text-center">
@@ -233,7 +230,7 @@
         </div>
       </section> -->
 
-      <!-- <section id="icons" class="bg-light text-center">
+    <!-- <section id="icons" class="bg-light text-center">
             <h4 style="font-size: 70px;">Lab Managment</h4>
             <div class="container">
                 <div class="row text-center">
@@ -249,25 +246,21 @@
                 </div>
             </div>
         </section> -->
-      <section id="iconspharmacy" class="bg-light text-center">
-        <h4 style="font-size: 70px;">Pharmacy Managment</h4>
-        <div class="container">
-          <div class="row text-center">
-            <a href="#" id="icona" onclick="openpharmacy()"
-              ><img
-                id="img"
-                src="./img/outpatientlist.svg"
-                alt="outpatientlist"
-              />
-              <h4 id="icon1">Patient Px List</h4>
-            </a>
-            <a href="#" id="iconc"><img id="img" src="./img/pharmacy.svg" alt="outpatientlist" />
-                <h4 id="icon1">Patient Px List</h4>
-            </a>
-            <div class="row" id="cheat1"></div>
-          </div>
+    <section id="iconspharmacy" class="bg-light text-center">
+      <h4 style="font-size: 70px;">Pharmacy Managment</h4>
+      <div class="container">
+        <div class="row text-center">
+          <a href="#" id="icona" onclick="openpharmacy()"><img id="img" src="./img/outpatientlist.svg"
+              alt="outpatientlist" />
+            <h4 id="icon1">Patient Px List</h4>
+          </a>
+          <a href="#" id="iconc"><img id="img" src="./img/pharmacy.svg" alt="outpatientlist" />
+            <h4 id="icon1">Patient Px List</h4>
+          </a>
+          <div class="row" id="cheat1"></div>
         </div>
-      </section>
+      </div>
+    </section>
     <!-- </section> -->
     <!-- <section id="icons" class="bg-light text-center">
       <h4>Daily Schedule</h4>
@@ -309,9 +302,7 @@
     </section> -->
     -->
     <!-- end of icons -->
-    <div
-      class="card-footer  justify-condent-around dflex text-center text-light"
-    >
+    <div class="card-footer  justify-condent-around dflex text-center text-light">
       <h1>National e-Health Record Operational Care</h1>
       <br />
       <p>
@@ -335,13 +326,37 @@
     <script src="./jS/bootstrap.bundle.min.js"></script>
     <script src="./jS/main.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
-    
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
-    
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-  </body>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+    <script>
+
+      var firebaseConfig = {
+        apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+        authDomain: "nerocare-1ab70.firebaseapp.com",
+        databaseURL: "https://nerocare-1ab70.firebaseio.com",
+        projectId: "nerocare-1ab70",
+        storageBucket: "nerocare-1ab70.appspot.com",
+        messagingSenderId: "954862350723",
+        appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+        measurementId: "G-TH863E9823"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./login.js"></script>
+</body>
+
 </html>
