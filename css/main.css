@@ -774,12 +774,12 @@ table {
 
 th {
   height: 50px;
-  padding: 15px;
+  /* padding: 30px; */
   border-bottom: 1px solid #ddd;
 }
 td{
    padding: 15px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ddd;
   color: #0d141f;
 }
@@ -832,8 +832,7 @@ text-align: left;
   background-color:white;
   margin-top: 60px;
   border-radius: 8px;}
-  .notes
-        {
+  .notes{
             background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
             background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
             background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
@@ -884,3 +883,96 @@ text-align: left;
           color: white;
           border-radius: 15px;
         }
+#create{
+  color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: relative;
+  left: 45%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+#imageUpload{
+ color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: absolute;
+  left: 2%;
+  padding: 5px;
+  margin-top: 1rem;
+  width: 300px;
+}
+#pcreate{
+   color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: relative;
+  left: 45%;
+  padding:0 2rem;
+  margin: 1rem 0;
+ 
+}
+#profile-container img {
+    width: 200px;
+    height: 200px;
+    color: #0d141f;
+}
+#profile-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+#imageUpload
+{
+    display: block;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+#divpatient1{
+   color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: absolute;
+  left: 2%;
+  padding: 5px;
+  margin-top: 4rem;
+  width: 300px;
+}
+#divpatient2{
+   color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: absolute;
+  left: 2%;
+  padding: 5px;
+  margin-top: 8rem;
+  width: 300px;
+}
+#divpatient3{
+   color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: absolute;
+  left: 2%;
+  padding: 5px;
+  margin-top: 12rem;
+  width: 300px;
+}
+#signup{
+   color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  position: relative;
+  left: 20%;
+  padding:0 2rem;
+  margin: 1rem 0;
+  margin-top: 20rem;
+}

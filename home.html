@@ -108,10 +108,10 @@
   <!-- end of banner -->
   <!-- nav bar -->
   <section id="nav">
-    <nav class="navbar navbar-expand-md navbar-dark ">
+    <nav class="navbar navbar-expand-md ">
       <input type="checkbox" name="checkbox dropdown" id="checkbox" /><a href="#" class="nav-link dropdown-toggle"
-        data-toggle="dropdown" data-target="dropdown_target"><label for="checkbox" class="checkbtn"><i
-            class="fas fa-bars text-light"></i></label>
+        style="background-color: #800000;" data-toggle="dropdown" data-target="dropdown_target"><label for="checkbox"
+          class="checkbtn"><i class="fas fa-bars text-light"></i></label>
         <span class="caret"></span></a>
       <div class="dropdown-menu text-center  " id="dropdown" aria-labelledby="dropdown_target">
         <a href="#" class="dropdown-item" id="dopcolor">Outpatient Managment</a>
@@ -134,13 +134,13 @@
       </div>
       <ul class="navbar-nav">
         <li class="nav-item" id="dashboard">
-          <a href="#" class="nav-link">Dashboard</a>
+          <a href="#" class="nav-link" style="background-color: #800000;">Dashboard</a>
         </li>
         <li class="nav-item" id="administration">
-          <a href="#" class="nav-link">Administration</a>
+          <a href="#" class="nav-link" style="background-color: #800000;">Administration</a>
         </li>
         <li class="nav-item" id="services">
-          <a href="#" class="nav-link">Services</a>
+          <a href="#" class="nav-link" style="background-color: #800000;">Services</a>
         </li>
       </ul>
     </nav>
@@ -148,7 +148,7 @@
   <!-- end of nav -->
   <section id="icons">
     <div class="row">
-      <a href="#" id="allpatients"><button id="allpatients" class="bg-secondary text-light text-center">
+      <a href="Allpatients.html" id="allpatients"><button id="allpatients" class="bg-secondary text-light text-center">
           <h4>All patients List</h4>
           <br />
           <h6>(Outpatient and Inpatient)</h6>
@@ -220,7 +220,7 @@
         <a href="dischargeList.html" id="icona"><img id="img" src="./img/Dischargelist.svg" alt="Dischargelist" />
           <h4 id="icon1">Dischrge List</h4>
         </a>
-        <a href="#" id="iconc"><img id="img" src="./img/reffered.svg" alt="reffered" />
+        <a href="reffered-to-other.html" id="iconc"><img id="img" src="./img/reffered.svg" alt="reffered" />
           <h4 id="icon1">Reffered-to-Other List</h4>
         </a>
       </div>
@@ -231,13 +231,13 @@
     <h4>Lab Managment</h4>
     <div class="container">
       <div class="row text-center">
-        <a href="#" id="icona"><img id="img" src="./img/lab_test.svg" alt="lab_test" />
+        <a href="labtests.html" id="icona"><img id="img" src="./img/lab_test.svg" alt="lab_test" />
           <h4 id="icon1">Lab test List</h4>
         </a>
-        <a href="#" id="iconb"><img id="img" src="./img/lab_pending.svg" alt="complet lab_test" />
+        <a href="labComplete.html" id="iconb"><img id="img" src="./img/lab_pending.svg" alt="complet lab_test" />
           <h4 id="icon1">Completed Lab Test</h4>
         </a>
-        <a href="#" id="iconc"><img id="img" src="./img/lab_pending.svg" alt="lab_pending" />
+        <a href="labpending.html" id="iconc"><img id="img" src="./img/lab_pending.svg" alt="lab_pending" />
           <h4 id="icon1">Pending Lab Tests</h4>
         </a>
       </div>
@@ -248,7 +248,7 @@
     <div class="container">
 
       <div class="row text-center">
-        <a href="#" id="icong"><img id="img" src="./img/pharmacy.svg" alt="Pharmacy" />
+        <a href="pharmacyList.html" id="icong"><img id="img" src="./img/pharmacy.svg" alt="Pharmacy" />
           <h4 id="icon1">Pharmacy List</h4>
         </a>
         <div class="row" id="cheat1"></div>
@@ -311,9 +311,8 @@
   <script src="./jS/jquery-3.4.1.min.js"></script>
   <!-- bootstrap javaScript -->
   <script src="./jS/bootstrap.bundle.min.js"></script>
-  <script src="./jS/main.js"></script>
-  <script src="./login.js"></script>
-  <script src="./firebase.js"></script>
+
+  <!-- <script src="./firebase.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 
@@ -344,6 +343,8 @@
 
     db.settings({ timestampsInSnapshots: true });
   </script>
+  <script src="./Auth.js"></script>
+  <script src="./jS/main.js"></script>
   <script src="./login.js"></script>
 </body>
 

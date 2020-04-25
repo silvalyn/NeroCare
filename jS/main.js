@@ -1,3 +1,57 @@
+const patientList = document.querySelector('#Allpatientslist');
+//set up patient list
+const setupList = (data) => {
+
+
+  let html = '';
+  data.forEach(doc => {
+    const patient = doc.data();
+    const pd = `
+     <th><i class="fas fa-camera"></i></th>
+                        <th>Full Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                        <tr>
+                            <td>
+                              
+                            </td>
+                            <td>
+                              ${patient.Name}
+                            </td>
+                            <td>
+                             ${patient.Age} years
+                            </td>
+                            <td>
+                             ${patient.Gender}
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+
+    
+    
+    `;
+    html += pd
+
+  })
+
+  patientList.innerHTML = html;
+}
+
+
+
+
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 
@@ -149,4 +203,23 @@ function submit() {
     // document.getElementById("overlaycash").style.display = "block";
   }
 }
+//setting up db componets
+
+function opencreatePatient() {
+  window.location.replace('creatingPatient.html');
+}
+// $("#profileImage").click(function (e) {
+//   $("#imageUpload").click();
+// });
+
+// function fasterPreview(uploader) {
+//   if (uploader.files && uploader.files[0]) {
+//     $('#profileImage').attr('src',
+//       window.URL.createObjectURL(uploader.files[0]));
+//   }
+// }
+
+// $("#imageUpload").change(function () {
+//   fasterPreview(this);
+// });
 
