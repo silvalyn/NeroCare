@@ -48,7 +48,7 @@
         <div class="container">
             <h3 style="text-align: center;">Enter Patient Data</h3>
             <div class="row" id="patientrow">
-                <div class="colum" style="margin-right: 10rem;">
+                <div class="colum" style="margin-right: 2rem;">
                     <div id="profile-container">
                         <!-- <i class="fas fa-camera" style="font-size: 100px;"></i> -->
                         <img src="./img/profile.svg" id="profileImage" alt="profile pic">
@@ -80,9 +80,9 @@
                     <input type="date" name="" id="DateOfBirth">
                     <div>
                         <h5>Gender</h5>
-                        <input type="radio" name="gender" id="gender"><label for="gender">Male</label>
-                        <input type="radio" name="gender" id="gender"><label for="gender">Female</label>
-                        <input type="radio" name="gender" id="gender"><label for="gender">Others</label>
+                        <input type="radio" name="gender" id="gender" value="Male"><label for="gender">Male</label>
+                        <input type="radio" name="gender" id="gender" value="Female"><label for="gender">Female</label>
+                        <input type="radio" name="gender" id="gender" value="Other"><label for="gender">Others</label>
                     </div>
                     <h5>Full Address</h5>
                     <input type="text" name="Address" id="Address">
@@ -95,13 +95,13 @@
                 <div class="colum">
                     <div>
                         <h5>Blood Type</h5>
-                        <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        <input type="radio" name="BloodType" id="gender" value="A"><label style="margin:0 1rem 0 0"
                             for="BloodType">A</label>
-                        <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        <input type="radio" name="BloodType" id="gender" value="B"><label style="margin:0 1rem 0 0"
                             for="BloodType">B</label>
-                        <input type="radio" name="BloodType" id="gender"><label style="margin:0 1rem 0 0"
+                        <input type="radio" name="BloodType" id="gender" value="O"><label style="margin:0 1rem 0 0"
                             for="BloodType">O</label>
-                        <input type="radio" name="BloodType" id="gender">
+                        <input type="radio" name="BloodType" id="gender" value="AB">
                         <label style="margin:0 1rem 0 0" for="BloodType">AB</label>
                     </div>
                     <h5>Height</h5>
@@ -194,7 +194,7 @@
         </div>
         <br><br>
 
-        <button id="pcreate">
+        <button id="pcreate" onclick="signupbtn()">
             <h3>Create</h3>
         </button>
     </form>

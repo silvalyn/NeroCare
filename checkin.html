@@ -24,7 +24,7 @@
     <span class="closebtn" onclick="closeCash()" title="Close Overlay"> &#215 </span>
     <div class="overlay__content">
       <h3 class="text-center"><strong>Cash</strong></h3>
-      <form class="text-center" action="">
+      <form class="text-center" id="cashoverlay" action="">
         <label for="">
           <h4>Amount</h4>
         </label>
@@ -40,7 +40,7 @@
             General Practitioner appointment</strong>
         </section>
         <br> <br>
-        <input type="submit" value="submit" onclick="submit()">
+        <input type="submit" value="submit" onclick="submitcashvalue()" id="submitcash">
 
       </form>
     </div>
@@ -71,10 +71,10 @@
         </label>
         <input type="text" name="MemberNo" id="MemberNo" placeholder="field required">
         <br>
-        <textarea name="" id="" cols="50" rows="5" placeholder="Write Medical Condition"></textarea>
+        <textarea name="" id="Condition" cols="50" rows="5" placeholder="Write Medical Condition"></textarea>
 
         <br>
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" onclick="submitmedical()">
 
       </form>
     </div>
@@ -84,7 +84,7 @@
     <span class="closebtn" onclick="closePaypal()" title="Close Overlay"> &#215 </span>
     <div class="overlay__content">
       <h3 class="text-center" style="background-color: #0d141f;"><img src="./img/paypal.svg" alt="Paypal"></a></h3>
-      <form class="text-center" action="">
+      <form class="text-center" action="" id="Paypalid">
         <div class="container">
           <div class="row">
             <div class="col">
@@ -397,20 +397,20 @@
               <h4>Billing Info</h4>
               <div class="text-left">
                 <h6>Full Name</h6>
-                <input type="text" style="width: 100%;" name="paypalname" id="paypalname" placeholder="Emmanuel Nakura">
+                <input type="text" style="width: 100%;" name="visaname" id="visaname" placeholder="Emmanuel Nakura">
               </div>
               <div class="text-left">
                 <h6>Address</h6>
-                <input style="width: 100%;" type="text" name="Address" id="Address" placeholder="L1066 kc">
+                <input style="width: 100%;" type="text" name="visaAddress" id="visaAddress" placeholder="L1066 kc">
               </div>
               <div class="text-left">
                 <h6>Zip Code</h6>
-                <input type="text" style="width: 100%;" name="ZipCode" id="ZipCode" placeholder="263">
+                <input type="text" style="width: 100%;" name="visaZipCode" id="vizaZipCode" placeholder="263">
               </div>
 
               <div class="text-left">
                 <h6>Country</h6>
-                <select id="country" name="country">
+                <select id="visacountry" name="visacountry">
                   <option value="Afganistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -666,27 +666,28 @@
               <h4>Card Info</h4>
               <div class="text-left">
                 <h6>Card Number</h6>
-                <input style="width: 100%;" type="text" name="CardNumber" id="CardNumber"
+                <input style="width: 100%;" type="text" name="visaCardNumber" id="visaCardNumber"
                   placeholder="5333 **** **** ****">
               </div>
               <div class="text-left">
                 <h6>Card Holder</h6>
-                <input style="width: 100%;" type="text" name="CardHolder" id="CardHolder" placeholder="Emmanuel Nakura">
+                <input style="width: 100%;" type="text" name="CardHolder" id="visaCardHolder"
+                  placeholder="Emmanuel Nakura">
               </div>
               <div class="text-left">
                 <h6>CVV</h6>
-                <input style="width: 100%;" type="text" name="CVV" id="CVV" placeholder="***">
+                <input style="width: 100%;" type="text" name="CVV" id="visaCVV" placeholder="***">
               </div>
               <div class="text-left">
                 <h6>Expiry Date</h6>
-                <input style="width: 100%;" type="date" name="date" id="date" placeholder="5/21">
+                <input style="width: 100%;" type="date" name="date" id="visadate" placeholder="5/21">
               </div>
 
             </div>
           </div>
         </div>
         <br>
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" onclick="submitvisa()">
 
       </form>
     </div>
@@ -856,7 +857,7 @@
         <br />
         <div class="option-container1">
           <div class="options1">
-            <a href="#" id="openCash" class="openCash" onclick="openCash()">Cash</a>
+            <a href="#" id="openCash" onclick="openCash()" class="openCash">Cash</a>
             <a href="#" class="openMedical" onclick="openMedical()">Medical</a>
             <a href="#" class="openPaypal" onclick="openPaypal()"><i style="font-size: 2rem;"
                 class="fab fa-cc-paypal"></i></a>
@@ -868,12 +869,18 @@
 
         <br />
         <label for="nurse">
-          <h4>Assign a Nurse</h4>
+          <h4>Select Hospital</h4>
         </label>
-        <input type="text" name="nusre" id="nurse" placeholder="Patience Nhakura" />
+        <select name="Hospitalpatientlist" id="Hospitalpatientlist">
+          <option value="UBH">UBH</option>
+          <option value="Mpilo">Mpilo</option>
+
+
+
+        </select>
         <br />
         <br />
-        <input type="submit" value="submit" />
+        <input type="submit" value="submit" onclick="submitcashfinal()" />
       </form>
     </div>
   </div>
@@ -914,7 +921,10 @@
 
     db.settings({ timestampsInSnapshots: true });
   </script>
-  <script src="./login.js"></script>
+  <!-- <script src="./login.js"></script> -->
+  <!-- <script src="./lists.js"></script> -->
+  <script src="./checkin.js"></script>
+
 
 </body>
 

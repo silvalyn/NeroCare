@@ -19,43 +19,649 @@
 </head>
 
 <body>
+    <div id="data" style="display: none;">
+        <div id="PrescriptionOverlay" class="PrescriptionOverlay">
+            <span class="closebtn" onclick="closePscp()" title="Close Overlay"> &#215 </span>
+            <div class="wrap text-center" id="prescriptionWrap">
+                <div class="row" style="background-color:#2487E9 ;">
+                    <h3>
+                        NEROCARE <span style="color: white;">System</span>
+                    </h3>
+                    <h3 style="margin-left: 7rem;">Phamacy Prescription</h3>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="colum" id="colum1">
+                        <h3>Patient Information</h3>
+                        <br>
+                        <h4>Name of the patient</h4><br>
+                        <h4>Patient Full Address</h4><br>
+                        <div class="row">
+                            <h4 style="margin:0 1rem 0 2rem">Cilty</h4>
+                            <h4>Mobile Number</h4>
+
+                        </div><br>
+                        <h4>Country</h4>
+                    </div>
+                    <div class="colum">
+                        <h3>Medication Details</h3>
+                        <br>
+                        <textarea class="notes" name="" id="" cols="60" rows="10"></textarea>
+                        <br>
+                        <button id="patientdashbd">Digitaly Sign</button>
+                        <br>
+                        <br>
+                        <label for="digitaly Sign">Doctor/Nurse</label>
+                    </div>
+                    <br>
+                    <div class="row"><button id="patientdashbd" style="background-color: #2487E9; padding: 0 2rem;">
+                            <h3>Previous Px</h3>
+                        </button>
+                        <button id="patientdashbd" style="margin-left: 15rem; padding: 0 2rem;">Confirm</button>
+                        <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd">Print</button></div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="NotesOverlay" class="NotesOverlay">
+            <span class="closebtn" onclick="closeNotes()" title="Close Overlay"> &#215 </span>
+            <div class="wrap text-center" id="prescriptionWrap">
+                <div class="row" style="background-color:#6900006b ;">
+                    <h3>
+                        NEROCARE <span style="color: white;">System</span>
+                    </h3>
+                    <h3 style="margin-left: 7rem;">Doctor's/Nurse Notes</h3>
+                </div>
+                <br>
+                <div class="row" id="note">
+                    <div class="colum" id="colum2">
+                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Assessment"></textarea>
+                        <br>
+                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Suggestions"></textarea>
+                        <br>
+                        <textarea name="" id="" cols="30" rows="10" class="notes1"
+                            placeholder="Intake and Output"></textarea>
+                        <br>
+                    </div>
+
+                    <div class="colum" id="colum"><textarea name="" id="" cols="30" rows="10" class="notes1"
+                            placeholder="Assessment"></textarea>
+                        <br>
+                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Suggestions"></textarea>
+                        <br>
+                        <textarea name="" id="" cols="30" rows="10" class="notes1"
+                            placeholder="Intake and Output"></textarea>
+                        <br></div>
+
+
+                </div>
+                <div class="row">
+                    <button id="patientdashbd" style="margin-right: 5rem; padding: 0 2rem;">Digitaly Sign</button> <br>
+                    <label for="signature">Electronically Signed by: Doctor</label><br>
+                    <button id="patientdashbd" style="margin-left: 2rem; padding: 0 2rem;">SAVE</button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="LabOverlay" class="LabOverlay">
+            <span class="closebtn" onclick="closeLab()" title="Close Overlay"> &#215 </span>
+            <div class="wrap text-center" id="prescriptionWrap">
+                <h3>Request a lab Test</h3>
+                <br>
+                <h4>Patient name</h4>
+                <input type="text" name="Patientname" id="Patientname1" placeholder="Emmanuel Tinotenda Nakura">
+
+                <h4>Patient ID</h4>
+                <input type="text" name="PatientID" id="PatientID1" placeholder="N0165103T">
+                <br>
+                <label for="Lab">Select a Test</label>
+                <select name="Lab" id="LabRequest">
+
+                    <option value="option">X-Ray</option>
+                    <option value="option">C-Scan</option>
+                    <option value="option">HIV test</option>
+                    <option value="option">Malaria</option>
+                </select>
+                <br><br>
+                <br>
+
+                <button id="SubmitRequest">
+                    <h4>Submit Request</h4>
+                </button>
+
+
+            </div>
+        </div>
+
+
+        <div id="RefrenceOverlay" class="RefrenceOverlay">
+            <span class="closebtn" onclick="closeRefrence()" title="Close Overlay"> &#215 </span>
+            <div class="wrap text-center" id="prescriptionWrap">
+                <h3>Referre a Patient</h3>
+                <br><br>
+                <div class="row">
+                    <div class="colum" id="colum1">
+                        <h4>Patient name</h4><br>
+                        <input type="text" name="Patientname" id="Patientname"
+                            placeholder="Emmanuel Tinotenda Nakura"><br>
+
+                        <h4>Patient ID</h4><br>
+                        <input type="text" name="PatientID" id="PatientID" placeholder="N0165103T">
+                        <br>
+                        <h4>Refferring Doctor</h4>
+                        <input type="text" name="RefferringDoctor" id="RefferringDoctor">
+                        <br>
+                    </div>
+                    <br>
+
+
+                    <div class="colum">
+                        <textarea name="recommendations" id="recommendations" cols="30" rows="10" class="notes1"
+                            placeholder="Write recommendations"></textarea>
+                        <br>
+                        <label for="hospital">Chose Hospital</label><select name="hospital" id="choosehospital">
+                            <option value="option">UBH</option>
+                            <option value="option">Mpillo</option>
+                        </select>
+                    </div>
+
+
+                    <br><br>
+                    <br>
 
 
 
-    </section>
-    <!-- end of tools section -->
-    <!-- home banner -->
-    <section>
-        <div class="container-fluid" id="homebanner">
-            <div class="row">
-                <div class="col text-center" id="bancol">
-                    <h1 class="display-4">
-                        NEROCARE <span style="color: #09283C;">System</span>
-                    </h1>
-                    <!-- <h3 id="desc">
+
+                </div>
+                <button id="patientdashbd">
+                    <h4>Refferre</h4>
+                </button>
+            </div>
+
+
+        </div>
+
+
+
+        </section>
+        <!-- end of tools section -->
+        <!-- home banner -->
+        <section>
+            <div class="container-fluid" id="homebanner">
+                <div class="row">
+                    <div class="col text-center" id="bancol">
+                        <h1 class="display-4">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                        <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
                     </h3> -->
+                    </div>
+                    <div class="col"></div>
                 </div>
-                <div class="col"></div>
             </div>
+        </section>
+        <!-- end of banner -->
+        <!-- nav bar -->
+        <div class="container">
+            <h3 style="text-align: center;">Patient Portal</h3>
+            <div class="row" id="patientrow">
+                <div class="colum" style="margin-right: 10rem;" id="profile-container">
+                    <!-- <i class="fas fa-camera" style="font-size: 100px;"></i> -->
+                    <img src="./img/profile.svg" id="profileImage" style="height : 140px;" alt="profile pic">
+
+                </div>
+
+                <div class="colum " style="margin-right: 10rem;" id="pdata1">
+                    <!-- <h4>Patient Full Name</h4>
+                <h5>Date of Birth</h5>
+                <h5>Gender</h5>
+                <h5>Full Address</h5>
+                <h5>City</h5>
+                <h5>Contact Details</h5> -->
+
+                </div>
+                <div class="colum">
+                    <div style="color: red;">
+                        <h4>Allergies and Reactions</h4>
+
+                        <ul>
+                            <li>Allergy 1</li>
+                            <li>reaction 1</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="colum">
+                    <h5 style="padding: 5px;background-color: #09283C;color:white;margin-left: 1rem;">Patient Class
+                    </h5>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home">Dash Board</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu1">Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu2">Clinical Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu3">Accounts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu4">Activities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu5">Audit</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="home">
+                            <br>
+                            <div id="quick" class="row">
+
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div id="colum1" class="colum">
+                                    <div class="container">
+                                        <h4>Current Medication</h4>
+                                        <br>
+                                        <ul>
+                                            <li>Prescription 1</li>
+                                            <li>Prescription 2</li>
+                                            <li>Prescription 3</li>
+                                        </ul>
+                                        <button id="patientdashbd">Check Px</button>
+                                    </div>
+
+
+
+                                    <br>
+
+                                    <div class="container"></div>
+                                    <h4>immunisation</h4>
+                                    <br>
+                                    <ul>
+                                        <li>Immunisation 1</li>
+                                        <li>Immunisation 2</li>
+                                        <li>Immunisation 3</li>
+                                    </ul>
+                                    <button id="patientdashbd">Check History</button>
+                                </div>
+
+
+
+
+
+                                <div id="colum1" class="colum">
+
+                                    <div class="container">
+                                        <h4>Medical History</h4>
+                                        <br>
+                                        <ul>
+                                            <li>Record 1</li>
+                                            <li>Record 2</li>
+                                            <li>Record 3</li>
+                                        </ul>
+                                        <button id="patientdashbd">View History</button>
+                                    </div>
+
+
+
+                                    <br>
+
+                                    <div class="container">
+                                        <h4>Investigations</h4>
+                                        <br>
+                                        <ul>
+                                            <li>Test 1</li>
+                                            <li>Test 2</li>
+                                            <li>Test 3</li>
+                                        </ul>
+                                        <button id="patientdashbd">View Lab</button>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div id="colum1" class="colum">
+
+                                    <select id="Status">
+
+                                        <option id="options" style="background-color: red;" value="Unstable">
+                                            Unstable
+                                        </option>
+                                        <option id="options" style="background-color:yellow;" value="WatchList">
+                                            Watchlist
+                                        </option>
+                                        <option id="options" style="background-color:blue" value="Stable">Stable
+                                        </option>
+                                        <option id="options" style="background-color:green" value="ToBeDischarged">
+                                            To Be
+                                            Discharged</option>
+                                    </select>
+                                    <br><br><br>
+                                    <button style="padding: 1rem; background-color: green;color: white;">
+                                        DISCHARGE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <div class="tab-pane container fade" id="menu1">
+                            <div id="quick" class="row">
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div id="colum1" class="colum">
+                                    <label id="lables" style="margin-right: 1rem;" for="smoking">Smoking
+                                        Status</label>
+                                    <h4 id="smokingvalue"></h4>
+                                    <br>
+                                    <label id="lables" style="margin-right: 3rem;"
+                                        for="Disabilities">Disabilities</label>
+                                    <h4 id="Disabilitiesvalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 4rem;" for="Alcohole">Alcohole</label>
+                                    <h4 id="Alcholevalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 4rem;" id="lables" for="Religion">Religion</label>
+                                    <h4 id="Religionvalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 1rem;" id="lables" for="MaritalStatus">Marital
+                                        Status</label>
+                                    <h4 id="MaritalStatusvalue"></h4>
+                                    <br>
+                                </div>
+
+
+
+                                <div class="colum">
+                                    <label style="margin-right: 1rem;" for="PatientNumber">Patient
+                                        Number</label>
+                                    <h4 id="PatientNumbervalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 52px;" for="BirthPlace">Birth Place</label>
+                                    <h4 id="BirthPlacevalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 28px;" for="FamilyDetails">Family Details</label>
+                                    <h4 id="FamilDetailsvalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 52px;" for="NextofKin">Next of Kin</label>
+                                    <h4 id="NextofKinvalue"></h4>
+                                    <br>
+                                    <label style="margin-right: 105px;" for="BMI">BMI</label>
+                                    <h4 id="BMIvalue"></h4>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane container fade" id="menu2">
+                            <div id="quick" class="row">
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+
+                            </div>
+                            <br>
+                            <div class="row" id="lables">
+                                <div class="colum" id="colum1">
+                                    <label id="lables" style="margin-right: 1rem;" for="BodyTemperature">Body
+                                        Temperature</label>
+                                    <input type="text" name="BodyTemperature" id="BodyTemperature"><br>
+                                    <label id="lables" style="margin-right: 2.5rem;" for="BloodPreasure">Blood
+                                        Preasure</label>
+                                    <input type="text" name="BloodPreasure" id="BloodPreasure"><br>
+                                    <label id="lables" style="margin-right: 6.5rem;" for="Height">Height</label>
+                                    <input type="text" name="Height" id="Height"><br>
+                                    <label id="lables" style="margin-right: 6.5rem;" for="Weight">Weight</label>
+                                    <input type="text" name="Weight" id="Weight"><br>
+                                    <label id="lables" style="margin-right: 5rem;" for="PulseRate">Pulse
+                                        Rate</label>
+                                    <input type="text" name="PulseRate" id="PulseRate"><br>
+                                </div>
+
+
+
+                                <div class="colum">
+                                    <label id="lables" style="margin-right: 7rem;" for="Respiration">Respiration</label>
+                                    <input type="text" name="Respiration" id="Respiration"><br>
+                                    <label id="lables" style="margin-right: 3.5rem;" for="OxygenSaturation">Oxygen
+                                        Saturation</label>
+                                    <input type="text" name="OxygenSaturation" id="OxygenSaturation"><br>
+                                    <label id="lables" style="margin-right: 7.5rem;" for="HIVStatus">HIVS
+                                        tatus</label>
+                                    <input type="text" name="HIVStatus" id="HIVStatus"><br>
+                                    <label id="lables" style="margin-right: 1.5rem;"
+                                        for="PsychiatricsAssesment">Psychiatrics
+                                        Assesment</label>
+                                    <input type="text" name="PsychiatricsAssesment" id="PsychiatricsAssesment"><br>
+                                    <label id="lables" style="margin-right: 2rem;" for="HEENTExamination">PHEENT
+                                        Examination</label>
+                                    <input type="text" name="HEENTExamination" id="HEENTExamination"><br>
+                                </div>
+
+                                <div class="colum">
+                                    <br><br><br>
+                                    <select id="Status">
+
+                                        <option id="options" style="background-color: red;" value="Unstable">
+                                            Unstable
+                                        </option>
+                                        <option id="options" style="background-color:yellow;" value="WatchList">
+                                            Watchlist
+                                        </option>
+                                        <option id="options" style="background-color:blue" value="Stable">Stable
+                                        </option>
+                                        <option id="options" style="background-color:green" value="ToBeDischarged">
+                                            To Be
+                                            Discharged</option>
+                                    </select>
+                                    <br><br>
+                                    <input type="date" name="VisitDate" id="VisitDate">
+                                    <br><br>
+                                    <textarea name="" id="" cols="30" rows="10"
+                                        placeholder="Write a Comment"></textarea>
+                                </div>
+                            </div>
+                            <button style="padding: 1rem 3rem; background-color:#09283C;color: white;">
+                                SAVE</button>
+                        </div>
+
+                        <br>
+
+
+
+                        <div class="tab-pane container fade" id="menu3">
+                            <div id="quick" class="row">
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+                                <table>
+                                    <thead>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Payment Method</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </thead>
+
+                                    <tbody id="accountsTable">
+                                        <!-- <tr>
+
+                                            <td id="accountsDate">
+
+                                            </td>
+                                            <td id="accountsDescription">
+
+                                            </td>
+                                            <td id="accountspaymentMethod">
+
+                                            </td>
+                                            <td id="accountsAmount">
+
+                                            </td>
+                                            <td id="accountsStatus">
+
+                                            </td>
+                                            <td>
+                                                <button id="approve">Approve</button>
+                                            </td> -->
+                                        <!-- </tr> -->
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br>
+
+                        </div>
+                        <div class="tab-pane container fade" id="menu4">
+                            <div id="quick" class="row">
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+
+                            </div>
+
+
+
+
+                            <br>
+
+
+                            <div class="row">
+                                <div class="colum" id="labels"><label style="margin-right: 5rem;" for="DailyJob">Daily
+                                        Job</label>
+                                    <h5 id="dailyjob"></h5>
+                                    <br>
+                                    <label style="margin-right: 60px;" for="Nationality">Nationality</label>
+                                    <h5 id="Nationality"></h5>
+
+                                    <br>
+                                    <label style="margin-right: 62px;" for="Citizenship">Citizenship</label>
+                                    <h5 id="citizenship"></h5>
+                                    <br>
+                                    <label for="CommunityService">Community Service</label>
+                                    <h5 id="comunityservice"></h5>
+                                    <br>
+                                    <label style="margin-right: 25px;" for="Criminal Record">Criminal Record</label>
+                                    <h5 id="criminalrecord"></h5>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="tab-pane container fade" id="menu5">
+                            <div id="quick" class="row">
+                                <h4 style="padding:1rem;">Quick Actions</h4>
+                                <img onclick="openPscp()" style=" margin-right:2rem;" src="./img/pharmacy.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openNotes()" src="./img/appointments.svg"
+                                    alt="">
+                                <img style="margin-right:2rem;" onclick="openLab()" src="./img/lab_test.svg" alt="">
+                                <img style="margin-right:2rem;" onclick="openReffere()" src="./img/Doctors.svg" alt="">
+                                <br>
+                                <br>
+
+                            </div>
+                            <br><br><br>
+                            <h3 style="padding: 1rem;background-color: #09283C;color:white;margin-left: 2rem;">
+                                Patient
+                                is
+                                up-to-date
+                            </h3>
+                            <br><br><br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
-    <!-- end of banner -->
-    <!-- nav bar -->
-    <section id="icons">
 
-        <section id="iconspharmacy" class="bg-light text-center">
-            <div class="row "><img id="img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg"
-                    alt="Outpatient" />
-                <h4 style="font-size: 50px;">Patient List</h4>
-                <button id="createpatient" onclick="opencreatePatient()">Create New Patient</button>
+    </div>
+    <div id="list">
+
+
+        <!-- end of tools section -->
+        <!-- home banner -->
+        <section>
+            <div class="container-fluid" id="homebanner">
+                <div class="row">
+                    <div class="col text-center" id="bancol">
+                        <h1 class="display-4">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                        <!-- <h3 id="desc">
+                        Covering all the electronic <br />
+                        records for all patients
+                    </h3> -->
+                    </div>
+                    <div class="col"></div>
+                </div>
             </div>
+        </section>
+        <!-- end of banner -->
+        <!-- nav bar -->
+        <section id="icons">
 
-            <div class="container">
-                <div class="row text-center">
-                    <table id="Allpatientslist">
-                        <!-- <th><i class="fas fa-camera"></i></th>
+            <section id="iconspharmacy" class="bg-light text-center">
+                <div class="row "><img id="img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg"
+                        alt="Outpatient" />
+                    <h4 style="font-size: 50px;">Patient List</h4>
+                    <button id="createpatient" onclick="opencreatePatient()">Create New Patient</button>
+                </div>
+
+                <div class="container">
+                    <div class="row text-center">
+                        <table id="Allpatientslist">
+                            <!-- <th><i class="fas fa-camera"></i></th>
                         <th>Full Name</th>
                         <th>Age</th>
                         <th>Gender</th>
@@ -87,76 +693,81 @@
                         </tr> -->
 
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
 
-        </section>
-        <!-- end of icons -->
-        <div class="card-footer  justify-condent-around dflex text-center text-light">
-            <h1>National e-Health Record Operational Care</h1>
-            <br />
-            <p>
-                NeroCare is dedicated to store, synchronize and visualize patient
-                clinical data with the goal to improve national health status. The
-                abilities of the system lies in its full utilization by General
-                practitioners as such all the copy rights and usage of NeroCare shall
-                only be for medical purposes approved by the patient and standards
-                boards associated with it.
-            </p>
+            </section>
+    </div>
 
-            <br />
-            <h4>copyrights&copy;2020</h4>
-            <br />
-            <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
-        </div>
-        <!-- end  of footer-->
-        <!-- jQuery -->
-        <script src="./jS/jquery-3.4.1.min.js"></script>
-        <!-- bootstrap javaScript -->
-        <script src="./jS/bootstrap.bundle.min.js"></script>
-        <script src="./jS/main.js"></script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <!-- end of icons -->
+    <div class="card-footer  justify-condent-around dflex text-center text-light">
+        <h1>National e-Health Record Operational Care</h1>
+        <br />
+        <p>
+            NeroCare is dedicated to store, synchronize and visualize patient
+            clinical data with the goal to improve national health status. The
+            abilities of the system lies in its full utilization by General
+            practitioners as such all the copy rights and usage of NeroCare shall
+            only be for medical purposes approved by the patient and standards
+            boards associated with it.
+        </p>
+
+        <br />
+        <h4>copyrights&copy;2020</h4>
+        <br />
+        <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+    </div>
+    <!-- end  of footer-->
+    <!-- jQuery -->
+    <script src="./jS/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap javaScript -->
+    <script src="./jS/bootstrap.bundle.min.js"></script>
+    <script src="./jS/main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
-        <script>
+    <script>
 
-            var firebaseConfig = {
-                apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
-                authDomain: "nerocare-1ab70.firebaseapp.com",
-                databaseURL: "https://nerocare-1ab70.firebaseio.com",
-                projectId: "nerocare-1ab70",
-                storageBucket: "nerocare-1ab70.appspot.com",
-                messagingSenderId: "954862350723",
-                appId: "1:954862350723:web:4251b22f62ddafb54206b6",
-                measurementId: "G-TH863E9823"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
+        var firebaseConfig = {
+            apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+            authDomain: "nerocare-1ab70.firebaseapp.com",
+            databaseURL: "https://nerocare-1ab70.firebaseio.com",
+            projectId: "nerocare-1ab70",
+            storageBucket: "nerocare-1ab70.appspot.com",
+            messagingSenderId: "954862350723",
+            appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+            measurementId: "G-TH863E9823"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
-            const auth = firebase.auth();
-            const db = firebase.firestore();
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-            db.settings({ timestampsInSnapshots: true });
-        </script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./login.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="./lists.js"></script>
+
 </body>
 
 </html>
