@@ -19,6 +19,294 @@
 </head>
 
 <body>
+    <div id="overlayHistory1" class="overlayHistory1">
+        <span class="closebtn" onclick="closepppnumber()" title="Close Overlay"> &#215 </span>
+        <form class="text-center" id="historyoverlay1" action="">
+            <div class="overlay__content1">
+                <h3 class="text-center"><strong>Patient</strong></h3>
+
+                <div class="colum">
+                    <div class="row" id="lables">
+                        <div class="colum" id="colum1">
+                            <label id="lables" style="margin-right: 1rem;" for="BodyTemperature">Body
+                                Temperature</label>
+                            <input type="text" name="BodyTemperature" id="BodyTemperature"><br>
+                            <label id="lables" style="margin-right: 2.5rem;" for="BloodPreasure">Blood
+                                Preasure</label>
+                            <input type="text" name="BloodPreasure" id="BloodPreasure"><br>
+                            <label id="lables" style="margin-right: 6.5rem;" for="Height">Height</label>
+                            <input type="text" name="Height" id="Height"><br>
+                            <label id="lables" style="margin-right: 6.5rem;" for="Weight">Weight</label>
+                            <input type="text" name="Weight" id="Weight"><br>
+                            <label id="lables" style="margin-right: 5rem;" for="PulseRate">Pulse
+                                Rate</label>
+                            <input type="text" name="PulseRate" id="PulseRate"><br>
+                        </div>
+
+
+
+                        <div class="colum">
+                            <label id="lables" style="margin-right: 7rem;" for="Respiration">Respiration</label>
+                            <input type="text" name="Respiration" id="Respiration"><br>
+                            <label id="lables" style="margin-right: 3.5rem;" for="OxygenSaturation">Oxygen
+                                Saturation</label>
+                            <input type="text" name="OxygenSaturation" id="OxygenSaturation"><br>
+                            <label id="lables" style="margin-right: 7.5rem;" for="HIVStatus">HIVS
+                                tatus</label>
+                            <input type="text" name="HIVStatus" id="HIVStatus"><br>
+                            <label id="lables" style="margin-right: 1.5rem;" for="PsychiatricsAssesment">Psychiatrics
+                                Assesment</label>
+                            <input type="text" name="PsychiatricsAssesment" id="PsychiatricsAssesment"><br>
+                            <label id="lables" style="margin-right: 2rem;" for="HEENTExamination">HEENT
+                                Examination</label>
+                            <input type="text" name="HEENTExamination" id="HEENTExamination"><br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    <div id="NotesOverlay1" class="NotesOverlay1">
+        <span class="closebtn" onclick="closeNotes1()" title="Close Overlay"> &#215 </span>
+        <form action="" class="text-center">
+            <div class="wrap text-center" id="prescriptionWrap">
+                <div class="row" style="background-color:#6900006b ;">
+                    <h3>
+                        NEROCARE <span style="color: white;">System</span>
+                    </h3>
+                    <h3 style="margin-left: 7rem;">Doctor's/Nurse Notes</h3>
+                </div>
+                <br>
+                <div class="row" id="note">
+                    <div class="colum" id="colum2">
+                        <textarea name="" id="Assesment" cols="30" rows="10" class="notes1"
+                            placeholder="Assessment"></textarea>
+                        <br>
+                        <textarea name="" id="Suggestions" cols="30" rows="10" class="notes1"
+                            placeholder="Suggestions"></textarea>
+                        <br>
+                        <textarea name="" id="Intake" cols="30" rows="10" class="notes1"
+                            placeholder="Intake and Output"></textarea>
+                        <br>
+                    </div>
+
+                    <div class="colum" id="colum"><textarea name="" id="Activities" cols="30" rows="10" class="notes1"
+                            placeholder="Home Activities"></textarea>
+                        <br>
+                        <textarea name="" id="Medication" cols="30" rows="10" class="notes1"
+                            placeholder="Medication"></textarea>
+                        <br>
+                        <textarea name="" id="Imaging" cols="30" rows="10" class="notes1"
+                            placeholder="Imaging Results"></textarea>
+                        <br></div>
+
+
+                </div>
+                <br>
+
+                <!-- <button onclick="viewstatus()">View Clinical trials</button> -->
+                <input type="submit" value="View Clinical trials">
+                <br>
+                <div class="row">
+
+                    <br>
+                    <label for="signature">Electronically Signed by: Doctor</label><br>
+
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+
+    <div id="overlayHistory" class="overlay5">
+        <span class="closebtn" onclick="closeppnumber()" title="Close Overlay"> &#215 </span>
+        <div class="overlay__content">
+            <h3 class="text-center"><strong>Patient</strong></h3>
+            <form class="text-center" id="historyoverlay" action="">
+                <label for="">
+                    <h4>Confirm Document Number</h4>
+                </label>
+                <h5 id="pn3"></h5>
+                <br><br>
+                <input type="text" value="" id="historynumber">
+                <br> <br>
+                <input type="submit" value="submit">
+                <!-- <button onclick="submitpnumber()">View</button> -->
+
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay4" id="Historylist1">
+        <section>
+            <div class="container-fluid" id="homebanner">
+                <div class="row">
+                    <div class="col text-center" id="bancol">
+                        <h1 class="display-4">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                        <!-- <h3 id="desc">
+                            Covering all the electronic <br />
+                            records for all patients
+                        </h3> -->
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-fluid text-center">
+                <table id="Historytable">
+                    <thead>
+                        <th>Date</th>
+                        <th>Document Number Number</th>
+                        <th>Action</th>
+
+                    </thead>
+                    <tbody id="Historybody">
+
+                    </tbody>
+
+                </table>
+                <Button onclick="closeHistory()">Back</Button>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div id="PrescriptionOverlay1" class="PrescriptionOverlay1">
+        <span class="closebtn" onclick="closePscp1()" title="Close Overlay"> &#215 </span>
+        <div class="wrap text-center" id="prescriptionWrap">
+            <div class="row" style="background-color:#2487E9 ;">
+                <h3>
+                    NEROCARE <span style="color: white;">System</span>
+                </h3>
+                <h3 style="margin-left: 7rem;">Phamacy Prescription</h3>
+            </div>
+            <br>
+            <form action="" id="saveprescrip">
+                <div class="row">
+                    <div class="colum" id="colum1">
+                        <h3>Patient Information</h3>
+                        <br>
+                        <h4 id="prescripname1"></h4><br>
+                        <h4 id="prescripaddress1"></h4><br>
+                        <div class="row">
+                            <h4 style="margin:0 1rem 0 2rem" id="prescripcity1"></h4>
+                            <h4 id="prescripnumber1"></h4><br>
+
+
+
+                        </div><br>
+                        <h4 id="prescripcountry1"></h4>
+                        <h4 id="prescrippnumber1"></h4>
+                    </div>
+                    <div class="colum">
+                        <h3>Medication Details</h3>
+                        <br>
+                        <textarea class="notes" name="" id="prescripnotes1" cols="60" rows="10"></textarea>
+                        <br>
+
+                        <br>
+                        <label for="digitaly Sign">Doctor/Nurse</label>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd">Print</button></div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="overlay2" id="prescriptionlist">
+        <section>
+            <div class="container-fluid" id="homebanner">
+                <div class="row">
+                    <div class="col text-center" id="bancol">
+                        <h1 class="display-4">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                        <!-- <h3 id="desc">
+                        Covering all the electronic <br />
+                        records for all patients
+                    </h3> -->
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-fluid text-center">
+                <table id="prescriptable">
+                    <thead>
+                        <th>Date</th>
+                        <th>Prescription Number</th>
+                        <th>Action</th>
+
+                    </thead>
+                    <tbody id="prescripbody">
+
+                    </tbody>
+
+                </table>
+                <Button onclick="closeprescrip()">Back</Button>
+            </div>
+
+        </section>
+    </div>
+
+
+
+    <div id="overlayprescrip" class="overlay3">
+        <span class="closebtn" onclick="closeppnumber()" title="Close Overlay"> &#215 </span>
+        <div class="overlay__content">
+            <h3 class="text-center"><strong>Patient</strong></h3>
+            <form class="text-center" id="cashoverlay1" action="">
+                <label for="">
+                    <h4>Confirm Prescription Number</h4>
+                </label>
+                <h5 id="pn2"></h5>
+                <br><br>
+                <input type="text" value="" id="ppnumber">
+                <br> <br>
+                <input type="submit" value="submit">
+                <!-- <button onclick="submitpnumber()">View</button> -->
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="overlaypnumber" class="overlay1">
+        <span class="closebtn" onclick="closepnumber()" title="Close Overlay"> &#215 </span>
+        <div class="overlay__content">
+            <h3 class="text-center"><strong>Patient</strong></h3>
+            <form class="text-center" id="cashoverlay1" action="">
+                <label for="">
+                    <h4>Confirm Patient Number</h4>
+                </label>
+                <h5 id="pn"></h5>
+                <br><br>
+                <input type="text" value="" id="pnumber">
+                <br> <br>
+                <input type="submit" value="submit">
+                <!-- <button onclick="submitpnumber()">View</button> -->
+
+            </form>
+        </div>
+    </div>
     <div id="data" style="display: none;">
         <div id="PrescriptionOverlay" class="PrescriptionOverlay">
             <span class="closebtn" onclick="closePscp()" title="Close Overlay"> &#215 </span>
@@ -30,81 +318,95 @@
                     <h3 style="margin-left: 7rem;">Phamacy Prescription</h3>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="colum" id="colum1">
-                        <h3>Patient Information</h3>
-                        <br>
-                        <h4>Name of the patient</h4><br>
-                        <h4>Patient Full Address</h4><br>
-                        <div class="row">
-                            <h4 style="margin:0 1rem 0 2rem">Cilty</h4>
-                            <h4>Mobile Number</h4>
+                <form action="" id="saveprescrip">
+                    <div class="row">
+                        <div class="colum" id="colum1">
+                            <h3>Patient Information</h3>
+                            <br>
+                            <h4 id="prescripname"></h4><br>
+                            <h4 id="prescripaddress"></h4><br>
+                            <div class="row">
+                                <h4 style="margin:0 1rem 0 2rem" id="prescripcity"></h4>
+                                <h4 id="prescripnumber"></h4><br>
 
-                        </div><br>
-                        <h4>Country</h4>
+
+
+                            </div><br>
+                            <h4 id="prescripcountry"></h4>
+                            <h4 id="prescrippnumber"></h4>
+                        </div>
+                        <div class="colum">
+                            <h3>Medication Details</h3>
+                            <br>
+                            <textarea class="notes" name="" id="prescripnotes" cols="60" rows="10"></textarea>
+                            <br>
+                            <button id="patientdashbd">Digitaly Sign</button>
+                            <br>
+                            <br>
+                            <label for="digitaly Sign">Doctor/Nurse</label>
+                        </div>
+                        <br>
+                        <div class="row"><button id="patientdashbd" style="background-color: #2487E9; padding: 0 2rem;">
+                                <h3>Previous Px</h3>
+                            </button>
+                            <!-- <button id="prepconfrm" style="margin-left: 15rem; padding: 0 2rem;">Confirm</button> -->
+                            <input type="submit">
+                            <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd">Print</button></div>
+
                     </div>
-                    <div class="colum">
-                        <h3>Medication Details</h3>
-                        <br>
-                        <textarea class="notes" name="" id="" cols="60" rows="10"></textarea>
-                        <br>
-                        <button id="patientdashbd">Digitaly Sign</button>
-                        <br>
-                        <br>
-                        <label for="digitaly Sign">Doctor/Nurse</label>
-                    </div>
-                    <br>
-                    <div class="row"><button id="patientdashbd" style="background-color: #2487E9; padding: 0 2rem;">
-                            <h3>Previous Px</h3>
-                        </button>
-                        <button id="patientdashbd" style="margin-left: 15rem; padding: 0 2rem;">Confirm</button>
-                        <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd">Print</button></div>
-
-                </div>
-
+                </form>
             </div>
         </div>
 
+
         <div id="NotesOverlay" class="NotesOverlay">
             <span class="closebtn" onclick="closeNotes()" title="Close Overlay"> &#215 </span>
-            <div class="wrap text-center" id="prescriptionWrap">
-                <div class="row" style="background-color:#6900006b ;">
-                    <h3>
-                        NEROCARE <span style="color: white;">System</span>
-                    </h3>
-                    <h3 style="margin-left: 7rem;">Doctor's/Nurse Notes</h3>
-                </div>
-                <br>
-                <div class="row" id="note">
-                    <div class="colum" id="colum2">
-                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Assessment"></textarea>
-                        <br>
-                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Suggestions"></textarea>
-                        <br>
-                        <textarea name="" id="" cols="30" rows="10" class="notes1"
-                            placeholder="Intake and Output"></textarea>
-                        <br>
+            <form action="" class="text-center">
+                <div class="wrap text-center" id="prescriptionWrap">
+                    <div class="row" style="background-color:#6900006b ;">
+                        <h3>
+                            NEROCARE <span style="color: white;">System</span>
+                        </h3>
+                        <h3 style="margin-left: 7rem;">Doctor's/Nurse Notes</h3>
                     </div>
+                    <br>
+                    <div class="row" id="note">
+                        <div class="colum" id="colum2">
+                            <textarea name="" id="Assesment" cols="30" rows="10" class="notes1"
+                                placeholder="Assessment"></textarea>
+                            <br>
+                            <textarea name="" id="Suggestions" cols="30" rows="10" class="notes1"
+                                placeholder="Suggestions"></textarea>
+                            <br>
+                            <textarea name="" id="Intake" cols="30" rows="10" class="notes1"
+                                placeholder="Intake and Output"></textarea>
+                            <br>
+                        </div>
 
-                    <div class="colum" id="colum"><textarea name="" id="" cols="30" rows="10" class="notes1"
-                            placeholder="Assessment"></textarea>
+                        <div class="colum" id="colum"><textarea name="" id="Activities" cols="30" rows="10"
+                                class="notes1" placeholder="Home Activities"></textarea>
+                            <br>
+                            <textarea name="" id="Medication" cols="30" rows="10" class="notes1"
+                                placeholder="Medication"></textarea>
+                            <br>
+                            <textarea name="" id="Imaging" cols="30" rows="10" class="notes1"
+                                placeholder="Imaging Results"></textarea>
+                            <br></div>
+
+
+                    </div>
+                    <div class="row">
+                        <button id="patientdashbd" style="margin-right: 5rem; padding: 0 2rem;">Digitaly Sign</button>
                         <br>
-                        <textarea name="" id="" cols="30" rows="10" class="notes1" placeholder="Suggestions"></textarea>
-                        <br>
-                        <textarea name="" id="" cols="30" rows="10" class="notes1"
-                            placeholder="Intake and Output"></textarea>
-                        <br></div>
+                        <label for="signature">Electronically Signed by: Doctor</label><br>
 
 
-                </div>
-                <div class="row">
-                    <button id="patientdashbd" style="margin-right: 5rem; padding: 0 2rem;">Digitaly Sign</button> <br>
-                    <label for="signature">Electronically Signed by: Doctor</label><br>
-                    <button id="patientdashbd" style="margin-left: 2rem; padding: 0 2rem;">SAVE</button>
-
+                    </div>
+                    <button onclick="viewstatus()">View Clinical trials</button>
+                    <input type="submit" value="Submit">
                 </div>
 
-            </div>
+            </form>
         </div>
 
         <div id="LabOverlay" class="LabOverlay">
@@ -286,12 +588,14 @@
                                     <div class="container">
                                         <h4>Current Medication</h4>
                                         <br>
-                                        <ul>
-                                            <li>Prescription 1</li>
-                                            <li>Prescription 2</li>
-                                            <li>Prescription 3</li>
-                                        </ul>
-                                        <button id="patientdashbd">Check Px</button>
+                                        <div class="container" id="prescripcontainer">
+                                            <ul id="prescriplist">
+                                                <!-- <li>Prescription 1</li>
+                                                <li>Prescription 2</li>
+                                                <li>Prescription 3</li> -->
+                                            </ul>
+                                        </div>
+                                        <button id="patientdashbd" onclick="openprescrip()">Check Px</button>
                                     </div>
 
 
@@ -299,13 +603,15 @@
                                     <br>
 
                                     <div class="container"></div>
-                                    <h4>immunisation</h4>
+                                    <h4>Medication</h4>
                                     <br>
-                                    <ul>
-                                        <li>Immunisation 1</li>
+                                    <div class="container" id="prescripcontainer">
+                                        <ul id="Historylist">
+                                            <!-- <li>Immunisation 1</li>
                                         <li>Immunisation 2</li>
-                                        <li>Immunisation 3</li>
-                                    </ul>
+                                        <li>Immunisation 3</li> -->
+                                        </ul>
+                                    </div>
                                     <button id="patientdashbd">Check History</button>
                                 </div>
 
@@ -318,12 +624,14 @@
                                     <div class="container">
                                         <h4>Medical History</h4>
                                         <br>
-                                        <ul>
-                                            <li>Record 1</li>
-                                            <li>Record 2</li>
-                                            <li>Record 3</li>
-                                        </ul>
-                                        <button id="patientdashbd">View History</button>
+                                        <div class="container" id="prescripcontainer">
+                                            <ul id="AssesmentList">
+                                                <!-- <li>Record 1</li>
+                                                <li>Record 2</li>
+                                                <li>Record 3</li> -->
+                                            </ul>
+                                        </div>
+                                        <button id="patientdashbd" onclick="viewHistory()">View History</button>
                                     </div>
 
 
@@ -346,8 +654,10 @@
                                 </div>
 
                                 <div id="colum1" class="colum">
-
-                                    <select id="Status">
+                                    <label style="padding: 1rem; background-color: green;color: white;"
+                                        id="StatusResults">
+                                        Status</label>
+                                    <!-- <select id="Status">
 
                                         <option id="options" style="background-color: red;" value="Unstable">
                                             Unstable
@@ -360,7 +670,7 @@
                                         <option id="options" style="background-color:green" value="ToBeDischarged">
                                             To Be
                                             Discharged</option>
-                                    </select>
+                                    </select> -->
                                     <br><br><br>
                                     <button style="padding: 1rem; background-color: green;color: white;">
                                         DISCHARGE</button>
@@ -438,69 +748,74 @@
                                 <br>
 
                             </div>
-                            <br>
-                            <div class="row" id="lables">
-                                <div class="colum" id="colum1">
-                                    <label id="lables" style="margin-right: 1rem;" for="BodyTemperature">Body
-                                        Temperature</label>
-                                    <input type="text" name="BodyTemperature" id="BodyTemperature"><br>
-                                    <label id="lables" style="margin-right: 2.5rem;" for="BloodPreasure">Blood
-                                        Preasure</label>
-                                    <input type="text" name="BloodPreasure" id="BloodPreasure"><br>
-                                    <label id="lables" style="margin-right: 6.5rem;" for="Height">Height</label>
-                                    <input type="text" name="Height" id="Height"><br>
-                                    <label id="lables" style="margin-right: 6.5rem;" for="Weight">Weight</label>
-                                    <input type="text" name="Weight" id="Weight"><br>
-                                    <label id="lables" style="margin-right: 5rem;" for="PulseRate">Pulse
-                                        Rate</label>
-                                    <input type="text" name="PulseRate" id="PulseRate"><br>
+                            <form action="" id="formAssesment">
+                                <br>
+                                <div class="row" id="lables">
+                                    <div class="colum" id="colum1">
+                                        <label id="lables" style="margin-right: 1rem;" for="BodyTemperature">Body
+                                            Temperature</label>
+                                        <input type="text" name="BodyTemperature" id="BodyTemperature"><br>
+                                        <label id="lables" style="margin-right: 2.5rem;" for="BloodPreasure">Blood
+                                            Preasure</label>
+                                        <input type="text" name="BloodPreasure" id="BloodPreasure"><br>
+                                        <label id="lables" style="margin-right: 6.5rem;" for="Height">Height</label>
+                                        <input type="text" name="Height" id="Height"><br>
+                                        <label id="lables" style="margin-right: 6.5rem;" for="Weight">Weight</label>
+                                        <input type="text" name="Weight" id="Weight"><br>
+                                        <label id="lables" style="margin-right: 5rem;" for="PulseRate">Pulse
+                                            Rate</label>
+                                        <input type="text" name="PulseRate" id="PulseRate"><br>
+                                    </div>
+
+
+
+                                    <div class="colum">
+                                        <label id="lables" style="margin-right: 7rem;"
+                                            for="Respiration">Respiration</label>
+                                        <input type="text" name="Respiration" id="Respiration"><br>
+                                        <label id="lables" style="margin-right: 3.5rem;" for="OxygenSaturation">Oxygen
+                                            Saturation</label>
+                                        <input type="text" name="OxygenSaturation" id="OxygenSaturation"><br>
+                                        <label id="lables" style="margin-right: 7.5rem;" for="HIVStatus">HIVS
+                                            tatus</label>
+                                        <input type="text" name="HIVStatus" id="HIVStatus"><br>
+                                        <label id="lables" style="margin-right: 1.5rem;"
+                                            for="PsychiatricsAssesment">Psychiatrics
+                                            Assesment</label>
+                                        <input type="text" name="PsychiatricsAssesment" id="PsychiatricsAssesment"><br>
+                                        <label id="lables" style="margin-right: 2rem;" for="HEENTExamination">HEENT
+                                            Examination</label>
+                                        <input type="text" name="HEENTExamination" id="HEENTExamination"><br>
+                                    </div>
+
+                                    <div class="colum">
+                                        <br><br><br>
+                                        <select id="Status">
+
+                                            <option id="options" style="background-color: red;" value="Unstable">
+                                                Unstable
+                                            </option>
+                                            <option id="options" style="background-color:yellow;" value="WatchList">
+                                                Watchlist
+                                            </option>
+                                            <option id="options" style="background-color:blue" value="Stable">Stable
+                                            </option>
+                                            <option id="options" style="background-color:green" value="ToBeDischarged">
+                                                To Be
+                                                Discharged</option>
+                                        </select>
+                                        <br><br>
+                                        <input type="date" name="VisitDate" id="VisitDate">
+                                        <br><br>
+                                        <textarea name="" id="Comment1" cols="30" rows="10"
+                                            placeholder="Write a Comment"></textarea>
+                                    </div>
                                 </div>
-
-
-
-                                <div class="colum">
-                                    <label id="lables" style="margin-right: 7rem;" for="Respiration">Respiration</label>
-                                    <input type="text" name="Respiration" id="Respiration"><br>
-                                    <label id="lables" style="margin-right: 3.5rem;" for="OxygenSaturation">Oxygen
-                                        Saturation</label>
-                                    <input type="text" name="OxygenSaturation" id="OxygenSaturation"><br>
-                                    <label id="lables" style="margin-right: 7.5rem;" for="HIVStatus">HIVS
-                                        tatus</label>
-                                    <input type="text" name="HIVStatus" id="HIVStatus"><br>
-                                    <label id="lables" style="margin-right: 1.5rem;"
-                                        for="PsychiatricsAssesment">Psychiatrics
-                                        Assesment</label>
-                                    <input type="text" name="PsychiatricsAssesment" id="PsychiatricsAssesment"><br>
-                                    <label id="lables" style="margin-right: 2rem;" for="HEENTExamination">PHEENT
-                                        Examination</label>
-                                    <input type="text" name="HEENTExamination" id="HEENTExamination"><br>
-                                </div>
-
-                                <div class="colum">
-                                    <br><br><br>
-                                    <select id="Status">
-
-                                        <option id="options" style="background-color: red;" value="Unstable">
-                                            Unstable
-                                        </option>
-                                        <option id="options" style="background-color:yellow;" value="WatchList">
-                                            Watchlist
-                                        </option>
-                                        <option id="options" style="background-color:blue" value="Stable">Stable
-                                        </option>
-                                        <option id="options" style="background-color:green" value="ToBeDischarged">
-                                            To Be
-                                            Discharged</option>
-                                    </select>
-                                    <br><br>
-                                    <input type="date" name="VisitDate" id="VisitDate">
-                                    <br><br>
-                                    <textarea name="" id="" cols="30" rows="10"
-                                        placeholder="Write a Comment"></textarea>
-                                </div>
-                            </div>
-                            <button style="padding: 1rem 3rem; background-color:#09283C;color: white;">
-                                SAVE</button>
+                                <input type="submit" value="Submit">
+                            </form>
+                            <!-- <button style="padding: 1rem 3rem; background-color:#09283C;color: white;" type="submit"
+                                value="submit">
+                                SAVE</button> -->
                         </div>
 
                         <br>
@@ -548,6 +863,9 @@
                                                 <button id="approve">Approve</button>
                                             </td> -->
                                         <!-- </tr> -->
+
+                                    </tbody>
+                                    <tbody id="accountsTablemedical">
 
                                     </tbody>
                                 </table>
@@ -731,7 +1049,7 @@
     <script src="./jS/jquery-3.4.1.min.js"></script>
     <!-- bootstrap javaScript -->
     <script src="./jS/bootstrap.bundle.min.js"></script>
-    <script src="./jS/main.js"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
@@ -766,7 +1084,10 @@
     </script>
     <script src="./login.js"></script>
     <script src="/__/firebase/init.js"></script>
+    <script src="./jS/main.js"></script>
     <script src="./lists.js"></script>
+    <script src="./savedata.js"></script>
+
 
 </body>
 

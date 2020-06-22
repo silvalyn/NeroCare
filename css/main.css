@@ -966,3 +966,110 @@ text-align: left;
   /* margin-top: 12rem; */
   width: 300px;
 }
+.overlay1 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+#prescripcontainer{
+   max-height: 80px;
+   max-width: 250px;
+  opacity: 1;
+  overflow-y: scroll;
+  
+
+}
+#prescripcontainer::-webkit-scrollbar {
+  width: 8px;
+  background-color: #0d141f;
+  border-radius: 0 8px 8px 0;
+}
+#prescripcontainer::-webkit-scrollbar-thumb {
+  background: #7c7d80;
+  border-radius: 0 8px 8px 0;
+}
+.overlay2 {
+ 
+  display: none;
+
+}
+.overlay4 {
+ 
+  display: none;
+
+}
+.NotesOverlay1{
+ 
+  display: none;
+
+}
+
+.overlay3 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlay5 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.PrescriptionOverlay1 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.NotesOverlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlay__content1 {
+  max-width: 1500px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+.overlayHistory1 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
