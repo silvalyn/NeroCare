@@ -15,7 +15,7 @@
 var pp1 = document.getElementById("pnumber");
 
 
-const saveprescrip1 = document.querySelector('#saveprescrip');
+const saveprescrip1 = document.querySelector('#saveprescrip11');
 var today = new Date();
 var time = today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear() + "-" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
@@ -104,8 +104,7 @@ PatientNotes.addEventListener('submit', (e) => {
         DateofAssesment: DateofAssesment.value,
         CommentAssesment: CommentAssesment.value
     })
-    alert("You have created Notes")
-    document.getElementById("NotesOverlay").style.display = "none";
+
 
 
     db.collection('Patients').doc(pp1.value).collection('PatientData').doc('Clinical Data').collection('Assesment').doc("Assesment").set({
@@ -124,6 +123,8 @@ PatientNotes.addEventListener('submit', (e) => {
         CommentAssesment: CommentAssesment.value
 
     })
+    alert("You have created Notes")
+    document.getElementById("NotesOverlay").style.display = "none";
 
 })
 function closeNotes() {
@@ -145,7 +146,7 @@ PatientAssesmrnt.addEventListener('submit', (e) => {
         OxygenSaturation: OxygenSaturation.value,
         HIVStatus: HIVStatus.value,
         PyschiatricAssesment: PyschiatricAssesment.value,
-        HEENT: HEENT.value,
+        Heent: HEENT.value,
         Status1: Status1.value,
         DateofAssesment: DateofAssesment.value,
         CommentAssesment: CommentAssesment.value
@@ -156,39 +157,310 @@ PatientAssesmrnt.addEventListener('submit', (e) => {
 })
 
 
-// const viewHistory1 = document.querySelector('#historyoverlay');
+const Labrequest = document.querySelector('#LabOverlay');
+
+var Labname = document.getElementById('Patientname1');
+var LabID = document.getElementById('PatientID1');
+var Labtype = document.getElementById('LabRequest');
+var HospitalLab = document.getElementById('LabHospital');
 
 
-// var Assesment2 = document.getElementById('Assesment');
-// var Suggestion2 = document.getElementById('Suggestions');
-// var Intake2 = document.getElementById('Intake');
-// var HomeActivities2 = document.getElementById('Activities');
-// var Medication2 = document.getElementById('Medication');
-// var ImagingResults2 = document.getElementById('Imaging');
+Labrequest.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-// viewHistory1.addEventListener('submit', (e) => {
-//     e.preventDefault();
+    db.collection('LAB').doc(HospitalLab.value).collection('Requested').doc(LabID.value).set({
+        PatientName: Labname.value,
+        PatientID: LabID.value,
+        LabRequest: Labtype.value,
 
-
-
-//     Assesment2.textContent = doc.data().name;
-//     Suggestion2.textContent = doc.data().Address;
-//     Intake2.textContent = doc.data().City;
-//     HomeActivities2.textContent = doc.data().ContactDetails;
-//     Medication2.textContent = doc.data().Nationality;
-//     ImagingResults2.textContent = doc.data().PatientNumber;
-
-//     prescripname1.appendChild(prescripnamevalue1);
-//     prescripaddress1.appendChild(prescripaddressvalue1);
-//     prescripcity1.appendChild(prescripcityvalue1);
-//     prescripnumber1.appendChild(prescripnumbervalue1);
-//     prescripcountry1.appendChild(prescripcountryvalue1);
-//     prescrippnumber1.appendChild(prescrippnumbervalue1);
+    })
+    db.collection('Hospitals').doc(HospitalLab.value).collection('LabList').doc(LabID.value).set({
+        PatientName: Labname.value,
+        PatientID: LabID.value,
+        LabRequest: Labtype.value,
 
 
+    })
+    alert("You have Requested a Lab invastigation");
+
+    document.getElementById("LabOverlay").style.display = "none";
+
+})
+
+
+const Refere = document.querySelector('#RefrenceOverlay');
+
+var Referename = document.getElementById('Patientname');
+var RefereID = document.getElementById('PatientID');
+var ReferingDoc = document.getElementById('RefferringDoctor');
+var Recommendation = document.getElementById('recommendations');
+var choosehospital = document.getElementById('choosehospital');
 
 
 
-// })
+
+Refere.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    db.collection('Hospitals').doc(choosehospital.value).collection('Refered Patients').doc(RefereID.value).set({
+        PatientName: Referename.value,
+        PatientID: RefereID.value,
+        Recommendations: Recommendation.value,
+        ReferingDoctor: ReferingDoc.value,
+
+
+    })
+    alert("You have Refferred a Patient.");
+    document.getElementById("RefrenceOverlay").style.display = "none";
+    document.getElementById("referehistory").style.display = "block";
+
+})
+
+function openAssignbed() {
+    document.getElementById("BedsOverlay").style.display = "block";
+
+}
+function closebeds() {
+    document.getElementById("BedsOverlay").style.display = "none";
+
+}
+function opensign() {
+    document.getElementById("NotesOverlay").style.display = "none";
+
+    document.getElementById("digitalysign").style.display = "block";
+
+}
+function opensign1() {
+    document.getElementById("PrescriptionOverlay").style.display = "none";
+
+    document.getElementById("digitalysign1").style.display = "block";
+
+}
+function closesign() {
+    document.getElementById("NotesOverlay").style.display = "block";
+
+    document.getElementById("digitalysign").style.display = "none";
+
+}
+
+
+function closesign1() {
+    document.getElementById("PrescriptionOverlay").style.display = "block";
+
+    document.getElementById("digitalysign1").style.display = "none";
+
+}
+const Sign = document.querySelector('#digitalysign');
+
+var Signature = document.getElementById('signature');
+// var Sigword = document.getElementById('signatureword');
+const Sigword = document.querySelector('#signatureword1');
+
+
+
+
+
+Sign.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let sigwordp = document.createElement('span')
+
+    sigwordp.textContent = Signature.value;
+
+    Sigword.appendChild(sigwordp);
+
+    document.getElementById("NotesOverlay").style.display = "block";
+
+    document.getElementById("digitalysign").style.display = "none";
+    document.getElementById("hide1").style.display = "none";
+
+
+})
+
+
+const Sign1 = document.querySelector('#digitalysign1');
+
+var Signature1 = document.getElementById('signature1');
+// var Sigword = document.getElementById('signatureword');
+const Sigword1 = document.querySelector('#signatureword');
+
+
+
+
+
+Sign1.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let sigwordp = document.createElement('span')
+
+    sigwordp.textContent = Signature1.value;
+
+    Sigword1.appendChild(sigwordp);
+
+    document.getElementById("PrescriptionOverlay").style.display = "block";
+
+    document.getElementById("digitalysign1").style.display = "none";;
+    document.getElementById("hide2").style.display = "none";
+
+
+})
+const Beds = document.querySelector('#BedsOverlay');
+
+var BedPname = document.getElementById('PatientnameBed');
+var BedPID = document.getElementById('PatientIDBed');
+var Ward = document.getElementById('chooseward');
+var BedNo = document.getElementById('BedNo');
+var choosehospitalBed = document.getElementById('choosehospitalBed');
+
+
+
+
+Beds.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+
+
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection('Inpatients').doc(BedPID.value).set({
+        PatientName: BedPname.value,
+        PatientID: BedPID.value,
+        Ward: Ward.value,
+        BedNumber: BedNo.value,
+        Time: time
+
+
+    })
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection('Hospitalpatients').doc(BedPID.value).set({
+        PatientName: BedPname.value,
+        PatientID: BedPID.value,
+        Ward: Ward.value,
+        BedNumber: BedNo.value,
+        Time: time
+
+
+    })
+
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection(Ward.value).doc(BedPID.value).set({
+        PatientName: BedPname.value,
+        PatientID: BedPID.value,
+        Ward: Ward.value,
+        BedNumber: BedNo.value,
+        Time: time
+
+
+    })
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection('Outpatient').doc(BedPID.value).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+
+
+    alert("You have moved patient to inpatient for further treatment.");
+    document.getElementById("BedsOverlay").style.display = "none";
+
+
+})
+
+const Discharge = document.querySelector('#dischargepatient');
+
+var Dischargename = document.getElementById('dischargeNumber');
+
+var choosehospitalDischarge = document.getElementById('choosehospitaldischarge');
+
+
+
+
+Discharge.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    db.collection('Hospitals').doc(choosehospitalDischarge.value).collection('Inpatients').doc(Dischargename.value).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+
+
+    db.collection('Hospitals').doc(choosehospitalDischarge.value).collection('Patients').doc(Dischargename.value).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+
+
+    db.collection('Hospitals').doc(choosehospitalDischarge.value).collection('Outpatient').doc(Dischargename.value).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
+
+
+
+
+
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection('DischargeList').doc(Dischargename.value).set({
+        PatientName: Dischargename.value,
+        Time: time,
+
+
+
+    })
+
+    db.collection('Hospitals').doc(choosehospitalBed.value).collection('History').doc(Dischargename.value).set({
+        PatientName: Dischargename.value,
+        Time: time,
+
+
+
+    })
+
+
+    alert("You have Discharged a patient.");
+    document.getElementById("dischargepatient").style.display = "none";
+
+
+})
+
+function dichargepatient() {
+    document.getElementById("dischargepatient").style.display = "block";
+
+}
+function closepdischargepatient() {
+    document.getElementById("dischargepatient").style.display = "none";
+
+}
+
+
+const KeepHist = document.querySelector('#referehistory');
+
+var histid = document.getElementById('referehistoryid');
+
+var choosehospitalDischarge = document.getElementById('choosehospitaldischarge');
+
+
+
+
+KeepHist.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+
+
+    db.collection('Hospitals').doc(histid.value).collection('Referedtoother').doc(RefereID.value).set({
+        PatientID: RefereID.value,
+        refereto: choosehospital.value,
+        Time: time,
+
+
+
+    })
+
+
+
+    document.getElementById("referehistory").style.display = "none";
+
+
+})
+
+
+
+
+
 
 

@@ -19,52 +19,275 @@
 </head>
 
 <body>
-  <section>
-    <div class="container-fluid bg-secondary text-light">
-      <div class="row">
-        <div class="col">
-          <i class="fab fa-instagram "> </i>
-          <i class="fab fa-twitter"> </i>
-          <i class="fab fa-facebook-f"> </i>
-          <i class="fas fa-envelope"> </i>
-        </div>
-        <div class="col">
-          <div class="row">
-            <i id="usericon" class="fas fa-user-md"></i>
-            <h6 id="welcome">Welcome :</h6>
 
-            <h6 id="username">Princes Ruwisi</h6>
-            <br />
-            <i id="loc_icon" class="fas fa-map-marker-alt"></i>
-            <h6 id="location">Location :</h6>
 
-            <h6 id="placename">Mpilo Hospital</h6>
+
+
+
+
+  <section id="lab_Complete" class="bg-light text-center" id="icons" style="display: none;">
+    <div class="row "><img id="img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg" alt="Outpatient" />
+      <h4 style="font-size: 50px;">Lab Tests Complete</h4>
+
+    </div>
+
+    <div class="container">
+      <div class="row text-center">
+        <table>
+          <th><i class="fas fa-camera"></i></th>
+          <th>Full Name</th>
+
+
+          <th>Paatient ID</th>
+          <th>Lab Test</th>
+          <th>Status</th>
+          <tbody id="labtable1">
+            <tr>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button onclick="backtolab()">
+      <h3>Back to Lab</h3>
+    </button>
+    <br>
+    <br>
+
+
+  </section>
+
+  <!-- end of tools section -->
+  <!-- home banner -->
+
+
+  <section id="lab_list" class="bg-light text-center" style="display: none">
+    <div class=" row "><img id=" img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg" alt="Outpatient" />
+      <h4 style="font-size: 50px;">Lab Tests</h4>
+
+    </div>
+
+    <div class="container">
+      <div class="row text-center">
+        <table>
+          <th><i class="fas fa-camera"></i></th>
+          <th>Full Name</th>
+
+
+          <th>Paatient ID</th>
+          <th>Lab Test</th>
+          <th>Status</th>
+          <tbody id="labtable">
+            <tr>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+              <td>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button onclick="backtolab1()">
+      <h3>Back to Lab</h3>
+    </button>
+    <br>
+    <br>
+
+
+  </section>
+
+
+
+  <div id="LabCompleteOverlay" class="LabCompleteOverlay">
+    <form action="">
+      <span class="closebtn" onclick="closeCompletelab()" title="Close Overlay"> &#215 </span>
+      <div class="wrap text-center" id="prescriptionWrap">
+        <h3>Select Lab</h3>
+        <br>
+
+
+        <label for="Lab">Select Lab</label>
+        <select name="Lab" id="Hospitallab3">
+
+          <option value="UBHlab">UBHlab</option>
+          <option value="Mpillolab">Mpilolab</option>
+
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <div id="LablistOverlay" class="LablistOverlay">
+    <form action="">
+      <span class="closebtn" onclick="closeselectlab()" title="Close Overlay"> &#215 </span>
+      <div class="wrap text-center" id="prescriptionWrap">
+        <h3>Select Lab</h3>
+        <br>
+
+
+        <label for="Lab">Select Lab</label>
+        <select name="Lab" id="Hospitallab2">
+
+          <option value="UBHlab">UBHlab</option>
+          <option value="Mpillolab">Mpilolab</option>
+
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <div id="LabSubmitOverlay" class="LabSubmitOverlay">
+    <form action="">
+      <span class="closebtn" onclick="closeSubmitLab()" title="Close Overlay"> &#215 </span>
+      <div class="wrap text-center" id="prescriptionWrap">
+        <h3>Submit a lab Test</h3>
+        <br>
+        <h4>Patient name</h4>
+        <input type="text" name="Patientname" id="Patientname1" placeholder="Emmanuel Tinotenda Nakura">
+
+        <h4>Patient ID</h4>
+        <input type="text" name="PatientID" id="PatientID1" placeholder="N0165103T">
+        <br>
+
+
+
+        <label for="Lab">Test Type</label>
+        <select name="Lab" id="LabTest">
+
+          <option value="X-Ray">X-Ray</option>
+          <option value="C-Scan">C-Scan</option>
+          <option value="HIV-test">HIV-test</option>
+          <option value="Malaria">Malaria</option>
+        </select>
+        <br><br>
+
+        <label for="Lab">Select Lab</label>
+        <select name="Lab" id="Hospitallab">
+
+          <option value="UBHlab">UBH lab</option>
+          <option value="Mpillolab">Mpilo lab</option>
+
+        </select>
+        <br><br>
+
+        <br>
+
+
+        <input style="font-size: 20px;" id="labdocupload" type="file" name="labdoc" onchange="chooseFile(event)"
+          placeholder="document" required="" capture>
+
+        <br>
+
+        <input type="submit" value="Submit Lab Request">
+
+
+      </div>
+    </form>
+  </div>
+
+  <section id="LabHome">
+    <section>
+      <div class="container-fluid bg-secondary text-light">
+        <div class="row">
+          <div class="col">
+            <i class="fab fa-instagram "> </i>
+            <i class="fab fa-twitter"> </i>
+            <i class="fab fa-facebook-f"> </i>
+            <i class="fas fa-envelope"> </i>
+          </div>
+          <div class="col">
+            <div class="row">
+              <i id="usericon" class="fas fa-user-md"></i>
+              <h6 id="welcome">Welcome :</h6>
+
+              <h6 id="username">Princes Ruwisi</h6>
+              <br />
+              <i id="loc_icon" class="fas fa-map-marker-alt"></i>
+              <h6 id="location">Location :</h6>
+
+              <h6 id="placename">Mpilo Hospital</h6>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end of tools section -->
-  <!-- home banner -->
-  <section>
-    <div class="container-fluid" id="homebanner">
-      <div class="row">
-        <div class="col text-center" id="bancol">
-          <h1 class="display-4">
-            NEROCARE <span style="color: #09283C;">System</span>
-          </h1>
-          <!-- <h3 id="desc">
+    </section>
+    <!-- end of tools section -->
+    <!-- home banner -->
+
+    <section>
+      <div class="container-fluid" id="homebanner">
+        <div class="row">
+          <div class="col text-center" id="bancol">
+            <h1 class="display-4">
+              NEROCARE <span style="color: #09283C;">System</span>
+            </h1>
+            <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
                     </h3> -->
+          </div>
+          <div class="col"></div>
         </div>
-        <div class="col"></div>
       </div>
-    </div>
-  </section>
-  <!-- end of banner -->
-  <!-- nav bar -->
-  <!-- <section id="nav">
+    </section>
+    <!-- end of banner -->
+    <!-- nav bar -->
+    <!-- <section id="nav">
         <nav class="navbar navbar-expand-md navbar-dark ">
             <input type="checkbox" name="checkbox dropdown" id="checkbox" /><a href="#" class="nav-link dropdown-toggle"
                 data-toggle="dropdown" data-target="dropdown_target"><label for="checkbox" class="checkbtn"><i
@@ -102,8 +325,8 @@
             </ul>
         </nav>
     </section> -->
-  <!-- end of nav -->
-  <section id="icons">
+    <!-- end of nav -->
+
     <!-- <div class="row">
             <a href="#" id="allpatients"><button id="allpatients" class="bg-secondary text-light text-center">
                     <h4>All patients List</h4>
@@ -211,23 +434,30 @@
         </div>
       </section> -->
 
-    <section id="icons" class="bg-light text-center">
+    <section class="bg-light text-center" style="background-color: rgba(255, 255, 255, 0);">
       <h4 style="font-size: 70px;">Lab Managment</h4>
-      <div class="container">
-        <div class="row text-center">
-          <a href="#" id="icona"><img id="img" src="./img/lab_test.svg" alt="lab_test" />
+      <br><br><br>
+      <div class="container" style="background-color: rgba(255, 255, 255, 0);">
+        <div class="row text-center" style="background-color: rgba(255, 255, 255, 0);">
+          <button id="icona" onclick="openselectlab()">
+            <img id="img" src="./img/lab_test.svg" alt="lab_test" />
             <h4 id="icon1">Lab test List</h4>
-          </a>
-          <a href="#" id="iconb"><img id="img" src="./img/lab_pending.svg" alt="complet lab_test" />
+          </button>
+          <button id="iconb" onclick="opencompletelab()">
+            <img id="img" src="./img/lab_pending.svg" alt="complet lab_test" />
             <h4 id="icon1">Completed <br> Lab Test</h4>
-          </a>
-          <a href="#" id="iconc"><img id="img" src="./img/lab_pending.svg" alt="lab_pending" />
-            <h4 id="icon1">Pending Lab Tests</h4>
-          </a>
+          </button>
+          <button id="iconc" onclick="submittest()">
+            <img id="img" src="./img/lab_pending.svg" alt="lab_pending" />
+            <h4 id="icon1">Submit<br> Lab Tests</h4>
+          </button>
         </div>
       </div>
+      <br>
     </section>
-    <!-- <section id="iconspharmacy" class="bg-light text-center">
+    <br><br><br><br><br><br><br>
+  </section>
+  <!-- <section id="iconspharmacy" class="bg-light text-center">
         <h4>Pharmacy Managment</h4>
         <div class="container">
           <div class="row text-center">
@@ -278,62 +508,68 @@
         </div>
       </div>
     </section> -->
-    <!-- end of icons -->
-    <div class="card-footer  justify-condent-around dflex text-center text-light">
-      <h1>National e-Health Record Operational Care</h1>
-      <br />
-      <p>
-        NeroCare is dedicated to store, synchronize and visualize patient
-        clinical data with the goal to improve national health status. The
-        abilities of the system lies in its full utilization by General
-        practitioners as such all the copy rights and usage of NeroCare shall
-        only be for medical purposes approved by the patient and standards
-        boards associated with it.
-      </p>
+  <!-- end of icons -->
+  <div class="card-footer  justify-condent-around dflex text-center text-light">
+    <h1>National e-Health Record Operational Care</h1>
+    <br />
+    <p>
+      NeroCare is dedicated to store, synchronize and visualize patient
+      clinical data with the goal to improve national health status. The
+      abilities of the system lies in its full utilization by General
+      practitioners as such all the copy rights and usage of NeroCare shall
+      only be for medical purposes approved by the patient and standards
+      boards associated with it.
+    </p>
 
-      <br />
-      <h4>copyrights&copy;2020</h4>
-      <br />
-      <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
-    </div>
-    <!-- end  of footer-->
-    <!-- jQuery -->
-    <script src="./jS/jquery-3.4.1.min.js"></script>
-    <!-- bootstrap javaScript -->
-    <script src="./jS/bootstrap.bundle.min.js"></script>
-    <script src="./jS/main.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <br />
+    <h4>copyrights&copy;2020</h4>
+    <br />
+    <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+  </div>
+  <!-- end  of footer-->
+  <!-- jQuery -->
+  <script src="./jS/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap javaScript -->
+  <script src="./jS/bootstrap.bundle.min.js"></script>
+  <script src="./jS/main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
 
-    <script>
 
-      var firebaseConfig = {
-        apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
-        authDomain: "nerocare-1ab70.firebaseapp.com",
-        databaseURL: "https://nerocare-1ab70.firebaseio.com",
-        projectId: "nerocare-1ab70",
-        storageBucket: "nerocare-1ab70.appspot.com",
-        messagingSenderId: "954862350723",
-        appId: "1:954862350723:web:4251b22f62ddafb54206b6",
-        measurementId: "G-TH863E9823"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+  <script>
 
-      const auth = firebase.auth();
-      const db = firebase.firestore();
+    var firebaseConfig = {
+      apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+      authDomain: "nerocare-1ab70.firebaseapp.com",
+      databaseURL: "https://nerocare-1ab70.firebaseio.com",
+      projectId: "nerocare-1ab70",
+      storageBucket: "nerocare-1ab70.appspot.com",
+      messagingSenderId: "954862350723",
+      appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+      measurementId: "G-TH863E9823"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-      db.settings({ timestampsInSnapshots: true });
-    </script>
-    <script src="./login.js"></script>
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <script src="./login.js"></script>
+  <script src="./lab.js"></script>
+  <script src="./lists.js"></script>
+
+
 </body>
 
 </html>

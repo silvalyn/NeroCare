@@ -20,32 +20,52 @@
 </head>
 
 <body>
-  <!-- overlay login -->
-  <div id="loginOverlay" class="overlay">
-    <span class="closebtn" onclick="closeForm()" title="Close Overlay"> &#215 </span>
-    <div class="wrap text-center">
 
-      <input type="text" name="name" id="name" placeholder="Emmanuel Tinotenda Nakura">
-      <h4 id="disc">Email Address</h4>
-      <input type="email" name="email" id="email" placeholder="enakura@mpilohospital.gov.org">
-      <h4 id="disc">Password</h4>
-      <input type="password" name="password" id="password" placeholder="password">
-      <button id="Login" onclick="initApp()">
-        <h4>LOG IN</h4>
-      </button>
-      <br>
-      <a href="#" id="reset">Forgot Password</a>
-      <!-- <input type="text" name="" id="email">
-      <input type="text" name="" id="password">
-      <button id="login" onclick="login1()">log in</button> -->
 
+  <div id="loginOverlayhome" class="overlay">
+    <span class="closebtn" onclick="closeppnumber()" title="Close Overlay"> &#215 </span>
+    <div class="overlay__content">
+      <form class="text-center" id="loginOverlayhome1" action="">
+
+        <h4 id="disc">Email Address</h4>
+        <input type="email" name="Loginemail" id="Loginemail" placeholder="enakura@mpilohospital.gov.org">
+        <h4 id="disc">Password</h4>
+        <input type="password" name="Loginpassword" id="Loginpassword" placeholder="password">
+
+
+        <br>
+
+
+        <input type="submit" value="submit">
+
+
+      </form>
     </div>
   </div>
+
+
+
+
+
+
+  <!-- overlay login
+  <div id="loginOverlayhome" class="overlay">
+    <span class="closebtn" onclick="closeForm()" title="Close Overlay"> &#215 </span>
+    <div class="overlay__content">
+      <h3 class="text-center"><strong>Log In</strong></h3>
+
+      
+
+
+      </form>
+    </div>
+  </div> -->
   <!-- NAV BAR -->
   <div class="container-fluid bg-secondary">
     <div class="row">
       <div class="col">
-        <h1 id="logo">
+
+        <h1 id="logo"><img src="./img/logo.gif" alt="" style="height: 80px;">
           NeroCare <span style="color: #09283C;">System</span>
         </h1>
       </div>
@@ -55,7 +75,7 @@
       <a href="#contact_us">
         <h4 id="contact">Contact Us</h4>
       </a>
-      <div class="selected-box text-center">
+      <div class="selected-box text-center" id="Loginvalue">
 
         <div class="options-container">
           <div class="option" id="optn">
@@ -103,6 +123,8 @@
   <section id="banner" class="p-5 ">
     <div class="container">
       <div class="row">
+        <div class="col-md-6 mx-auto">
+          <img src="./img/logo.gif" alt="" style="height: 35rem;"></div>
         <div class="col-md-6 mx-auto text-center">
           <h1 id="ban" class="display-4">
             NERO<span style="color: #09283C;">CARE System</span>
@@ -211,7 +233,8 @@
 
     db.settings({ timestampsInSnapshots: true });
   </script>
-  <script src="./login.js"></script>
+  <script src="./homelogin.js"></script>
+
 </body>
 
 </html>

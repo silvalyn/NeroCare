@@ -145,166 +145,170 @@ function signupbtn() {
 
 
 
-function toggleSignIn() {
-    if (firebase.auth().currentUser) {
-        // User is signed in.
+// function toggleSignIn() {
+//     if (firebase.auth().currentUser) {
+//         // User is signed in.
 
-        firebase.auth().signOut();
-        // document.getElementById("Login").style.color = "Red"
+//         firebase.auth().signOut();
+//         // document.getElementById("Login").style.color = "Red"
 
-        // var user = firebase.auth().currentUser;
+//         // var user = firebase.auth().currentUser;
 
-        // if (user != null) {
-        //     var email_id = user.email;
-        //     document.getElementById("password").innerHTML = "welcome : " + email_id;
+//         // if (user != null) {
+//         //     var email_id = user.email;
+//         //     document.getElementById("password").innerHTML = "welcome : " + email_id;
 
-        // }
+//         // }
 
-    } else {
-        // No user is signed in.
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        if (email.length < 4) {
-            alert('Please enter an email address.');
-            return;
-        }
-        if (password.length < 4) {
-            alert('Please enter a password.');
-            return;
-        }
+//     } else {
+//         // No user is signed in.
+//         var email = document.getElementById('email').value;
+//         var password = document.getElementById('password').value;
+//         var name = document.getElementById('name').value;
 
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-            window.alert("Error : " + errorMessage);
+//         if (email.length < 4) {
+//             alert('Please enter an email address.');
+//             return;
+//         } else if (name.length < 4) {
+//             alert('Please enter full name.');
+//             return;
+//         } else if (password.length < 4) {
+//             alert('Please enter a password.');
+//             return;
+//         } else {
 
-            if (errorCode === 'auth/wrong-password') {
-                alert('Wrong password.');
-            } else {
-                alert(errorMessage);
-            }
+//             firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+//                 // Handle Errors here.
+//                 var errorCode = error.code;
+//                 var errorMessage = error.message;
+//                 // ...
+//                 window.alert("Error : " + errorMessage);
 
-            console.log(error);
-            document.getElementById('Login').disabled = false;
-            // [END_EXCLUDE]
-        });
-        // [END authwithemail]
-    }
+//                 if (errorCode === 'auth/wrong-password') {
+//                     alert('Wrong password.');
+//                 } else {
+//                     alert(errorMessage);
+//                 }
 
-    function sendPasswordReset() {
-        var email = document.getElementById('email').value;
-        // [START sendpasswordemail]
-        firebase.auth().sendPasswordResetEmail(email).then(function () {
-            // Password Reset Email Sent!
-            // [START_EXCLUDE]
-            alert('Password Reset Email Sent!');
-            // [END_EXCLUDE]
-        }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // [START_EXCLUDE]
-            if (errorCode == 'auth/invalid-email') {
-                alert(errorMessage);
-            } else if (errorCode == 'auth/user-not-found') {
-                alert(errorMessage);
-            }
-            console.log(error);
-            // [END_EXCLUDE]
-        });
-        // [END sendpasswordemail];
-    }
-    // document.getElementById('Login').disabled = true;
-    //     }
-    //     });
+//                 console.log(error);
+//                 document.getElementById('Login').disabled = false;
+//                 // [END_EXCLUDE]
+//             });
+//         }
+//         // [END authwithemail]
+//     }
 
-    //     firebase.auth().onAuthStateChanged(firebaseUser => {
-    //         if (firebaseUser) {
-    //             window.open('home.html')
-    //         }
-    //     })
+//     function sendPasswordReset() {
+//         var email = document.getElementById('email').value;
+//         // [START sendpasswordemail]
+//         firebase.auth().sendPasswordResetEmail(email).then(function () {
+//             // Password Reset Email Sent!
+//             // [START_EXCLUDE]
+//             alert('Password Reset Email Sent!');
+//             // [END_EXCLUDE]
+//         }).catch(function (error) {
+//             // Handle Errors here.
+//             var errorCode = error.code;
+//             var errorMessage = error.message;
+//             // [START_EXCLUDE]
+//             if (errorCode == 'auth/invalid-email') {
+//                 alert(errorMessage);
+//             } else if (errorCode == 'auth/user-not-found') {
+//                 alert(errorMessage);
+//             }
+//             console.log(error);
+//             // [END_EXCLUDE]
+//         });
+//         // [END sendpasswordemail];
+//     }
+//     // document.getElementById('Login').disabled = true;
+//     //     }
+//     //     });
 
-    // }
-    // });
-    // function login2() {
-    //     firebase.auth().signOut();
-    // }
-}
-function sendPasswordReset() {
-    var email = document.getElementById('email').value;
-    // [START sendpasswordemail]
-    firebase.auth().sendPasswordResetEmail(email).then(function () {
-        // Password Reset Email Sent!
-        // [START_EXCLUDE]
-        alert('Password Reset Email Sent!');
-        // [END_EXCLUDE]
-    }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/invalid-email') {
-            alert(errorMessage);
-        } else if (errorCode == 'auth/user-not-found') {
-            alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-    });
-    // [END sendpasswordemail];
-}
-function initApp() {
-    // Listening for auth state changes.
-    // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function (user) {
-        // [START_EXCLUDE silent]
-        // document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
-        if (user) {
-            // User is signed in.
-            // window.open('home.html')
-            location.href = "home.html";
-            // [END_EXCLUDE]
+//     //     firebase.auth().onAuthStateChanged(firebaseUser => {
+//     //         if (firebaseUser) {
+//     //             window.open('home.html')
+//     //         }
+//     //     })
 
-        } else {
+//     // }
+//     // });
+//     // function login2() {
+//     //     firebase.auth().signOut();
+//     // }
+// }
+// function sendPasswordReset() {
+//     var email = document.getElementById('email').value;
+//     // [START sendpasswordemail]
+//     firebase.auth().sendPasswordResetEmail(email).then(function () {
+//         // Password Reset Email Sent!
+//         // [START_EXCLUDE]
+//         alert('Password Reset Email Sent!');
+//         // [END_EXCLUDE]
+//     }).catch(function (error) {
+//         // Handle Errors here.
+//         var errorCode = error.code;
+//         var errorMessage = error.message;
+//         // [START_EXCLUDE]
+//         if (errorCode == 'auth/invalid-email') {
+//             alert(errorMessage);
+//         } else if (errorCode == 'auth/user-not-found') {
+//             alert(errorMessage);
+//         }
+//         console.log(error);
+//         // [END_EXCLUDE]
+//     });
+//     // [END sendpasswordemail];
+// }
+// function initApp() {
+//     // Listening for auth state changes.
+//     // [START authstatelistener]
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         // [START_EXCLUDE silent]
+//         // document.getElementById('quickstart-verify-email').disabled = true;
+//         // [END_EXCLUDE]
+//         if (user) {
 
+//             location.href = "home.html";
+//             // [END_EXCLUDE]
 
-        }
-        // [START_EXCLUDE silent]
-        document.getElementById('Login').disabled = false;
-
-        // window.close()
+//         } else {
 
 
-        // [END_EXCLUDE]
-    });
-    // [END authstatelistener]
+//         }
+//         // [START_EXCLUDE silent]
+//         document.getElementById('Login').disabled = false;
 
-    document.getElementById('Login').addEventListener('click', toggleSignIn, false);
+//         // window.close()
 
 
-    document.getElementById('reset').addEventListener('click', sendPasswordReset, false);
-}
+//         // [END_EXCLUDE]
+//     });
+//     // [END authstatelistener]
 
-// window.onload = function () {
-//     initApp();
+//     document.getElementById('Login').addEventListener('click', toggleSignIn, false);
+
+
+//     document.getElementById('reset').addEventListener('click', sendPasswordReset, false);
+// }
+
 
 // };
-const logout = document.querySelector('#signout');
-logout.addEventListener('click', (e) => {
-    e.preventDefault();
-    auth.signOut().then(() => {
-        alert('User Sign out');
-        window.location.replace('index.html')
-    })
-
-})
-// const login = document.querySelector('#Login');
-// login.addEventListener('click', (e) => {
+// const logout = document.querySelector('#signout');
+// logout.addEventListener('click', (e) => {
 //     e.preventDefault();
-//     login = function () {
-//         initApp();
-//     };
+//     auth.signOut().then(() => {
+//         alert('User Sign out');
+//         window.location.replace('index.html')
+//     })
+
 // })
+// // const login = document.querySelector('#Login');
+// // login.addEventListener('click', (e) => {
+// //     e.preventDefault();
+// //     login = function () {
+// //         initApp();
+// //     };
+// // })
+
+

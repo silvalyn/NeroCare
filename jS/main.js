@@ -1,5 +1,75 @@
+function AllPatients() {
+  document.getElementById("overlayHospital").style.display = "block";
 
-const patientList = document.querySelector('#Allpatientslist');
+}
+
+function outpatients() {
+  document.getElementById("overlayHospital1").style.display = "block";
+
+}
+function inpatient() {
+  document.getElementById("overlayHospital2").style.display = "block";
+
+}
+function hospitalpatient() {
+  document.getElementById("overlayHospital3").style.display = "block";
+
+}
+function referedpatient() {
+  document.getElementById("overlayHospital4").style.display = "block";
+
+}
+function dischargelist() {
+  document.getElementById("overlayHospital5").style.display = "block";
+
+}
+function referedtolist() {
+  document.getElementById("overlayHospital6").style.display = "block";
+
+}
+function labtestlist() {
+  document.getElementById("overlayHospital8").style.display = "block";
+
+}
+function completedlablist() {
+  document.getElementById("overlayHospital9").style.display = "block";
+
+}
+
+
+
+
+function closeHospital() {
+  document.getElementById("overlayHospital").style.display = "none";
+  document.getElementById("overlayHospital1").style.display = "none";
+  document.getElementById("overlayHospital2").style.display = "none";
+  document.getElementById("overlayHospital3").style.display = "none";
+  document.getElementById("overlayHospital4").style.display = "none";
+  document.getElementById("overlayHospital5").style.display = "none";
+  document.getElementById("overlayHospital6").style.display = "none";
+  document.getElementById("overlayHospital8").style.display = "none";
+  document.getElementById("overlayHospital9").style.display = "none";
+
+}
+
+
+// var SelectHospital = sessionStorage.getItem("SelectHospital");
+// var SelectHospital1 = sessionStorage.getItem("SelectHospital1");
+
+
+
+// db.collection('Hospitals').doc(SelectHospital).collection('Patients').get().then(snapshot => {
+//   setupList(snapshot.docs);
+
+// });
+// db.collection('Hospitals').doc("UBH").collection('Outpatient').get().then(snapshot => {
+//   setupList1(snapshot.docs);
+//   // console.log(snapshot.docs)
+// })
+
+
+
+const patientList = document.querySelector('#Allpatientslistdata');
 const setupList = (data) => {
 
 
@@ -11,17 +81,8 @@ const setupList = (data) => {
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     const pd = `
-     <thead>
-     <tr><th><i class="fas fa-camera"></i></th>
-                        <th>Full Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Patient Number</th>
-                        <th>Time</th>
-                        <th>Action</th></tr>
-
-     </theard>
-     <tbody>
+    
+     
                         <tr>
                             <td>
                               
@@ -47,7 +108,7 @@ const setupList = (data) => {
                             <button>View Patient</Button>
                             </td>
                         </tr>
-                        </tbody>
+                        
 
     
     
@@ -66,7 +127,7 @@ const setupList = (data) => {
   $("#Allpatientslist tbody tr").click(function () {
     var tableDatavalue = $(this).find("td").eq(4).html();
 
-    alert("View Patient: " + tableDatavalue.toString());
+    // alert("View Patient: " + tableDatavalue.toString());
 
     let pnumbervalue = document.createElement('span');
     pnumbervalue.setAttribute("id", "pn1");
@@ -96,328 +157,660 @@ function closepnumber() {
 };
 
 
+// db.collection('Hospitals').doc('UBH').collection('Patients').get().then(snapshot => {
+//   setupList1(snapshot.docs);
+//   // console.log(snapshot.docs)
+// })
 
 
 
 
 
 
+const patientList1 = document.querySelector('#Allpatientslistdata1');
+const setupList1 = (data) => {
 
 
+  let htmloutp = '';
+  data.forEach(doc => {
 
+    const patient1 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd1 = `
 
-// // const patientportal = document.querySelector('.overlay4');
 
-// const patientportal = document.querySelector('.overlay4');
+                        <tr>
+                            <td>
 
+                            </td>
+                            <td>
+                              ${patient1.name}
+                            </td>
+                            <td>
+                             ${patient1.DateofBirth}
+                            </td>
+                            <td>
+                             ${patient1.Gender}
 
-// patientportal.addEventListener('submit', (e) => {
-//   e.preventDefault();
+                            </td>
 
+                            <td>
+                            ${patient1.PatientNumber}
+                            </td>
+                            <td>
+                            ${time}
+                            </td>
+                            <td>
+                            <button>View Patient</Button>
+                            </td>
+                        </tr>
 
-//   // var pp1 = document.getElementById("pnumber");
-//   // db.collection("Patients").doc(pp1.value).collection("PatientData").get().then((snapshot) => {
-//   //   console.log(snapshot.docs);
-//   //   snapshot.docs.forEach(doc => {
-//   //     inputdata(doc);
-//   //   });
 
-//   //   // inputdata(doc);
-//   //   // window.location.replace('patientPortal.html');
 
-//   // });
-//   // db.collection("Patients").doc(pp1.value).get().then(function (doc) {
-//   //   console.log(doc.data())
-//   //   var picture = doc.data().userID;
-//   //   let img = document.getElementById('profileImage');
-//   //   firebase.storage().ref('patients/' + picture + '/profilePic.jpg').getDownloadURL().then(imgUrl => {
-//   //     img.src = imgUrl;
 
-//   //   })
+    `;
 
-//   // });
+    htmloutp += pd1
 
-//   // db.collection("Patients").doc(pp1.value).collection("PatientData").doc("AdministrativeData").collection("CashPayments").get().then(snapshot => {
-//   //   // console.log(snapshot.docs);
+  });
 
-//   //   cashdata(snapshot);
 
+  patientList1.innerHTML = htmloutp;
 
-//   //   // inputdata(doc);
-//   //   // window.location.replace('patientPortal.html');
 
-//   // });
-//   // db.collection("Patients").doc(pp1.value).collection("PatientData").doc("AdministrativeData").collection("Medical Payments").get().then(snapshot => {
-//   //   // console.log(snapshot.docs);
+  // //   pdall1.innerHTML = html1;
+  const pnumber = document.querySelector('#pn');
+  $("#Allpatientslist1 tbody tr").click(function () {
+    var tableDatavalue = $(this).find("td").eq(4).html();
 
-//   //   medicaldata(snapshot);
+    alert("View Patient: " + tableDatavalue.toString());
 
+    let pnumbervalue = document.createElement('span');
+    pnumbervalue.setAttribute("id", "pn1");
 
-//   //   // inputdata(doc);
-//   //   // window.location.replace('patientPortal.html');
 
-// });
+    pnumbervalue.textContent = tableDatavalue;
 
+    pnumber.appendChild(pnumbervalue);
 
 
-// const pdall1 = document.querySelector('#pdata1');
 
+    document.getElementById("overlaypnumber").style.display = "block";
 
+  });
 
 
-// const smoking = document.querySelector('#smokingvalue');
-// const Disability = document.querySelector('#Disabilitiesvalue');
-// const Alchole = document.querySelector('#Alcholevalue');
-// const Religion = document.querySelector('#Religionvalue');
-// const MaritalStatus = document.querySelector('#MaritalStatusvalue');
-// const PatientNumber = document.querySelector('#PatientNumbervalue');
-// const BirthPlace = document.querySelector('#BirthPlacevalue');
-// const FamilyDetails = document.querySelector('#FamilDetailsvalue');
-// const NextofKin = document.querySelector('#NextofKinvalue');
-// const BMI = document.querySelector('#BMIvalue');
-// const dailyjob = document.querySelector('#dailyjob');
-// const nationality = document.querySelector('#Nationality');
-// const citizenship = document.querySelector('#citizenship');
-// const comunityservice = document.querySelector('#cominityservice');
-// const criminalrecord = document.querySelector('#criminalrecord');
 
 
+};
 
-// function inputdata(doc) {
-//   let div = document.createElement('div')
-//   let name = document.createElement('h4')
-//   let dateofbirth = document.createElement('h5')
-//   let gender = document.createElement('h5')
-//   let fullAddress = document.createElement('h5')
-//   let city = document.createElement('h5')
-//   let contactDetails = document.createElement('h5')
 
-//   let smokingvalue = document.createElement('span')
-//   let Disabilityvalue = document.createElement('span')
-//   let Alcholevalue = document.createElement('span')
-//   let Religionvalue = document.createElement('span')
-//   let MaritalStatusvalue = document.createElement('span')
-//   let PatientNumbervalue = document.createElement('span')
-//   let BirthPlacevalue = document.createElement('span')
-//   let FamilyDetailsvalue = document.createElement('span')
-//   let NextofKinvalue = document.createElement('span')
-//   let BMIvalue = document.createElement('span')
 
-//   let dailyjobvalue = document.createElement('span')
-//   let nationalityvalue = document.createElement('span')
-//   let citizenshipvalue = document.createElement('span')
-//   let communityservicevalue = document.createElement('span')
-//   let criminalrecordvalue = document.createElement('span')
+const patientList2 = document.querySelector('#Allpatientslistdata2');
+const setupList2 = (data) => {
 
 
+  let htmlinp = '';
+  data.forEach(doc => {
 
+    const patient2 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd2 = `
 
 
-//   name.textContent = doc.data().name;
-//   dateofbirth.textContent = doc.data().DateofBirth;
-//   gender.textContent = doc.data().Gender;
-//   fullAddress.textContent = doc.data().Address;
-//   city.textContent = doc.data().City;
-//   contactDetails.textContent = doc.data().ContactDetails;
+                        <tr>
+                            <td>
 
-//   smokingvalue.textContent = doc.data().SmokingStatus;
-//   Disabilityvalue.textContent = doc.data().Disability;
-//   Religionvalue.textContent = doc.data().Religion;
-//   Alcholevalue.textContent = doc.data().AlcholeConsumption;
-//   MaritalStatusvalue.textContent = doc.data().MaritalStatus;
-//   PatientNumbervalue.textContent = doc.data().PatientNumber;
-//   BirthPlacevalue.textContent = doc.data().PlaceOfBirth;
-//   FamilyDetailsvalue.textContent = doc.data().FamilyDetails;
-//   NextofKinvalue.textContent = doc.data().NextOfKin;
-//   BMIvalue.textContent = doc.data().BMI;
+                            </td>
+                            <td>
+                              ${patient2.PatientName}
+                            </td>
+                            <td>
+                             ${patient2.BedNumber}
+                            </td>
+                            <td>
+                             ${patient2.Ward}
 
-//   citizenshipvalue.textContent = doc.data().Citizenship;
-//   nationalityvalue.textContent = doc.data().Nationality;
-//   communityservicevalue.textContent = doc.data().communityservice;
-//   criminalrecordvalue.textContent = doc.data().criminalrecord;
-//   dailyjobvalue.textContent = doc.data().DailyJob;
+                            </td>
 
+                            <td>
+                            ${patient2.PatientID}
+                            </td>
+                            <td>
+                            ${patient2.Time}
+                            </td>
+                            <td>
+                            <button>View Patient</Button>
+                            </td>
+                        </tr>
 
 
 
 
-//   pdall1.appendChild(name);
-//   pdall1.appendChild(dateofbirth);
-//   pdall1.appendChild(gender);
-//   pdall1.appendChild(fullAddress);
-//   pdall1.appendChild(city);
-//   pdall1.appendChild(div);
+    `;
 
-//   smoking.appendChild(smokingvalue);
-//   Disability.appendChild(Disabilityvalue);
-//   Alchole.appendChild(Alcholevalue);
-//   Religion.appendChild(Religionvalue);
-//   MaritalStatus.appendChild(MaritalStatusvalue);
-//   PatientNumber.appendChild(PatientNumbervalue);
-//   BirthPlace.appendChild(BirthPlacevalue);
-//   NextofKin.appendChild(NextofKinvalue);
-//   FamilyDetails.appendChild(FamilyDetailsvalue);
-//   BMI.appendChild(BMIvalue);
+    htmlinp += pd2
 
-//   dailyjob.appendChild(dailyjobvalue);
-//   nationality.appendChild(nationalityvalue);
-//   citizenship.appendChild(citizenshipvalue);
-//   // comunityservice.appendChild(communityservicevalue);
-//   // criminalrecord.appendChild(criminalrecordvalue);
+  });
 
 
+  patientList2.innerHTML = htmlinp;
 
 
-//   document.getElementById("list").style.display = "none";
-//   document.getElementById("data").style.display = "block";
+  // //   pdall1.innerHTML = html1;
+  const pnumber = document.querySelector('#pn');
+  $("#Allpatientslist2 tbody tr").click(function () {
+    var tableDatavalue = $(this).find("td").eq(4).html();
 
-// };
+    alert("View Patient: " + tableDatavalue.toString());
 
-// const date = document.querySelector('#accountsDate');
-// const Description = document.querySelector('#accountsDescription');
-// const paymentMethod = document.querySelector('#accountspaymentMethod');
-// const Amount = document.querySelector('#accountsAmount');
-// const Status = document.querySelector('#accountsStatus');
+    let pnumbervalue = document.createElement('span');
+    pnumbervalue.setAttribute("id", "pn1");
 
-// const tabe = document.querySelector('#accountsTable');
 
+    pnumbervalue.textContent = tableDatavalue;
 
+    pnumber.appendChild(pnumbervalue);
 
-// function cashdata(data) {
-//   let html1 = '';
-//   data.forEach(doc => {
-//     const patient1 = doc.data();
 
-//     const pd1 = `
-//                        <tr>
 
-//                        <td>
+    document.getElementById("overlaypnumber").style.display = "block";
 
-//                        </td>
-//                        <td>
-//                         Cash payments
-//                       </td>
-//                       <td>
-//                         CASH
-//                       </td>
-//                       <td>
-//                         ${patient1.amount}
-//                       </td>
-//                     <td>
-//                       Processed
-//                      </td>
-//                        <td>
-//                        <h5>Approved</h5>
+  });
 
-//                       </td> 
-//                       </tr> 
 
 
-//     `;
 
-//     html1 += pd1
+};
 
-//   });
 
 
 
 
+const patientList3 = document.querySelector('#Allpatientslistdata3');
+const setupList3 = (data) => {
 
-//   tabe.innerHTML = html1;
 
+  let htmlhosp = '';
+  data.forEach(doc => {
 
+    const patient3 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd3 = `
 
 
+                        <tr>
+                            <td>
 
-//   // // let date = document.createElement('h4');
-//   // let tr = document.createElement('tr');
-//   // // let td = document.createElement('td');
-//   // let datevalue = document.createElement('span');
-//   // let Descriptionvalue = document.createElement('span');
-//   // let Paymentvalue = document.createElement('span');
-//   // let Amountvalue = document.createElement('td');
-//   // let Statusvalue = document.createElement('span');
+                            </td>
+                            <td>
+                              ${patient3.PatientName}
+                            </td>
+                            <td>
+                             ${patient3.BedNumber}
+                            </td>
+                            <td>
+                             ${patient3.Ward}
 
+                            </td>
 
-//   // tr.setAttribute('data-id', doc.id);
-//   // datevalue.textContent = doc.data().Date;
-//   // Descriptionvalue.textContent = doc.data().description;
-//   // Paymentvalue.textContent = doc.data().Payment;
-//   // Amountvalue.textContent = doc.data().amount;
-//   // Statusvalue.textContent = doc.data().status;
-//   // // Actionvalue.textContent = doc.data().Action;
+                            <td>
+                            ${patient3.PatientID}
+                            </td>
+                            <td>
+                            ${patient3.Time}
+                            </td>
+                            <td>
+                            <button>View Patient</Button>
+                            </td>
+                        </tr>
 
 
-//   // // date.appendChild(datevalue);
-//   // // Description.appendChild(Descriptionvalue);
-//   // // paymentMethod.appendChild(Paymentvalue);
-//   // // Amount.appendChild(Amountvalue);
-//   // // Status.appendChild(Statusvalue);
-//   // // td.appendChild(date);
-//   // // td.appendChild(Description);
-//   // // td.appendChild(paymentMethod);
-//   // // td.appendChild(Amount);
-//   // // td.appendChild(Status);
-//   // tr.appendChild(datevalue);
-//   // tr.appendChild(Descriptionvalue);
-//   // tr.appendChild(Paymentvalue);
 
-//   // tr.appendChild(Amountvalue);
 
-//   // tr.appendChild(Statusvalue);
-//   // // tr.appendChild(Actionvalue);
+    `;
 
+    htmlhosp += pd3
 
-//   // tabe.appendChild(tr);
+  });
 
 
+  patientList3.innerHTML = htmlhosp;
 
 
+  // //   pdall1.innerHTML = html1;
+  const pnumber = document.querySelector('#pn');
+  $("#Allpatientslist3 tbody tr").click(function () {
+    var tableDatavalue = $(this).find("td").eq(4).html();
 
+    alert("View Patient: " + tableDatavalue.toString());
 
+    let pnumbervalue = document.createElement('span');
+    pnumbervalue.setAttribute("id", "pn1");
 
 
-// }
-// const tabe1 = document.querySelector('#accountsTablemedical');
+    pnumbervalue.textContent = tableDatavalue;
 
-// function medicaldata(data) {
-//   let html2 = '';
-//   data.forEach(doc => {
-//     const patient1 = doc.data();
+    pnumber.appendChild(pnumbervalue);
 
-//     const pd2 = `
-//                        <tr>
 
-//                        <td>
 
-//                        </td>
-//                        <td>
-//                           ${patient1.Condition}
-//                       </td>
-//                       <td>
-//                         ${patient1.Organisation}
-//                       </td>
-//                       <td>
-//                         Medical Amount
-//                       </td>
-//                     <td>
-//                       ${patient1.MemberNumber}
-//                      </td>
-//                        <td>
-//                        <h5>Approved</h5>
+    document.getElementById("overlaypnumber").style.display = "block";
 
-//                       </td> 
-//                       </tr> 
+  });
 
 
-//     `;
 
-//     html2 += pd2
 
-//   });
+};
 
 
-//   tabe1.innerHTML = html2;
+
+const patientList4 = document.querySelector('#Allpatientslistdata4');
+const setupList4 = (data) => {
+
+
+  let htmlref = '';
+  data.forEach(doc => {
+
+    const patient4 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd4 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient4.PatientName}
+                            </td>
+                            <td>
+                              ${patient4.PatientID}
+                            </td>
+                            <td>
+                             ${patient4.Recommendations}
+
+                            </td>
+
+                            <td>
+                            ${patient4.ReferingDoctor}
+                            </td>
+                            <td>
+                            ${time}
+                            </td>
+                            <td>
+                            <button>View Patient</Button>
+                            </td>
+                        </tr>
+
+
+
+
+    `;
+
+    htmlref += pd4
+
+  });
+
+
+  patientList4.innerHTML = htmlref;
+
+
+  // //   pdall1.innerHTML = html1;
+  const pnumber = document.querySelector('#pn');
+  $("#Allpatientslist4 tbody tr").click(function () {
+    var tableDatavalue = $(this).find("td").eq(2).html();
+
+    alert("View Patient: " + tableDatavalue.toString());
+
+    let pnumbervalue = document.createElement('span');
+    pnumbervalue.setAttribute("id", "pn1");
+
+
+    pnumbervalue.textContent = tableDatavalue;
+
+    pnumber.appendChild(pnumbervalue);
+
+
+
+    document.getElementById("overlaypnumber").style.display = "block";
+
+  });
+
+
+
+
+};
+
+
+
+
+
+const patientList5 = document.querySelector('#Allpatientslistdata5');
+const setupList5 = (data) => {
+
+
+  let htmldisch = '';
+  data.forEach(doc => {
+
+    const patient5 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd5 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient5.PatientName}
+                            </td>
+                            <td>
+                              ${patient5.Time}
+                            </td>
+                            
+                           
+                        </tr>
+
+
+
+
+    `;
+
+    htmldisch += pd5
+
+  });
+
+
+  patientList5.innerHTML = htmldisch;
+
+
+  // //   pdall1.innerHTML = html1;
+  // const pnumber = document.querySelector('#pn');
+  // $("#Allpatientslist4 tbody tr").click(function () {
+  //   var tableDatavalue = $(this).find("td").eq(2).html();
+
+  //   alert("View Patient: " + tableDatavalue.toString());
+
+  //   let pnumbervalue = document.createElement('span');
+  //   pnumbervalue.setAttribute("id", "pn1");
+
+
+  //   pnumbervalue.textContent = tableDatavalue;
+
+  //   pnumber.appendChild(pnumbervalue);
+
+
+
+  //   document.getElementById("overlaypnumber").style.display = "block";
+
+  // });
+
+
+
+
+};
+
+
+const patientList6 = document.querySelector('#Allpatientslistdata6');
+const setupList6 = (data) => {
+
+
+  let htmlreft = '';
+  data.forEach(doc => {
+
+    const patient6 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd6 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient6.PatientID}
+                            </td>
+                            <td>
+                              ${patient6.refereto}
+                            </td>
+                            <td>
+                              ${patient6.Time}
+                            </td>
+                            
+                           
+                        </tr>
+
+
+
+
+    `;
+
+    htmlreft += pd6
+
+  });
+
+
+  patientList6.innerHTML = htmlreft;
+
+
+  // //   pdall1.innerHTML = html1;
+  // const pnumber = document.querySelector('#pn');
+  // $("#Allpatientslist4 tbody tr").click(function () {
+  //   var tableDatavalue = $(this).find("td").eq(2).html();
+
+  //   alert("View Patient: " + tableDatavalue.toString());
+
+  //   let pnumbervalue = document.createElement('span');
+  //   pnumbervalue.setAttribute("id", "pn1");
+
+
+  //   pnumbervalue.textContent = tableDatavalue;
+
+  //   pnumber.appendChild(pnumbervalue);
+
+
+
+  //   document.getElementById("overlaypnumber").style.display = "block";
+
+  // });
+
+
+
+
+};
+
+const patientList7 = document.querySelector('#Allpatientslistdata7');
+const setupList7 = (data) => {
+
+
+  let htmllab = '';
+  data.forEach(doc => {
+
+    const patient7 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd7 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient7.PatientName}
+                            </td>
+                             <td>
+                              ${patient7.PatientID}
+                            </td>
+                            <td>
+                              ${patient7.LabRequest}
+                            </td>
+                             <td>
+                             Requested
+                            </td>
+                            <td>
+                             
+                            </td>
+                            
+                           
+                        </tr>
+
+
+
+
+    `;
+
+    htmllab += pd7
+
+  });
+
+
+  patientList7.innerHTML = htmllab;
+
+
+
+
+
+
+};
+
+const patientList8 = document.querySelector('#Allpatientslistdata8');
+const setupList8 = (data) => {
+
+
+  let htmllabcomp = '';
+  data.forEach(doc => {
+
+    const patient8 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd8 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient8.PatientName}
+                            </td>
+                             <td>
+                              ${patient8.PatientID}
+                            </td>
+                            <td>
+                              ${patient8.LabRequest}
+                            </td>
+                             <td>
+                             Completed
+                            </td>
+                            <td>
+                             
+                            </td>
+                            
+                           
+                        </tr>
+
+
+
+
+    `;
+
+    htmllabcomp += pd8
+
+  });
+
+
+  patientList8.innerHTML = htmllabcomp;
+
+
+
+
+
+
+};
+
+
+const patientList9 = document.querySelector('#Allpatientslistdata9');
+const setupList9 = (data) => {
+
+
+  let htmlpham = '';
+  data.forEach(doc => {
+
+    const patient9 = doc.data();
+    // var PatientN0 = patient.getString("PatientNumber");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const pd9 = `
+
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                              ${patient9.Name}
+                            </td>
+                             <td>
+                              ${patient9.PharmacyID}
+                            </td>
+                            <td>
+                              ${patient9.email}
+                            </td>
+                             
+                            
+                           
+                        </tr>
+
+
+
+
+    `;
+
+    htmlpham += pd9
+
+  });
+
+
+  patientList9.innerHTML = htmlpham;
+
+
+
+
+
+
+};
+
+
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("gohome").onclick = function () { gohome() };
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function gohome() {
+  location.replace("home.html")
+}
+
+
+
+
+
+document.getElementById("dropdown").classList.toggle("show");
 
 
 

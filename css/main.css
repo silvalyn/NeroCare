@@ -1,7 +1,8 @@
 body {
   font-family: "Noto Serif";
   color: #09283c;
-  background-color: #f7f6ff;
+  background: url(../img/background.jpg) center/cover no-repeat fixed ;
+  opacity: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -17,6 +18,13 @@ body::-webkit-scrollbar {
 #contact {
   padding: 1rem;
   color: white;
+}
+#back {
+  padding: 1rem;
+  color: #09283c;
+  border-radius: 5px;
+  font-size: x-large;
+  margin: 1rem;
 }
 #banner {
   font-family: "Abril Fatface";
@@ -790,7 +798,7 @@ tr:nth-child(even) {background-color: #f2f2f2;
 #gender{
   cursor: pointer;
 }
-#options,#patientclass{
+#patientclass{
   padding: 8px;
   color: white;
   background-color: #0d141f;
@@ -914,8 +922,9 @@ text-align: left;
 }
 #profile-container img {
     width: 200px;
-    height: 200px;
+    height: auto;
     color: #0d141f;
+    /* position: absolute; */
 }
 #profile-container {
     width: 200px;
@@ -999,6 +1008,11 @@ text-align: left;
   display: none;
 
 }
+.overlay7 {
+ 
+  display: none;
+
+}
 .overlay4 {
  
   display: none;
@@ -1055,7 +1069,7 @@ text-align: left;
   background: rgba(0, 0, 0, 0.7);
 }
 .overlay__content1 {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
   background-color: white;
@@ -1072,4 +1086,135 @@ text-align: left;
   left: 0;
   overflow-x: hidden;
   background: rgba(0, 0, 0, 0.7);
+}
+.overlayHistory2 {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+#labdocupload{
+ color:white;
+  background: #0d141f;
+  border-radius: 10px;
+  
+  padding: 5px;
+  margin-top: 1rem;
+  width: 300px;
+}
+.LabSubmitOverlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.LablistOverlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.LabCompleteOverlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.overlaylab {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.bedsOverlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.Digitalysign{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.dischargepatient{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.referehistory{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+#Status{
+  font-size: 25px;
+}
+#optionsstatus{
+  color:white;
+}
+#optionsstatus:hover {
+  background-color: rgba(255, 255, 255, 0.082);
+}
+.overlayHospital{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+#gohome{
+cursor: pointer;
 }

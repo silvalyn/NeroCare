@@ -1,22 +1,25 @@
-db.collection('Hospitals').doc('UBH').collection('Patients').get().then(snapshot => {
+
+var SelectHospital = sessionStorage.getItem("SelectHospital");
+db.collection('Hospitals').doc(SelectHospital).collection('Patients').get().then(snapshot => {
   setupList(snapshot.docs);
+
+});
+
+db.collection('LAB').doc('UBHlab').collection('Complete Requests').get().then(snapshot => {
+  setupList8(snapshot.docs);
   // console.log(snapshot.docs)
-})
-
-// const patientportal = document.querySelector('.overlay4');
-
-
-
-// patientportal.addEventListener('submit', (e) => {
-//     e.preventDefault();
-// });
+});
+//
 
 
 
+db.collection('Pharmacy').get().then(snapshot => {
+  setupList9(snapshot.docs);
+  // console.log(snapshot.docs)
+});
 
-// const patientportal = document.querySelector('.overlay4');
 
-const patientportal = document.querySelector('.overlay1');
+const patientportal = document.querySelector('#overlaypnumber');
 
 var pp1 = document.getElementById("pnumber");
 patientportal.addEventListener('submit', (e) => {
@@ -25,13 +28,13 @@ patientportal.addEventListener('submit', (e) => {
 
 
   db.collection("Patients").doc(pp1.value).collection("PatientData").get().then((snapshot) => {
-    console.log(snapshot.docs);
+    // console.log(snapshot.docs);
     snapshot.docs.forEach(doc => {
       inputdata(doc);
     });
 
     inputdata(doc);
-    window.location.replace('patientPortal.html');
+    // window.location.replace('patientPortal.html');
 
   });
   db.collection("Patients").doc(pp1.value).get().then(function (doc) {
@@ -44,6 +47,16 @@ patientportal.addEventListener('submit', (e) => {
     })
 
   });
+  // db.collection("Patients").doc(pp1.value).get().then(function (doc) {
+  //   console.log(doc.data())
+  //   var picture = doc.data().userID;
+  //   let img = document.getElementById('profileImage1');
+  //   firebase.storage().ref('patients/' + picture + '/profilePic.jpg').getDownloadURL().then(imgUrl => {
+  //     img.src = imgUrl;
+
+  //   })
+
+  // });
 
   db.collection("Patients").doc(pp1.value).collection("PatientData").doc("AdministrativeData").collection("CashPayments").get().then(snapshot => {
     // console.log(snapshot.docs);
@@ -61,8 +74,7 @@ patientportal.addEventListener('submit', (e) => {
     medicaldata(snapshot);
 
 
-    // inputdata(doc);
-    // window.location.replace('patientPortal.html');
+
 
   });
   db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("Prescriptions").get().then(snapshot => {
@@ -71,10 +83,15 @@ patientportal.addEventListener('submit', (e) => {
     prescriptiondata(snapshot);
 
 
-    // inputdata(doc);
-    // window.location.replace('patientPortal.html');
+
 
   });
+
+
+
+
+
+
   db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("Prescriptions").get().then(snapshot => {
     // console.log(snapshot.docs);
 
@@ -125,16 +142,30 @@ patientportal.addEventListener('submit', (e) => {
     // window.location.replace('patientPortal.html');
 
   });
-  db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("Histo").doc("Assesment").get().then(snapshot => {
+  db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("LabResults").get().then(snapshot => {
     // console.log(snapshot.docs);
 
-    History3(snapshot);
+    LabTest(snapshot);
 
 
     // inputdata(doc);
     // window.location.replace('patientPortal.html');
 
   });
+
+  db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("LabResults").get().then(snapshot => {
+    // console.log(snapshot.docs);
+
+    LabTestList(snapshot);
+
+
+    // inputdata(doc);
+    // window.location.replace('patientPortal.html');
+
+  });
+
+
+
 
   document.getElementById("overlaypnumber").style.display = "none";
 });
@@ -158,6 +189,8 @@ const dailyjob = document.querySelector('#dailyjob');
 const nationality = document.querySelector('#Nationality');
 const citizenship = document.querySelector('#citizenship');
 const comunityservice = document.querySelector('#cominityservice');
+const Allergies1 = document.querySelector('#allegieslist');
+
 
 // phrmacy prescription
 const prescripname = document.querySelector('#prescripname');
@@ -173,6 +206,9 @@ const prescripcity1 = document.querySelector('#prescripcity1');
 const prescripnumber1 = document.querySelector('#prescripnumber1');
 const prescripcountry1 = document.querySelector('#prescripcountry1');
 const prescrippnumber1 = document.querySelector('#prescrippnumber1');
+const patientclass = document.querySelector('#patientclass');
+
+
 
 
 
@@ -184,6 +220,8 @@ function inputdata(doc) {
   let fullAddress = document.createElement('h5')
   let city = document.createElement('h5')
   let contactDetails = document.createElement('h5')
+  let Allergieslist = document.createElement('li')
+
 
   let smokingvalue = document.createElement('span')
   let Disabilityvalue = document.createElement('span')
@@ -195,6 +233,8 @@ function inputdata(doc) {
   let FamilyDetailsvalue = document.createElement('span')
   let NextofKinvalue = document.createElement('span')
   let BMIvalue = document.createElement('span')
+  let patientclass1 = document.createElement('span')
+
 
   let dailyjobvalue = document.createElement('span')
   let nationalityvalue = document.createElement('span')
@@ -221,6 +261,8 @@ function inputdata(doc) {
   fullAddress.textContent = doc.data().Address;
   city.textContent = doc.data().City;
   contactDetails.textContent = doc.data().ContactDetails;
+  Allergieslist.textContent = doc.data().Allergies;
+
 
   smokingvalue.textContent = doc.data().SmokingStatus;
   Disabilityvalue.textContent = doc.data().Disability;
@@ -231,7 +273,9 @@ function inputdata(doc) {
   BirthPlacevalue.textContent = doc.data().PlaceOfBirth;
   FamilyDetailsvalue.textContent = doc.data().FamilyDetails;
   NextofKinvalue.textContent = doc.data().NextOfKin;
-  BMIvalue.textContent = doc.data().BMI;
+  BMIvalue.textContent = doc.data().bmi;
+  patientclass1.textContent = doc.data().PatientClass;
+
 
   citizenshipvalue.textContent = doc.data().Citizenship;
   nationalityvalue.textContent = doc.data().Nationality;
@@ -269,6 +313,10 @@ function inputdata(doc) {
   NextofKin.appendChild(NextofKinvalue);
   FamilyDetails.appendChild(FamilyDetailsvalue);
   BMI.appendChild(BMIvalue);
+  patientclass.appendChild(patientclass1);
+  Allergies1.appendChild(Allergieslist);
+
+
 
   dailyjob.appendChild(dailyjobvalue);
   nationality.appendChild(nationalityvalue);
@@ -311,6 +359,10 @@ function inputdata(doc) {
 
 
   document.getElementById("list").style.display = "none";
+  // document.getElementById("outp").style.display = "none";
+  // document.getElementById("inp").style.display = "none";
+
+
   document.getElementById("data").style.display = "block";
 
 };
@@ -481,6 +533,48 @@ function History2(data) {
   presp2.innerHTML = html5;
 }
 
+const presp3 = document.querySelector('#LabList');
+
+
+function LabTest(data) {
+  let html6 = '';
+  data.forEach(doc => {
+    const patient5 = doc.data();
+
+    const pd6 = `
+  <li>${patient5.Time}---${patient5.LabRequest}</li>
+  `
+
+    html6 += pd6
+  })
+
+
+  presp3.innerHTML = html6;
+}
+
+
+const presp4 = document.querySelector('#allegieslist');
+
+
+// function Allergies(data) {
+//   let html7 = '';
+//   data.forEach(doc => {
+//     const patient6 = doc.data();
+
+//     const pd7 = `
+//   <li>${patient6.Allergies}</li>
+//   `
+
+//     html7 += pd7
+//   })
+
+
+//   presp3.innerHTML = html7;
+// }
+
+
+
+
 
 const Statusresults = document.querySelector('#StatusResults')
 function History3(data) {
@@ -505,6 +599,79 @@ function History3(data) {
 
 
 }
+
+
+
+const labbody = document.querySelector('#labbody');
+function LabTestList(data) {
+  let html10 = '';
+  data.forEach(doc => {
+    const lab1 = doc.data();
+
+    const lab = `
+     <tr>
+     <td>
+     ${lab1.Time}
+     </td>
+      <td id="ppnumber" value="${doc.id}">
+     ${doc.id}
+     </td>
+      <td>
+     ${lab1.LabRequest}
+     </td>
+     </tr>
+     <br>
+
+
+
+    `
+
+
+    html10 += lab;
+
+
+  })
+
+  labbody.innerHTML = html10
+  const labdetail = document.querySelector('#labid');
+  $("#labbody tr").click(function () {
+    var tableDatavalue = $(this).find("td").eq(0).html();
+
+    alert("View Lab: " + tableDatavalue.toString());
+
+    let labvalue = document.createElement('span');
+    labvalue.setAttribute("id", "labid1");
+
+
+    labvalue.textContent = tableDatavalue;
+
+    labdetail.appendChild(labvalue);
+
+
+
+    document.getElementById("overlaylab").style.display = "block";
+
+  });
+  var clear = document.getElementById("labid1")
+  clear.remove();
+}
+
+
+function viewlabList() {
+  document.getElementById("lablist").style.display = "block";
+  document.getElementById("data").style.display = "none";
+}
+function closelab() {
+  document.getElementById("lablist").style.display = "none";
+  document.getElementById("data").style.display = "block";
+}
+
+function closelaboverlay() {
+  document.getElementById("overlaylab").style.display = "none";
+  var clear = document.getElementById("labid1")
+  clear.remove();
+}
+
 
 
 
@@ -685,6 +852,10 @@ function closeHistory() {
   document.getElementById("Historylist1").style.display = "none";
   document.getElementById("data").style.display = "block";
 }
+function closeppnumber() {
+  document.getElementById("overlayHistory").style.display = "none";
+  // document.getElementById("data").style.display = "block";
+}
 
 
 const viewHistory1 = document.querySelector('#historyoverlay');
@@ -696,6 +867,16 @@ var Intake2 = document.getElementById('Intake');
 var HomeActivities2 = document.getElementById('Activities');
 var Medication2 = document.getElementById('Medication');
 var ImagingResults2 = document.getElementById('Imaging');
+var BodyTemp = document.getElementById('BodyTemperature1');
+var BloodPre = document.getElementById('BloodPreasure1');
+var Hieght = document.getElementById('Height1');
+var Weight = document.getElementById('Weight1');
+var PR = document.getElementById('PulseRate1');
+var Resp = document.getElementById('Respiration1');
+var OX = document.getElementById('OxygenSaturation1');
+var HIVstat = document.getElementById('HIVStatus1');
+var PS = document.getElementById('PsychiatricsAssesment1');
+var HEENT = document.getElementById('HEENTExamination1');
 
 
 var historynumber1 = document.getElementById("historynumber");
@@ -721,6 +902,18 @@ viewHistory1.addEventListener('submit', (e) => {
       Medication2.textContent = doc.data().Medication;
       ImagingResults2.textContent = doc.data().ImagingResults;
 
+      BodyTemp.textContent = doc.data().BodyTemp;
+      BloodPre.textContent = doc.data().BloodPressure;
+      Hieght.textContent = doc.data().Hieght;
+      Weight.textContent = doc.data().Weight;
+      PR.textContent = doc.data().PalseRate;
+      Resp.textContent = doc.data().Respiration;
+      OX.textContent = doc.data().OxygenSaturation;
+      HIVstat.textContent = doc.data().HIVStatus;
+      PS.textContent = doc.data().PyschiatricAssesment;
+      HEENT.textContent = doc.data().Heent;
+
+
       // prescripnotes1.appendChild(prescripnotesvalue1);
 
       // console.log("Document data:", doc.data());
@@ -745,8 +938,13 @@ viewHistory1.addEventListener('submit', (e) => {
 
 const viewHistory2 = document.querySelector('#NotesOverlay1');
 
+
+
 viewHistory2.addEventListener('submit', (e) => {
   e.preventDefault();
+
+
+
   document.getElementById("overlayHistory1").style.display = "block";
 })
 function closepppnumber() {
@@ -754,4 +952,137 @@ function closepppnumber() {
 }
 function viewstatus() {
   document.getElementById("overlayHistory1").style.display = "block";
+}
+
+const viewHistory3 = document.querySelector('#overlayHistory2');
+
+var BodyTemp1 = document.getElementById('BodyTemperature2');
+var BloodPre1 = document.getElementById('BloodPreasure2');
+var Hieght1 = document.getElementById('Height2');
+var Weight1 = document.getElementById('Weight2');
+var PR1 = document.getElementById('PulseRate2');
+var Resp1 = document.getElementById('Respiration2');
+var OX1 = document.getElementById('OxygenSaturation2');
+var HIVstat1 = document.getElementById('HIVStatus2');
+var PS1 = document.getElementById('PsychiatricsAssesment2');
+var HEENT1 = document.getElementById('HEENTExamination2');
+
+
+viewHistory3.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+
+
+})
+
+function opencurrentmedicaltrials() {
+
+
+  var docRef = db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("Assesment").doc("Assesment");
+
+  docRef.get().then(function (doc) {
+    if (doc.exists) {
+      const prescripdata = doc.data();
+
+
+      BodyTemp1.textContent = doc.data().BodyTemp;
+      BloodPre1.textContent = doc.data().BloodPressure;
+      Hieght1.textContent = doc.data().Hieght;
+      Weight1.textContent = doc.data().Weight;
+      PR1.textContent = doc.data().PalseRate;
+      Resp1.textContent = doc.data().Respiration;
+      OX1.textContent = doc.data().OxygenSaturation;
+      HIVstat1.textContent = doc.data().HIVStatus;
+      PS1.textContent = doc.data().PyschiatricAssesment;
+      HEENT1.textContent = doc.data().Heent;
+
+
+      // prescripnotes1.appendChild(prescripnotesvalue1);
+
+      // console.log("Document data:", doc.data());
+
+
+    } else {
+      // doc.data() will be undefined in this case
+      alert("No such document!");
+    }
+  }).catch(function (error) {
+    console.log("Error getting document:", error);
+  });
+
+  document.getElementById("overlayHistory2").style.display = "block";
+
+}
+function closetrials() {
+  document.getElementById("overlayHistory2").style.display = "none";
+}
+
+
+
+
+const labdownload = document.querySelector('#overlaylab');
+
+var labidtodownload = document.getElementById('labnumber');
+
+labdownload.addEventListener('submit', (e) => {
+  e.preventDefault();
+  var storage = firebase.storage();
+  let storageRef = firebase.storage();
+  //   // Create a reference to the file we want to down
+  storageRef.ref('labdata/' + labidtodownload.value + '/labdta.pdf').getDownloadURL().then(function (url) {
+    // `url` is the download URL for 'images/stars.jpg'
+
+    // This can be downloaded directly:
+    // var xhr = new XMLHttpRequest();
+    // xhr.responseType = 'blob';
+    // xhr.onload = function (event) {
+    //   var blob = xhr.response;
+    // };
+    // xhr.open('GET', url);
+    // xhr.send();
+
+    // Or inserted into an <img> element:
+    var img = document.getElementById('download');
+    img.src = url;
+  }).catch(function (error) {
+
+    // A full list of error codes is available at
+    // https://firebase.google.com/docs/storage/web/handle-errors
+    switch (error.code) {
+      case 'storage/object-not-found':
+        // File doesn't exist
+        alert("File does not exist")
+        break;
+
+      case 'storage/unauthorized':
+        // User doesn't have permission to access the object
+        alert("You dont have permission to this file")
+        break;
+
+      case 'storage/canceled':
+        // User canceled the upload
+        alert("Storage Canceled")
+        break;
+
+
+
+      case 'storage/unknown':
+        // Unknown error occurred, inspect the server response
+        alert("Storage Unknown")
+        break;
+    }
+  });
+
+})
+
+
+function printDiv(divName) {
+  var printContents = document.getElementById(divName).innerHTML;
+  var originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = printContents;
+
+  window.print();
+
+  document.body.innerHTML = originalContents;
 }

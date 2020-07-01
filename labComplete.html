@@ -22,14 +22,14 @@
 
 
 
-    </section>
+
     <!-- end of tools section -->
     <!-- home banner -->
     <section>
         <div class="container-fluid" id="homebanner">
             <div class="row">
                 <div class="col text-center" id="bancol">
-                    <h1 class="display-4">
+                    <h1 class="display-4" id="gohome">
                         NEROCARE <span style="color: #09283C;">System</span>
                     </h1>
                     <!-- <h3 id="desc">
@@ -51,7 +51,6 @@
                 <h4 style="font-size: 50px;">Lab Tests Complete</h4>
 
             </div>
-
             <div class="container">
                 <div class="row text-center">
                     <table>
@@ -63,24 +62,27 @@
                         <th>Lab Test</th>
                         <th>Status</th>
                         <th>Action</th>
-                        <tr>
-                            <td>
+                        <tbody id="Allpatientslistdata8">
+                            <tr id="labtable">
 
-                            </td>
-                            <td>
+                                <td>
 
-                            </td>
-                            <td>
+                                </td>
+                                <td>
 
-                            </td>
-                            <td>
+                                </td>
+                                <td>
 
-                            </td>
-                            <td>
+                                </td>
+                                <td>
 
-                            </td>
+                                </td>
+                                <td>
 
-                        </tr>
+                                </td>
+
+                            </tr>
+                        </tbody>
 
 
                     </table>
@@ -96,63 +98,76 @@
 
 
         </section>
-        <!-- end of icons -->
-        <div class="card-footer  justify-condent-around dflex text-center text-light">
-            <h1>National e-Health Record Operational Care</h1>
-            <br />
-            <p>
-                NeroCare is dedicated to store, synchronize and visualize patient
-                clinical data with the goal to improve national health status. The
-                abilities of the system lies in its full utilization by General
-                practitioners as such all the copy rights and usage of NeroCare shall
-                only be for medical purposes approved by the patient and standards
-                boards associated with it.
-            </p>
+    </section>
+    <!-- end of icons -->
+    <div class="card-footer  justify-condent-around dflex text-center text-light">
+        <h1>National e-Health Record Operational Care</h1>
+        <br />
+        <p>
+            NeroCare is dedicated to store, synchronize and visualize patient
+            clinical data with the goal to improve national health status. The
+            abilities of the system lies in its full utilization by General
+            practitioners as such all the copy rights and usage of NeroCare shall
+            only be for medical purposes approved by the patient and standards
+            boards associated with it.
+        </p>
 
-            <br />
-            <h4>copyrights&copy;2020</h4>
-            <br />
-            <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
-        </div>
-        <!-- end  of footer-->
-        <!-- jQuery -->
-        <script src="./jS/jquery-3.4.1.min.js"></script>
-        <!-- bootstrap javaScript -->
-        <script src="./jS/bootstrap.bundle.min.js"></script>
-        <script src="./jS/main.js"></script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+        <br />
+        <h4>copyrights&copy;2020</h4>
+        <br />
+        <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+    </div>
+    <!-- end  of footer-->
+    <!-- jQuery -->
+    <script src="./jS/jquery-3.4.1.min.js"></script>
+    <!-- bootstrap javaScript -->
+    <script src="./jS/bootstrap.bundle.min.js"></script>
+    <script src="./jS/main.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
-        <script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
-            var firebaseConfig = {
-                apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
-                authDomain: "nerocare-1ab70.firebaseapp.com",
-                databaseURL: "https://nerocare-1ab70.firebaseio.com",
-                projectId: "nerocare-1ab70",
-                storageBucket: "nerocare-1ab70.appspot.com",
-                messagingSenderId: "954862350723",
-                appId: "1:954862350723:web:4251b22f62ddafb54206b6",
-                measurementId: "G-TH863E9823"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
+    <script>
 
-            const auth = firebase.auth();
-            const db = firebase.firestore();
+        var firebaseConfig = {
+            apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+            authDomain: "nerocare-1ab70.firebaseapp.com",
+            databaseURL: "https://nerocare-1ab70.firebaseio.com",
+            projectId: "nerocare-1ab70",
+            storageBucket: "nerocare-1ab70.appspot.com",
+            messagingSenderId: "954862350723",
+            appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+            measurementId: "G-TH863E9823"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
-            db.settings({ timestampsInSnapshots: true });
-        </script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="./login.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="./login.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="./login.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="./jS/main.js"></script>
+    <script src="./lists.js"></script>
+    <script src="./savedata.js"></script>
+    <script src="./labcomplete.js"></script>
+
+
 </body>
 
 </html>
