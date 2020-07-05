@@ -1,9 +1,4 @@
 
-var SelectHospital = sessionStorage.getItem("SelectHospital");
-db.collection('Hospitals').doc(SelectHospital).collection('Patients').get().then(snapshot => {
-  setupList(snapshot.docs);
-
-});
 
 db.collection('LAB').doc('UBHlab').collection('Complete Requests').get().then(snapshot => {
   setupList8(snapshot.docs);
@@ -47,16 +42,7 @@ patientportal.addEventListener('submit', (e) => {
     })
 
   });
-  // db.collection("Patients").doc(pp1.value).get().then(function (doc) {
-  //   console.log(doc.data())
-  //   var picture = doc.data().userID;
-  //   let img = document.getElementById('profileImage1');
-  //   firebase.storage().ref('patients/' + picture + '/profilePic.jpg').getDownloadURL().then(imgUrl => {
-  //     img.src = imgUrl;
 
-  //   })
-
-  // });
 
   db.collection("Patients").doc(pp1.value).collection("PatientData").doc("AdministrativeData").collection("CashPayments").get().then(snapshot => {
     // console.log(snapshot.docs);
@@ -674,7 +660,6 @@ function closelaboverlay() {
 
 
 
-
 const prespbody = document.querySelector('#prescripbody');
 function prescriptionlist1(data) {
   let html4 = '';
@@ -701,88 +686,47 @@ function prescriptionlist1(data) {
 
 
     html4 += pp;
-
-
   })
-
   prespbody.innerHTML = html4
   const ppnumber = document.querySelector('#pn2');
   $("#prescripbody tr").click(function () {
     var tableDatavalue = $(this).find("td").eq(1).html();
-
     alert("View Prescription: " + tableDatavalue.toString());
-
     let ppnumbervalue = document.createElement('span');
     ppnumbervalue.setAttribute("id", "pn4");
-
-
     ppnumbervalue.textContent = tableDatavalue;
-
     ppnumber.appendChild(ppnumbervalue);
-
-
-
     document.getElementById("overlayprescrip").style.display = "block";
-
   });
   var clear = document.getElementById("pn4")
   clear.remove();
 }
-
 function closeppnumber() {
   var clear = document.getElementById("pn4")
   clear.remove();
   document.getElementById("overlayprescrip").style.display = "none";
-
 };
-
-
 function openprescrip() {
   document.getElementById("prescriptionlist").style.display = "block";
   document.getElementById("data").style.display = "none";
-
-
 }
 const prescripsingle = document.querySelector('.overlay3');
-
-
-
 var ppnumber1 = document.getElementById("ppnumber");
 prescripsingle.addEventListener('submit', (e) => {
   e.preventDefault();
-
   const prescripnotes1 = document.querySelector('#prescripnotes1');
-
-
-
-
-
   var docRef = db.collection("Patients").doc(pp1.value).collection("PatientData").doc("Clinical Data").collection("Prescriptions").doc(ppnumber1.value);
-
   docRef.get().then(function (doc) {
     if (doc.exists) {
       const prescripdata = doc.data();
-
-
-
       prescripnotes1.textContent = prescripdata.Notes;
-
-      // prescripnotes1.appendChild(prescripnotesvalue1);
-
-      // console.log("Document data:", doc.data());
-
-
     } else {
-      // doc.data() will be undefined in this case
-      // console.log("No such document!");
       alert("no Such Document")
     }
   }).catch(function (error) {
     console.log("Error getting document:", error);
   });
   document.getElementById("overlayprescrip").style.display = "none";
-
-
 })
 function closeprescrip() {
   document.getElementById("prescriptionlist").style.display = "none";

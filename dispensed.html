@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab Tests</title>
+    <title>Dispensed List</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <!-- fontawesome -->
@@ -29,11 +29,11 @@
         <div class="container-fluid" id="homebanner">
             <div class="row">
                 <div class="col text-center" id="bancol">
-
-                    <h1 class="display-4" id="gohome">
-                        NEROCARE <span style="color: #09283C;">System</span>
-                    </h1>
-
+                    <a href="home.html" style="color: white; text-underline-position: unset;">
+                        <h1 class="display-4" id="gohome">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                    </a>
                     <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
@@ -50,54 +50,56 @@
         <section id="iconspharmacy" class="bg-light text-center">
             <div class="row "><img id="img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg"
                     alt="Outpatient" />
-                <h4 style="font-size: 50px;">Lab Tests</h4>
+                <h4 style="font-size: 50px;">Dispensed List</h4>
 
             </div>
-
-            <div class="container">
-                <div class="row text-center">
-                    <table>
-                        <th><i class="fas fa-camera"></i></th>
-                        <th>Full Name</th>
+            <div>
 
 
-                        <th>Paatient ID</th>
-                        <th>Lab Test</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                        <tbody id="Allpatientslistdata7">
-                            <tr id="labtable">
+                <div class="container">
+                    <div class="row text-center">
+                        <table id="Pharmacylist1">
 
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-
-                            </tr>
-                        </tbody>
+                            <th>Date</th>
+                            <th>Patient ID</th>
 
 
-                    </table>
+                            <tr>
+                                <tbody id="Pharmacylistdata1">
+                                    <!-- <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td>
+                                                        <td>
+                    
+                                                        </td> -->
+                                    <!-- </tr> -->
+
+                                </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
 
         </section>
@@ -158,16 +160,8 @@
 
             db.settings({ timestampsInSnapshots: true });
         </script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="./jS/main.js"></script>
-        <script src="./lists.js"></script>
-        <script src="./savedata.js"></script>
-        <script src="./labrequest.js"></script>
+        <script src="./dispensed1.js"></script>
+        <script src="./dispensed.js"></script>
 
 
 </body>

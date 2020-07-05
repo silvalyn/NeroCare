@@ -798,19 +798,12 @@ const setupList9 = (data) => {
 };
 
 
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById("gohome").onclick = function () { gohome() };
-
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-function gohome() {
-  location.replace("home.html")
-}
 
 
 
 
 
-document.getElementById("dropdown").classList.toggle("show");
+
 
 
 
@@ -982,10 +975,27 @@ function opencreatePatient() {
   window.location.replace('creatingPatient.html');
 };
 
+// // Get the button, and when the user clicks on it, execute myFunction
+// document.getElementById("gohome").onclick = function () { gohome() }
+
+// /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+// function gohome() {
+//   location.replace("home.html")
+// }
+function signout1() {
+
+  firebase.auth().signOut().then(function () {
+    // Sign-out successful.
+    location.replace("index.html")
+
+  }).catch(function (error) {
+    // An error happened.
+    alert(error);
+    console.log(error);
+  });
 
 
-
-
+}
 
 
 

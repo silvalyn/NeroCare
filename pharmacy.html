@@ -19,6 +19,159 @@
 </head>
 
 <body>
+  <div id="Phamacylist">
+
+    <div id="overlayprescrip" class="overlay5">
+      <span class="closebtn" onclick="closeppx()" title="Close Overlay"> &#215 </span>
+      <div class="overlay__content">
+        <h3 class="text-center"><strong>Patient</strong></h3>
+        <form class="text-center" id="historyoverlay" action="">
+          <label for="">
+            <h4>Confirm Document Number</h4>
+          </label>
+          <h5 id="pn3"></h5>
+          <br><br>
+
+          <input type="text" value="" id="prescripnum">
+          <br> <br>
+          <input type="submit" value="submit">
+          <!-- <button onclick="submitpnumber()">View</button> -->
+
+        </form>
+      </div>
+    </div>
+
+
+
+    <div id="PrescriptionOverlay2" class="PrescriptionOverlay1">
+      <span class="closebtn" onclick="closePscp1()" title="Close Overlay"> &#215 </span>
+      <div class="wrap text-center" id="prescriptionWrap">
+        <div class="row" style="background-color:#2487E9 ;">
+          <h3>
+            NEROCARE <span style="color: white;">System</span>
+          </h3>
+          <h3 style="margin-left: 7rem;">Phamacy Prescription</h3>
+        </div>
+        <br>
+        <form action="" id="saveprescrip">
+          <div class="row">
+            <div class="colum" id="colum1">
+              <h3>Patient Information</h3>
+              <br>
+              <h4 id="prescripname1"></h4><br>
+              <h4 id="prescripaddress1"></h4><br>
+              <div class="row">
+                <h4 style="margin:0 1rem 0 2rem" id="prescripcity1"></h4>
+                <h4 id="prescripnumber1"></h4><br>
+
+
+
+              </div><br>
+              <h4 id="prescripcountry1"></h4>
+              <h4 id="prescrippnumber1"></h4>
+            </div>
+            <div class="colum">
+              <h3>Medication Details</h3>
+              <br>
+              <textarea class="notes" name="" id="prescripnotes1" cols="60" rows="10"></textarea>
+              <br>
+
+              <br>
+              <label for="digitaly Sign">Doctor/Nurse</label>
+            </div>
+            <br>
+            <div class="row">
+
+              <!-- <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd"
+                onclick="dispense()">Dispense</button> -->
+
+            </div>
+            <input type="submit" value="Dispense">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="pharmacypatientlist1" style="display: none;">
+      <!-- end of tools section -->
+      <!-- home banner -->
+      <section onload="Allpatients()">
+        <div class="container-fluid" id="homebanner">
+          <div class="row">
+            <div class="col text-center" id="bancol">
+              <a href="pharmacy.html" style="color: white; text-underline-position: unset;">
+                <h1 class="display-4" id="gohome">
+                  NEROCARE <span style="color: #09283C;">System</span>
+                </h1>
+              </a>
+              <!-- <h3 id="desc">
+                        Covering all the electronic <br />
+                        records for all patients
+                    </h3> -->
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </section>
+      <!-- end of banner -->
+      <!-- nav bar -->
+      <section id="icons">
+
+        <section id="iconspharmacy" class="bg-light text-center">
+          <br><br>
+
+          <div class="container">
+            <div class="row text-center">
+              <table id="Pharmacylist">
+                <th><i class="fas fa-camera"></i>Document Number</th>
+                <th>Date</th>
+                <th>Document ID</th>
+                <th>Details</th>
+
+                <tr>
+                  <tbody id="Pharmacylistdata">
+                    <!-- <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td> -->
+                    <!-- </tr> -->
+
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button id="button" onclick="pharmcayback()">Back Home</button>
+
+        </section>
+
+
+
+    </div>
+  </div>
 
   <div id="overlaypharmacy" class="overlaypharmacy">
     <span class="closebtn" onclick="closepharmacy()" title="Close Overlay"> &#215 </span>
@@ -28,7 +181,7 @@
         <label for="">
           <h4>Enter Patient's Number</h4>
         </label>
-        <input type="text" name="PatientID" id="PatientID" placeholder="N0165103T">
+        <input type="text" name="PatientID" id="PharmacyPatientID" placeholder="N0165103T">
         <br><br>
 
         </section>
@@ -38,52 +191,55 @@
       </form>
     </div>
   </div>
-  <section>
-    <div class="container-fluid bg-secondary text-light">
-      <div class="row">
-        <div class="col">
-          <i class="fab fa-instagram "> </i>
-          <i class="fab fa-twitter"> </i>
-          <i class="fab fa-facebook-f"> </i>
-          <i class="fas fa-envelope"> </i>
-        </div>
-        <div class="col">
-          <div class="row">
-            <i id="usericon" class="fas fa-user-md"></i>
-            <h6 id="welcome">Welcome :</h6>
-
-            <h6 id="username">Princes Ruwisi</h6>
-            <br />
-            <i id="loc_icon" class="fas fa-map-marker-alt"></i>
-            <h6 id="location">Location :</h6>
-
-            <h6 id="placename">Mpilo Hospital</h6>
+  <div id="pharmacyhome">
+    <section>
+      <div class="container-fluid bg-secondary text-light">
+        <div class="row">
+          <div class="col">
+            <i class="fab fa-instagram "> </i>
+            <i class="fab fa-twitter"> </i>
+            <i class="fab fa-facebook-f"> </i>
+            <i class="fas fa-envelope"> </i>
           </div>
+          <div class="col">
+            <div class="row">
+              <i id="usericon" class="fas fa-user-md"></i>
+              <h6 id="welcome">Welcome :</h6>
+
+              <h6 id="username">Trinity Phamacy</h6>
+              <br />
+              <i id="loc_icon" class="fas fa-map-marker-alt"></i>
+              <h6 id="location">Location :</h6>
+
+              <h6 id="placename">Pharmacy</h6>
+            </div>
+          </div>
+          <button id="signout" onclick="signout1()">Sign Out</button>
+
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end of tools section -->
-  <!-- home banner -->
-  <section>
-    <div class="container-fluid" id="homebanner">
-      <div class="row">
-        <div class="col text-center" id="bancol">
-          <h1 class="display-4">
-            NEROCARE <span style="color: #09283C;">System</span>
-          </h1>
-          <!-- <h3 id="desc">
+    </section>
+    <!-- end of tools section -->
+    <!-- home banner -->
+    <section>
+      <div class="container-fluid" id="homebanner">
+        <div class="row">
+          <div class="col text-center" id="bancol">
+            <h1 class="display-4">
+              NEROCARE <span style="color: #09283C;">System</span>
+            </h1>
+            <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
                     </h3> -->
+          </div>
+          <div class="col"></div>
         </div>
-        <div class="col"></div>
       </div>
-    </div>
-  </section>
-  <!-- end of banner -->
-  <!-- nav bar -->
-  <!-- <section id="nav">
+    </section>
+    <!-- end of banner -->
+    <!-- nav bar -->
+    <!-- <section id="nav">
         <nav class="navbar navbar-expand-md navbar-dark ">
             <input type="checkbox" name="checkbox dropdown" id="checkbox" /><a href="#" class="nav-link dropdown-toggle"
                 data-toggle="dropdown" data-target="dropdown_target"><label for="checkbox" class="checkbtn"><i
@@ -121,9 +277,9 @@
             </ul>
         </nav>
     </section> -->
-  <!-- end of nav -->
-  <section id="icons">
-    <!-- <div class="row">
+    <!-- end of nav -->
+    <section id="icons">
+      <!-- <div class="row">
             <a href="#" id="allpatients"><button id="allpatients" class="bg-secondary text-light text-center">
                     <h4>All patients List</h4>
                     <br />
@@ -134,8 +290,8 @@
                 <h4>Admin Center</h4>
             </button>
         </div> -->
-    <!-- </section> -->
-    <!-- <section id="icons" class="bg-light text-center">
+      <!-- </section> -->
+      <!-- <section id="icons" class="bg-light text-center">
         <h4>Outpatient Managment</h4>
         <div class="container">
           <div class="row text-center">
@@ -230,7 +386,7 @@
         </div>
       </section> -->
 
-    <!-- <section id="icons" class="bg-light text-center">
+      <!-- <section id="icons" class="bg-light text-center">
             <h4 style="font-size: 70px;">Lab Managment</h4>
             <div class="container">
                 <div class="row text-center">
@@ -246,23 +402,25 @@
                 </div>
             </div>
         </section> -->
-    <section id="iconspharmacy" class="bg-light text-center">
-      <h4 style="font-size: 70px;">Pharmacy Managment</h4>
-      <div class="container">
-        <div class="row text-center">
-          <a href="#" id="icona" onclick="openpharmacy()"><img id="img" src="./img/outpatientlist.svg"
-              alt="outpatientlist" />
-            <h4 id="icon1">Patient Px List</h4>
-          </a>
-          <a href="#" id="iconc"><img id="img" src="./img/pharmacy.svg" alt="outpatientlist" />
-            <h4 id="icon1">Patient Px List</h4>
-          </a>
-          <div class="row" id="cheat1"></div>
+      <section id="iconspharmacy" class="bg-light text-center">
+        <h4 style="font-size: 70px;">Pharmacy Managment</h4>
+        <div class="container">
+          <div class="row text-center">
+            <a href="#" id="icona" onclick="openpharmacy()"><img id="img" src="./img/outpatientlist.svg"
+                alt="outpatientlist" />
+              <h4 id="icon1">Patient Px List</h4>
+            </a>
+            <a href="dispensed.html" id="iconc"><img id="img" src="./img/pharmacy.svg" alt="outpatientlist" />
+              <h4 id="icon1">Patient Px List All</h4>
+            </a>
+            <div class="row" id="cheat1"></div>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- </section> -->
-    <!-- <section id="icons" class="bg-light text-center">
+        <br><br><br>
+      </section>
+  </div>
+  <!-- </section> -->
+  <!-- <section id="icons" class="bg-light text-center">
       <h4>Daily Schedule</h4>
       <div class="container">
         <div class="row text-center" id="iconsrow">
@@ -300,63 +458,65 @@
         </div>
       </div>
     </section> -->
-    -->
-    <!-- end of icons -->
-    <div class="card-footer  justify-condent-around dflex text-center text-light">
-      <h1>National e-Health Record Operational Care</h1>
-      <br />
-      <p>
-        NeroCare is dedicated to store, synchronize and visualize patient
-        clinical data with the goal to improve national health status. The
-        abilities of the system lies in its full utilization by General
-        practitioners as such all the copy rights and usage of NeroCare shall
-        only be for medical purposes approved by the patient and standards
-        boards associated with it.
-      </p>
 
-      <br />
-      <h4>copyrights&copy;2020</h4>
-      <br />
-      <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
-    </div>
-    <!-- end  of footer-->
-    <!-- jQuery -->
-    <script src="./jS/jquery-3.4.1.min.js"></script>
-    <!-- bootstrap javaScript -->
-    <script src="./jS/bootstrap.bundle.min.js"></script>
-    <script src="./jS/main.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <!-- end of icons -->
+  <div class="card-footer  justify-condent-around dflex text-center text-light">
+    <h1>National e-Health Record Operational Care</h1>
+    <br />
+    <p>
+      NeroCare is dedicated to store, synchronize and visualize patient
+      clinical data with the goal to improve national health status. The
+      abilities of the system lies in its full utilization by General
+      practitioners as such all the copy rights and usage of NeroCare shall
+      only be for medical purposes approved by the patient and standards
+      boards associated with it.
+    </p>
+
+    <br />
+    <h4>copyrights&copy;2020</h4>
+    <br />
+    <a href="#" id="back_top"><i class="fas fa-arrow-up text-light "></i></a>
+  </div>
+  <!-- end  of footer-->
+  <!-- jQuery -->
+  <script src="./jS/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap javaScript -->
+  <script src="./jS/bootstrap.bundle.min.js"></script>
+  <script src="./jS/main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
 
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
-    <script>
+  <script>
 
-      var firebaseConfig = {
-        apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
-        authDomain: "nerocare-1ab70.firebaseapp.com",
-        databaseURL: "https://nerocare-1ab70.firebaseio.com",
-        projectId: "nerocare-1ab70",
-        storageBucket: "nerocare-1ab70.appspot.com",
-        messagingSenderId: "954862350723",
-        appId: "1:954862350723:web:4251b22f62ddafb54206b6",
-        measurementId: "G-TH863E9823"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+    var firebaseConfig = {
+      apiKey: "AIzaSyCS8z6C_69CkKDXEf0iBPxxoZWvcavdJcg",
+      authDomain: "nerocare-1ab70.firebaseapp.com",
+      databaseURL: "https://nerocare-1ab70.firebaseio.com",
+      projectId: "nerocare-1ab70",
+      storageBucket: "nerocare-1ab70.appspot.com",
+      messagingSenderId: "954862350723",
+      appId: "1:954862350723:web:4251b22f62ddafb54206b6",
+      measurementId: "G-TH863E9823"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-      const auth = firebase.auth();
-      const db = firebase.firestore();
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-      db.settings({ timestampsInSnapshots: true });
-    </script>
-    <script src="./login.js"></script>
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <script src="./login.js"></script>
+  <script src="./pharmacy.js"></script>
+
 </body>
 
 </html>

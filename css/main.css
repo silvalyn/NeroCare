@@ -1218,3 +1218,10 @@ text-align: left;
 #gohome{
 cursor: pointer;
 }
+#button{
+  padding: 1rem;
+  color: white;
+  background-color: #0d141f;
+  border-radius: 8px;
+  margin: 1rem;
+}

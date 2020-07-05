@@ -3,3 +3,5 @@ db.collection('Hospitals').doc(SelectHospital2).collection('Inpatients').get().t
     setupList2(snapshot.docs);
     // console.log(snapshot.docs)
 });
+
+

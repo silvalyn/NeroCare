@@ -36,3 +36,8 @@
 
 
 })
+document.getElementById("dropdown").classList.toggle("show");
+
+function gotofirebase() {
+    location.replace('https://console.firebase.google.com/')
+}

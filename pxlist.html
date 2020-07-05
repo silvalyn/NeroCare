@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab Tests</title>
+    <title>Pharmacy Px List</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <!-- fontawesome -->
@@ -20,20 +20,86 @@
 
 <body>
 
+    <div id="overlayprescrip" class="overlay5">
+        <span class="closebtn" onclick="closeppnumber()" title="Close Overlay"> &#215 </span>
+        <div class="overlay__content">
+            <h3 class="text-center"><strong>Patient</strong></h3>
+            <form class="text-center" id="historyoverlay" action="">
+                <label for="">
+                    <h4>Confirm Document Number</h4>
+                </label>
+                <h5 id="pn3"></h5>
+                <br><br>
 
+                <input type="text" value="" id="">
+                <br> <br>
+                <input type="submit" value="submit">
+                <!-- <button onclick="submitpnumber()">View</button> -->
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="PrescriptionOverlay1" class="PrescriptionOverlay1">
+        <span class="closebtn" onclick="closePscp1()" title="Close Overlay"> &#215 </span>
+        <div class="wrap text-center" id="prescriptionWrap">
+            <div class="row" style="background-color:#2487E9 ;">
+                <h3>
+                    NEROCARE <span style="color: white;">System</span>
+                </h3>
+                <h3 style="margin-left: 7rem;">Phamacy Prescription</h3>
+            </div>
+            <br>
+            <form action="" id="saveprescrip">
+                <div class="row">
+                    <div class="colum" id="colum1">
+                        <h3>Patient Information</h3>
+                        <br>
+                        <h4 id="prescripname1"></h4><br>
+                        <h4 id="prescripaddress1"></h4><br>
+                        <div class="row">
+                            <h4 style="margin:0 1rem 0 2rem" id="prescripcity1"></h4>
+                            <h4 id="prescripnumber1"></h4><br>
+
+
+
+                        </div><br>
+                        <h4 id="prescripcountry1"></h4>
+                        <h4 id="prescrippnumber1"></h4>
+                    </div>
+                    <div class="colum">
+                        <h3>Medication Details</h3>
+                        <br>
+                        <textarea class="notes" name="" id="prescripnotes1" cols="60" rows="10"></textarea>
+                        <br>
+
+                        <br>
+                        <label for="digitaly Sign">Doctor/Nurse</label>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <button style="margin-left: 10rem; padding: 0 2rem;" id="patientdashbd">Print</button></div>
+
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <!-- end of tools section -->
     <!-- home banner -->
-    <section>
+    <section onload="Allpatients()">
         <div class="container-fluid" id="homebanner">
             <div class="row">
                 <div class="col text-center" id="bancol">
-
-                    <h1 class="display-4" id="gohome">
-                        NEROCARE <span style="color: #09283C;">System</span>
-                    </h1>
-
+                    <a href="pharmacy.html" style="color: white; text-underline-position: unset;">
+                        <h1 class="display-4" id="gohome">
+                            NEROCARE <span style="color: #09283C;">System</span>
+                        </h1>
+                    </a>
                     <!-- <h3 id="desc">
                         Covering all the electronic <br />
                         records for all patients
@@ -48,46 +114,42 @@
     <section id="icons">
 
         <section id="iconspharmacy" class="bg-light text-center">
-            <div class="row "><img id="img" style="margin: 0 2rem 0 3rem;" src="./img/outpatientlist.svg"
-                    alt="Outpatient" />
-                <h4 style="font-size: 50px;">Lab Tests</h4>
-
-            </div>
+            <br><br>
 
             <div class="container">
                 <div class="row text-center">
-                    <table>
+                    <table id="Pharmacylist">
                         <th><i class="fas fa-camera"></i></th>
-                        <th>Full Name</th>
+                        <th>Date</th>
+                        <th>Document ID</th>
+                        <th>Details</th>
 
+                        <tr>
+                            <tbody id="Pharmacylistdata">
+                                <!-- <td>
 
-                        <th>Paatient ID</th>
-                        <th>Lab Test</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                        <tbody id="Allpatientslistdata7">
-                            <tr id="labtable">
+                                    </td>
+                                    <td>
 
-                                <td>
+                                    </td>
+                                    <td>
 
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
 
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
 
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
 
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
 
-                                </td>
+                                    </td> -->
+                                <!-- </tr> -->
 
-                            </tr>
-                        </tbody>
-
-
+                            </tbody>
                     </table>
                 </div>
             </div>
@@ -101,6 +163,8 @@
 
 
         </section>
+        </div>
+
         <!-- end of icons -->
         <div class="card-footer  justify-condent-around dflex text-center text-light">
             <h1>National e-Health Record Operational Care</h1>
@@ -124,7 +188,7 @@
         <script src="./jS/jquery-3.4.1.min.js"></script>
         <!-- bootstrap javaScript -->
         <script src="./jS/bootstrap.bundle.min.js"></script>
-        <script src="./jS/main.js"></script>
+
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
@@ -132,7 +196,6 @@
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
-
 
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
@@ -160,14 +223,8 @@
         </script>
         <script src="./login.js"></script>
         <script src="/__/firebase/init.js"></script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
-        <script src="./login.js"></script>
-        <script src="/__/firebase/init.js"></script>
         <script src="./jS/main.js"></script>
-        <script src="./lists.js"></script>
-        <script src="./savedata.js"></script>
-        <script src="./labrequest.js"></script>
+        <script src="./pharmacy.js"></script>
 
 
 </body>

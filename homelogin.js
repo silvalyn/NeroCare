@@ -76,7 +76,7 @@ LoginOverlay.addEventListener('submit', (e) => {
                 if (document.getElementById('LAB').checked) {
                     // alert(Loginvalue.value)
 
-                    location.replace('labtests.html')
+                    location.replace('lab.html')
 
                 }
 
